@@ -1,0 +1,113 @@
+$normal-font: 'Alegreya Sans', sans-serif
+$fancy-font: 'Pacifico', cursive
+
+$nav-bg: #079EA6
+$input-txt-c: #3d3d3d
+$mat-shadow: 1px 1px 6px rgba(0,0,0,0.4)
+
+body
+	margin: 0
+	padding: 0
+	font-family: $normal-font
+	font-weight: 300
+	color: darken($nav-bg, 20%)
+
+p
+	font-size: 10px
+
+a
+	text-decoration: none
+	margin: 0 10px 0 10px
+
+
+=gradient-bg($top, $bottom)
+	background: -webkit-linear-gradient($top, $bottom) /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient($top, $bottom) /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient($top, $bottom) /* For Firefox 3.6 to 15 */
+	background: linear-gradient($top, $bottom) /* Standard syntax */
+
+
+
+/* BUTTONS */
+$btn-primary-c: #B3197B
+$btn-darken-amt: 5%
+.otr-btn-primary
+	padding: 6px 10px 6px 10px
+	border-radius: 1px
+	color: white
+	background: $btn-primary-c
+
+.otr-btn-primary:hover
+	background: lighten($btn-primary-c, $btn-darken-amt)
+
+
+/* LAYOUT */
+div.otr-slate-solid
+	width: 76%
+	background-color: $nav-bg
+	padding: 4%
+	border-radius: 2px
+	box-shadow: $mat-shadow
+
+
+
+/* NAV */
+$home-nav-h: 90px
+div.otr-home-banner
+	position: relative
+	width: 100%
+	height: $home-nav-h
+	max-height: 340px
+	display: block
+	text-align: center
+	background-color: $nav-bg
+	overflow: hidden
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.4)
+
+	img.otr-home-logo
+		position: relative
+		height: $home-nav-h * .8
+		top: ($home-nav-h - ($home-nav-h * .8)) / 2
+
+
+$nav-h: 70px
+div.otr-nav
+	position: relative
+	width: 100%
+	height: $nav-h
+	line-height: $nav-h
+	text-align: center
+	color: white
+	box-shadow: 0px 1px 6px rgba(0,0,0,0.8)
+	+gradient-bg($nav-bg, darken($nav-bg, 3%))
+
+span.otr-logo
+	font-family: $fancy-font
+	font-size: 2em
+	color: white
+	text-shadow: 1px 1px 6px black
+	padding: 10px 50px 0 50px
+
+
+/* FORM */
+div.otr-input-group
+	position: relative
+	width: 100%
+	margin-bottom: 12px
+	span
+		text-align: left
+		position: relative
+		display: block
+		font-size: 0.6em
+		margin-bottom: 4px
+	input
+		position: relative
+		margin: 0 auto
+		width: 100%
+		color: $input-txt-c
+		font-weight: 300
+		font-size: 1.2em
+		padding: 4px 6px 4px 6px
+		border: 1px solid $nav-bg
+		border-radius: 2px
+		background: white

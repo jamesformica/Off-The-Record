@@ -42,6 +42,11 @@ gem 'spring',        group: :development
 
 gem 'angularjs-rails'
 
+gem "animate-rails"
+
+gem 'lodash-rails' #for restangular
+
+gem 'font-awesome-sass'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'

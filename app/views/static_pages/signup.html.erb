@@ -1,0 +1,40 @@
+<%= render "/layouts/homenav" %>
+
+<div class="otr-signup" ng-controller="SignUpController">
+	
+	<form name="signUpForm" ng-submit="signUp(newagent)">
+
+		<div class="otr-input-group">
+			<span>Full Name</span>
+			<input type="text" ng-model="newagent.agent.name" value="James Formica">
+		</div>
+
+		<div class="otr-input-group">
+			<span>Email</span>
+			<input type="text" ng-model="newagent.agent.email" value="james@email.com">
+		</div>
+
+		<div class="otr-input-group">
+			<span>Username</span>
+			<input type="text" ng-model="newagent.agent.username" value="james2">
+		</div>
+
+		<div class="otr-input-group">
+			<span>Password</span>
+			<input type="password" ng-model="newagent.agent.password" value="password123">
+		</div>
+
+		<div class="otr-input-group">
+			<span>Confirm Password</span>
+			<input type="password" ng-model="newagent.agent.password_confirmation" value="password123">
+		</div>
+
+		<input type="submit" value="GO!">
+
+	</form>
+	
+	<ul>
+		<li ng-repeat="err in errors">{{err}}</li>
+	</ul>
+
+</div>

@@ -1,1 +1,26 @@
-<h1>Pezza is a cock head</h1>
+<%= render "/layouts/homenav" %>
+
+<div class="otr-home">
+	
+
+	<div class="otr-home-controls">
+		
+		<div>
+			<p>Welcome back...</p>
+			<input type="text" placeholder="email / username">
+			<input type="password" placeholder="password">
+		</div>
+
+
+		<div>
+			<p>New to Off the Record?</p>
+			<h3>	
+				<%= link_to sign_up_path, class: "otr-btn-primary" do %> 
+				<%= icon('hand-o-right') %> Sign Up 
+				<% end %> 
+			</h3>
+		</div>
+
+	</div>
+
+</div>

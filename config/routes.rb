@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
-  
+
   root 'static_pages#index'
+
+  get 'sign_up' => 'static_pages#signup', as: 'sign_up'
+
+  scope :api do
+    resources :agents, defaults: {format: :json}
+  end
+
+  #get 'api/agents/new' => 'agents#new', as: 'api/agents/new'
+  #post 'api/agents' => 'agents#create', as: 'api/agents'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
