@@ -5,28 +5,23 @@
 	<form name="signUpForm" ng-submit="signUp(newagent)">
 
 		<div class="otr-input-group">
-			<span>Full Name</span>
-			<input type="text" ng-model="newagent.agent.name" value="James Formica">
+			<input type="text" ng-model="newagent.agent.name" placeholder="full name">
 		</div>
 
 		<div class="otr-input-group">
-			<span>Email</span>
-			<input type="text" ng-model="newagent.agent.email" value="james@email.com">
+			<input type="text" ng-model="newagent.agent.email" placeholder="email">
 		</div>
 
 		<div class="otr-input-group">
-			<span>Username</span>
-			<input type="text" ng-model="newagent.agent.username" value="james2">
+			<input type="text" ng-model="newagent.agent.username" placeholder="username">
 		</div>
 
 		<div class="otr-input-group">
-			<span>Password</span>
-			<input type="password" ng-model="newagent.agent.password" value="password123">
+			<input type="password" ng-model="newagent.agent.password" placeholder="password">
 		</div>
 
 		<div class="otr-input-group">
-			<span>Confirm Password</span>
-			<input type="password" ng-model="newagent.agent.password_confirmation" value="password123">
+			<input type="password" ng-model="newagent.agent.password_confirmation" placeholder="confirm">
 		</div>
 
 		<ul class="otr-validation-errors">

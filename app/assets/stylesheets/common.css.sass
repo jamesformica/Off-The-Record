@@ -37,6 +37,18 @@ a
 	font-size: $default-font-size * 2.4
 
 
+/* INPUT */
+input[type="text"], input[type="password"]
+	width: 90%
+	height: 40px
+	padding-left: 6px
+	margin-bottom: 8px
+	font-size: 1.2em
+	border: 0
+	border-bottom: 2px solid fade-out($nav-bg, 0.6)
+	outline: 0
+
+
 /* BUTTONS */
 .otr-btn
 	padding: 6px 10px 6px 10px
@@ -129,14 +141,3 @@ div.otr-input-group
 		display: block
 		font-size: 1.6em
 		margin-bottom: 4px
-	input
-		position: relative
-		margin: 0 auto
-		width: 100%
-		color: $input-txt-c
-		font-weight: 300
-		font-size: 1.2em
-		padding: 4px 6px 4px 6px
-		border: 1px solid $nav-bg
-		border-radius: 2px
-		background: white
