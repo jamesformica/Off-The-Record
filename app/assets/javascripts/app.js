@@ -4,8 +4,8 @@ angular.module("offtherecord", [
 	'sign-up.controller'
 	])
 
-.config(['RestangularProvider', function(RestangularProvider) {
-	RestangularProvider.setBaseUrl('/api');
+.config(['RestangularProvider', function (RestangularProvider) {
+	RestangularProvider.setBaseUrl('/api/v1');
 }])
 
 ;

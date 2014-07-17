@@ -29,12 +29,14 @@
 			<input type="password" ng-model="newagent.agent.password_confirmation" value="password123">
 		</div>
 
-		<input type="submit" value="GO!">
+		<ul class="otr-validation-errors">
+			<li ng-repeat="err in errors">{{err}}</li>
+		</ul>
+
+		<h1><input type="submit" class="otr-btn-primary lg" value="Join Us!"></h1>
 
 	</form>
-	
-	<ul>
-		<li ng-repeat="err in errors">{{err}}</li>
-	</ul>
+
+	<%= link_to "Cancel", root_path, class: "otr-btn-secondary md" %>
 
 </div>

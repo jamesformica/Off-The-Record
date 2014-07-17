@@ -1,9 +1,11 @@
-$normal-font: 'Alegreya Sans', sans-serif
+$normal-font: 'Quicksand', sans-serif
 $fancy-font: 'Pacifico', cursive
 
 $nav-bg: #079EA6
 $input-txt-c: #3d3d3d
 $mat-shadow: 1px 1px 6px rgba(0,0,0,0.4)
+
+$default-font-size: 10px
 
 body
 	margin: 0
@@ -11,9 +13,7 @@ body
 	font-family: $normal-font
 	font-weight: 300
 	color: darken($nav-bg, 20%)
-
-p
-	font-size: 10px
+	font-size: $default-font-size
 
 a
 	text-decoration: none
@@ -27,18 +27,48 @@ a
 	background: linear-gradient($top, $bottom) /* Standard syntax */
 
 
+.sm
+	font-size: $default-font-size * 1.2
+
+.md
+	font-size: $default-font-size * 1.8
+
+.lg
+	font-size: $default-font-size * 2.4
+
 
 /* BUTTONS */
-$btn-primary-c: #B3197B
-$btn-darken-amt: 5%
-.otr-btn-primary
+.otr-btn
 	padding: 6px 10px 6px 10px
-	border-radius: 1px
+	border: 0
+	border-radius: 2px
 	color: white
+
+$btn-hover-amt: 5%
+$btn-primary-c: lighten($nav-bg, 6%)
+$btn-secondary-c: #E0655E
+.otr-btn-primary
+	@extend .otr-btn
 	background: $btn-primary-c
 
 .otr-btn-primary:hover
-	background: lighten($btn-primary-c, $btn-darken-amt)
+	background: lighten($btn-primary-c, $btn-hover-amt)
+
+.otr-btn-secondary
+	@extend .otr-btn
+	background: $btn-secondary-c
+
+.otr-btn-secondary:hover
+	background: lighten($btn-secondary-c, $btn-hover-amt)
+
+
+
+ul.otr-validation-errors
+	color: red
+	font-size: 1.2em
+	list-style-type: none
+
+
 
 
 /* LAYOUT */
@@ -62,7 +92,6 @@ div.otr-home-banner
 	text-align: center
 	background-color: $nav-bg
 	overflow: hidden
-	box-shadow: 1px 1px 5px rgba(0,0,0,0.4)
 
 	img.otr-home-logo
 		position: relative
@@ -98,7 +127,7 @@ div.otr-input-group
 		text-align: left
 		position: relative
 		display: block
-		font-size: 0.6em
+		font-size: 1.6em
 		margin-bottom: 4px
 	input
 		position: relative

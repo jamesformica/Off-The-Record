@@ -4,8 +4,10 @@ Rails.application.routes.draw do
 
   get 'sign_up' => 'static_pages#signup', as: 'sign_up'
 
-  scope :api do
-    resources :agents, defaults: {format: :json}
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      resources :agents
+    end
   end
 
   #get 'api/agents/new' => 'agents#new', as: 'api/agents/new'
