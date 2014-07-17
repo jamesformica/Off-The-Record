@@ -5,20 +5,18 @@
 
 	<div class="otr-home-controls">
 		
-		<div>
-			<p>Welcome back...</p>
+		<div class="otr-slate-w">
+			<h4>Welcome back...</h4>
 			<input type="text" placeholder="email / username">
 			<input type="password" placeholder="password">
 		</div>
 
-
-		<div>
-			<p>New to Off the Record?</p>
-			<h3>	
-				<%= link_to sign_up_path, class: "otr-btn-primary md" do %> 
-				<%= icon('hand-o-right') %> Sign Up 
-				<% end %> 
-			</h3>
+		<div class="otr-slate-w">
+			<h4>New to Off the Record?</h4>
+			<p>Join the awesome fun, sign up today :D</p><br/>
+			<%= link_to sign_up_path, class: "otr-btn-secondary md" do %> 
+			<%= icon('hand-o-right') %> Sign Up 
+			<% end %> 
 		</div>
 
 	</div>

@@ -11,7 +11,6 @@
   			def create 
   				agent = Agent.new(agent_params)
   				if agent.save
-  					# respond_with(agent, location: nil)
   					render json: { message: "Sign Up successful!"}, status: :ok
   				else
   					render json: { errors: agent.errors.full_messages }, status: :unprocessable_entity

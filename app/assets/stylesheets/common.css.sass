@@ -3,9 +3,10 @@ $fancy-font: 'Pacifico', cursive
 
 $nav-bg: #079EA6
 $input-txt-c: #3d3d3d
-$mat-shadow: 1px 1px 6px rgba(0,0,0,0.4)
+$mat-shadow: 1px 1px 3px rgba(0,0,0,0.4)
 
 $default-font-size: 10px
+$default-font-c: #575757
 
 body
 	margin: 0
@@ -14,10 +15,25 @@ body
 	font-weight: 300
 	color: darken($nav-bg, 20%)
 	font-size: $default-font-size
+	background-image: url('/assets/subtle_dots.png')
 
 a
 	text-decoration: none
 	margin: 0 10px 0 10px
+
+h4
+	font-size: 1.4em
+	font-weight: normal
+	margin: 4px 0 4px 0
+	color: $nav-bg
+
+p
+	font-size: 1.2em
+	color: $default-font-c
+
+span
+	font-size: 1.2em
+	color: $default-font-c
 
 
 =gradient-bg($top, $bottom)
@@ -45,8 +61,9 @@ input[type="text"], input[type="password"]
 	margin-bottom: 8px
 	font-size: 1.2em
 	border: 0
-	border-bottom: 2px solid fade-out($nav-bg, 0.6)
 	outline: 0
+	color: $default-font-c
+	border-bottom: 2px solid fade-out($nav-bg, 0.6)
 
 
 /* BUTTONS */
@@ -58,7 +75,7 @@ input[type="text"], input[type="password"]
 
 $btn-hover-amt: 5%
 $btn-primary-c: lighten($nav-bg, 6%)
-$btn-secondary-c: #E0655E
+$btn-secondary-c: #E37C76
 .otr-btn-primary
 	@extend .otr-btn
 	background: $btn-primary-c
@@ -85,12 +102,22 @@ ul.otr-validation-errors
 
 
 /* LAYOUT */
-div.otr-slate-solid
+.otr-slate
 	width: 76%
-	background-color: $nav-bg
 	padding: 4%
 	border-radius: 2px
 	box-shadow: $mat-shadow
+
+div.otr-slate-w
+	@extend .otr-slate
+	background-color: white
+	
+
+div.otr-slate-c
+	@extend .otr-slate
+	background-color: #E6F2EC
+
+
 
 
 
