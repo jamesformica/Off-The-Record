@@ -10,9 +10,11 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
 //= require angular
 //= require lodash
 //= require restangular.min
 //= require app.js
+//= require toastr
 //= require_tree ./angular
 //= require_tree .
