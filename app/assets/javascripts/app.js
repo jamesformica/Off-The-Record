@@ -1,11 +1,14 @@
 angular.module("offtherecord", [
 	'restangular',
 	'agent.service',
-	'sign-up.controller'
+	'session.service',
+	'sign-up.controller',
+	'sign-in.controller',
+	'record.controller'
 	])
 
 .config(['RestangularProvider', function (RestangularProvider) {
-	RestangularProvider.setBaseUrl('/api/v1');
+	RestangularProvider.setBaseUrl('/');
 }])
 
 ;

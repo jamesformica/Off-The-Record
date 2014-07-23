@@ -3,6 +3,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   # protect_from_forgery with: :exception
   protect_from_forgery
+  
+  include SessionsHelper
+
 
   after_filter :set_csrf_cookie_for_ng
   def set_csrf_cookie_for_ng

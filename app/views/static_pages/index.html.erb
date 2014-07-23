@@ -1,14 +1,17 @@
 <%= render "/layouts/homenav" %>
 
-<div class="otr-home">
+<div class="otr-home" ng-controller="SignInController">
 	
 
 	<div class="otr-home-controls">
 		
 		<div class="otr-slate-w">
 			<h4>Welcome back...</h4>
-			<input type="text" placeholder="email / username">
-			<input type="password" placeholder="password">
+			<form name="signUpForm" ng-submit="signIn(signin)">
+				<input type="text" placeholder="email / username" ng-model="signin.email">
+				<input type="password" placeholder="password" ng-model="signin.password">
+				<input type="submit" class="otr-btn-primary lg" value="Log In!">
+			</form>
 		</div>
 
 		<div class="otr-slate-w">

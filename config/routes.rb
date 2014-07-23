@@ -2,11 +2,16 @@ Rails.application.routes.draw do
 
   root 'static_pages#index'
 
-  get 'sign_up' => 'static_pages#signup', as: 'sign_up'
+  match '/sign_up', to: 'static_pages#signup', via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
+  match '/signedin', to: 'sessions#signedin', via: 'get'
+  match '/record', to: 'static_pages#record', via: 'get'
+
+  resources :sessions, only: [ :create, :destroy]
+  resources :agents
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
-      resources :agents
     end
   end
 
