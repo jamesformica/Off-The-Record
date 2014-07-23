@@ -13,7 +13,6 @@ angular.module("sign-in.controller", [])
 
 	$scope.signIn = function(agent) {
 		Session.create(agent).then(function(data) {
-			toastr.success('Have fun storming the castle!', 'Miracle Max Says');
 			$window.location.href = '/record';
 		}, function(response) {
 			$scope.errors = response.data.errors;

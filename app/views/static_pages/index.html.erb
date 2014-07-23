@@ -1,22 +1,30 @@
-<%= render "/layouts/homenav" %>
+
 
 <div class="otr-home" ng-controller="SignInController">
 	
+	<div class="otr-home-logo">
+		<h1>Off the Record</h1>
+	</div>
 
 	<div class="otr-home-controls">
 		
 		<div class="otr-slate-w">
-			<h4>Welcome back...</h4>
 			<form name="signUpForm" ng-submit="signIn(signin)">
 				<input type="text" placeholder="email / username" ng-model="signin.email">
 				<input type="password" placeholder="password" ng-model="signin.password">
-				<input type="submit" class="otr-btn-primary lg" value="Log In!">
-			</form>
-		</div>
+				<br/>
+				
+				<ul class="otr-validation-errors">
+					<li ng-repeat="err in errors">{{err}}</li>
+				</ul>
 
-		<div class="otr-slate-w">
-			<h4>New to Off the Record?</h4>
-			<p>Join the awesome fun, sign up today :D</p><br/>
+				<br/>
+				<button type="submit" class="otr-btn-primary lg">
+					<%= icon('magic') %>&nbsp;&nbsp;Log In
+				</button>
+			</form>
+			<br/><br/>
+			<p>Or, join the fun</p>
 			<%= link_to sign_up_path, class: "otr-btn-secondary md" do %> 
 			<%= icon('hand-o-right') %> Sign Up 
 			<% end %> 

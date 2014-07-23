@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 			sign_in agent
 			render json: { message: "Sign In successful"}, status: :ok
 		else
-			render json: { message: "Invalid credentials"}, status: :unauthorized
+			render json: { errors: ["Invalid credentials"]}, status: :unprocessable_entity
 		end
 	end
 
