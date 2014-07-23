@@ -8,24 +8,12 @@
 
 		<div class="otr-input-group">
 			<input type="text" ng-model="newagent.agent.name" placeholder="full name">
-		</div>
-
-		<div class="otr-input-group">
 			<input type="text" ng-model="newagent.agent.email" placeholder="email">
-		</div>
-
-		<div class="otr-input-group">
 			<input type="text" ng-model="newagent.agent.username" placeholder="username">
-		</div>
-
-		<div class="otr-input-group">
 			<input type="password" ng-model="newagent.agent.password" placeholder="password">
-		</div>
-
-		<div class="otr-input-group">
 			<input type="password" ng-model="newagent.agent.password_confirmation" placeholder="confirm password">
 		</div>
-
+		
 		<ul class="otr-validation-errors">
 			<li ng-repeat="err in errors">{{err}}</li>
 		</ul>

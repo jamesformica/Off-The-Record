@@ -2,10 +2,6 @@ angular.module("sign-in.controller", [])
 
 .controller('SignInController', ['$scope', '$window', 'Session', function ($scope, $window, Session) {
 
-	Session.signedin().then(function(data) {
-		$window.location.href = '/record';
-	});
-
 	$scope.signin = {
 		email : "",
 		password : ""

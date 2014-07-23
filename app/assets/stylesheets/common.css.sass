@@ -1,7 +1,7 @@
 $normal-font: 'Open Sans', sans-serif
 $fancy-font: 'Pacifico', cursive
 
-$nav-bg: #079EA6
+$primary-color: #079EA6
 $input-txt-c: #3d3d3d
 $mat-shadow: 1px 1px 3px rgba(0,0,0,0.4)
 
@@ -13,9 +13,8 @@ body
 	padding: 0
 	font-family: $normal-font
 	font-weight: 300
-	color: darken($nav-bg, 20%)
+	color: darken($primary-color, 20%)
 	font-size: $default-font-size
-	background-image: url('/assets/subtle_dots.png')
 
 a
 	text-decoration: none
@@ -25,7 +24,7 @@ h4
 	font-size: 1.4em
 	font-weight: normal
 	margin: 4px 0 4px 0
-	color: $nav-bg
+	color: $primary-color
 
 p
 	font-size: 1.2em
@@ -53,6 +52,26 @@ span
 	font-size: $default-font-size * 2.4
 
 
+$input-border-style: 1.6px solid fade-out(black, 0.88)
+$input-border-radius: 4px
+div.otr-input-group
+	position: relative
+	width: 100%		
+	input
+		border-right: $input-border-style
+		border-left: $input-border-style
+		border-bottom: $input-border-style
+		margin-bottom: 0px
+	input:first-child
+		border-top: $input-border-style
+		border-top-left-radius: $input-border-radius
+		border-top-right-radius: $input-border-radius
+	input:last-child
+		border-bottom-left-radius: $input-border-radius
+		border-bottom-right-radius: $input-border-radius
+
+
+
 /* INPUT */
 input[type="text"], input[type="password"]
 	position: relative
@@ -64,8 +83,7 @@ input[type="text"], input[type="password"]
 	border: 0
 	outline: 0
 	color: black
-	border-radius: 4px
-	border: 1.6px solid fade-out(black, 0.8)
+	
 
 
 /* BUTTONS */
@@ -74,9 +92,10 @@ input[type="text"], input[type="password"]
 	border: 0
 	border-radius: 2px
 	color: white
+	cursor: pointer
 
 $btn-hover-amt: 5%
-$btn-primary-c: lighten($nav-bg, 6%)
+$btn-primary-c: #08bac3
 $btn-secondary-c: #E37C76
 .otr-btn-primary
 	@extend .otr-btn
@@ -126,7 +145,7 @@ div.otr-slate-c
 
 
 /* NAV */
-$home-nav-h: 90px
+$home-nav-h: 60px
 div.otr-home-banner
 	position: relative
 	width: 100%
@@ -134,22 +153,14 @@ div.otr-home-banner
 	max-height: 340px
 	display: block
 	text-align: center
-	background-color: $nav-bg
+	background-color: $primary-color
 	overflow: hidden
+	box-shadow: 1px 1px 4px rgba(0,0,0,0.6)
 
 	img.otr-home-logo
 		position: relative
 		height: $home-nav-h * .8
 		top: ($home-nav-h - ($home-nav-h * .8)) / 2
-
-	span
-		position: absolute
-		bottom: 4px
-		right: 8px
-		font-family: $fancy-font
-		font-size: 1.6em
-		color: $nav-bg
-		text-shadow: 0 0 1px darken($nav-bg, 10%)
 
 
 
@@ -162,7 +173,7 @@ div.otr-nav
 	text-align: center
 	color: white
 	box-shadow: 0px 1px 6px rgba(0,0,0,0.8)
-	+gradient-bg($nav-bg, darken($nav-bg, 3%))
+	+gradient-bg($primary-color, darken($primary-color, 3%))
 
 span.otr-logo
 	font-family: $fancy-font
@@ -172,14 +183,3 @@ span.otr-logo
 	padding: 10px 50px 0 50px
 
 
-/* FORM */
-div.otr-input-group
-	position: relative
-	width: 100%
-	margin-bottom: 12px
-	span
-		text-align: left
-		position: relative
-		display: block
-		font-size: 1.6em
-		margin-bottom: 4px

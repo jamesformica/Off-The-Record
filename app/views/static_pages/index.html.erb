@@ -10,9 +10,10 @@
 		
 		<div class="otr-slate-w">
 			<form name="signUpForm" ng-submit="signIn(signin)">
-				<input type="text" placeholder="email / username" ng-model="signin.email">
-				<input type="password" placeholder="password" ng-model="signin.password">
-				<br/>
+				<div class="otr-input-group">
+					<input type="text" placeholder="email / username" ng-model="signin.email">
+					<input type="password" placeholder="password" ng-model="signin.password">
+				</div>
 				
 				<ul class="otr-validation-errors">
 					<li ng-repeat="err in errors">{{err}}</li>

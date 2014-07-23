@@ -6,6 +6,10 @@ class AgentsController < ApplicationController
 		respond_with Agent.all
 	end
 
+	def new
+		render json: Agent.new
+	end
+
 	def create 
 		agent = Agent.new(agent_params)
 		if agent.save

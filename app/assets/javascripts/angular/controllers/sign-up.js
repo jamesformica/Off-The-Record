@@ -2,9 +2,15 @@ angular.module("sign-up.controller", [])
 
 .controller('SignUpController', ['$scope', '$window', 'Agent', function ($scope, $window, Agent) {
 
-	$scope.newagent = {
-		agent: {}
-	};
+	Agent.new().then(function(data){
+		$scope.newagent = {
+			agent: data
+		};
+	}, function(response) {
+		var i = 3;
+	});
+
+	
 
 	$scope.signUp = function(agent) {
 		Agent.create(agent).then(function(data) {
