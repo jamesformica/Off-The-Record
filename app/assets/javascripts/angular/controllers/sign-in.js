@@ -7,11 +7,12 @@ angular.module("sign-in.controller", [])
 		password : ""
 	};
 
-	$scope.signIn = function(agent) {
-		Session.create(agent).then(function(data) {
+	$scope.signIn = function(signin) {
+		Session.create(signin).then(function(data) {
 			$window.location.href = '/record';
 		}, function(response) {
 			$scope.errors = response.data.errors;
+			$scope.signin.password = '';
 		});
 	};
 

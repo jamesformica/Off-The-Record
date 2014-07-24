@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
 
 	def create
-		agent = Agent.find_by(email: params[:session][:email].downcase)
+		cred = params[:session][:email].downcase
+		agent = Agent.find_by(email: cred) || Agent.find_by(username: cred)
 		if agent && agent.authenticate(params[:session][:password])
 			sign_in agent
 			render json: { message: "Sign In successful"}, status: :ok

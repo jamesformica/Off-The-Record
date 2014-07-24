@@ -67,11 +67,30 @@ describe Agent do
 			it { should_not be_valid }
 		end
 
-		describe "when email address is already taken" do
+		describe "when email address is already taken case sensitive" do
 			before do
 				user_with_same_email = @agent.dup
 				user_with_same_email.email = @agent.email.upcase
 				user_with_same_email.save
+			end
+
+			it { should_not be_valid }
+		end
+
+		describe "when username is already taken" do
+			before do
+				user_with_same_username = @agent.dup
+				user_with_same_username.save
+			end
+
+			it { should_not be_valid }
+		end
+
+		describe "when username is already taken case sensitive" do
+			before do
+				user_with_same_username = @agent.dup
+				user_with_same_username.username = @agent.email.upcase
+				user_with_same_username.save
 			end
 
 			it { should_not be_valid }
