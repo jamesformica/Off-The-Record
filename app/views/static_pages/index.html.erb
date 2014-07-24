@@ -3,7 +3,7 @@
 <div class="otr-home" ng-controller="SignInController">
 	
 	<div class="otr-home-logo">
-		<h1>Off the Record</h1>
+		<h1 id="logo">Off the Record</h1>
 	</div>
 
 	<div class="otr-home-controls">
@@ -34,3 +34,9 @@
 	</div>
 
 </div>
+
+<script>
+	$(document).ready(function() {
+		$("#logo").arctext({radius: 300});
+	});
+</script>

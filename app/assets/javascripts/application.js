@@ -14,6 +14,7 @@
 //= require angular
 //= require lodash
 //= require restangular.min
+//= require arctext.js
 //= require app.js
 //= require toastr
 //= require_tree ./angular
