@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
 
-	before_action :redirect_to_record, except: :record
+	before_action :redirect_to_profile, except: :profile
 
 	def index
 	end
@@ -8,13 +8,13 @@ class StaticPagesController < ApplicationController
 	def signup
 	end
 
-	def record
+	def profile
 	end
 
 	private
-	def redirect_to_record
+	def redirect_to_profile
 		if signed_in?
-			redirect_to record_path
+			redirect_to profile_path
 		end
 	end
 

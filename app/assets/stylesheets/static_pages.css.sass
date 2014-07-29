@@ -11,6 +11,7 @@ div.otr-home
 	background-position: center
 	background-attachment: fixed
 
+
 div.otr-home-logo
 	width: 100%
 	text-align: center
@@ -18,11 +19,15 @@ div.otr-home-logo
 	h1
 		font-family: $fancy-font
 		font-size: 3.6em
+		line-height: 1.8em
 		color: white
-		text-shadow: 0 0 3px rgba(0, 0, 0, 0.4)
-
+		margin: 0
+		z-index: 1001
+		+text-outline(2px, 3px, rgba(0,0,0,0.8))
+		//0 0 3px rgba(0, 0, 0, 0.4)
 		span
-			color: #575757
+			// color: #575757
+			color: white
 
 
 

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   match '/sign_up', to: 'static_pages#signup', via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
   match '/signedin', to: 'sessions#signedin', via: 'get'
-  match '/record', to: 'static_pages#record', via: 'get'
+  match '/profile', to: 'static_pages#profile', via: 'get'
 
   resources :sessions, only: [ :create, :destroy]
   resources :agents

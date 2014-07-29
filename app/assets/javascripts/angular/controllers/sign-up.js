@@ -1,21 +1,18 @@
 angular.module("sign-up.controller", [])
 
-.controller('SignUpController', ['$scope', '$window', 'Agent', function ($scope, $window, Agent) {
+.controller('SignUpController', ['$scope', 'Redirect', 'Agent', function ($scope, Redirect, Agent) {
 
 	Agent.new().then(function(data){
 		$scope.newagent = {
 			agent: data
 		};
 	}, function(response) {
-		var i = 3;
+		//big problem
 	});
-
-	
 
 	$scope.signUp = function(agent) {
 		Agent.create(agent).then(function(data) {
-			toastr.success('Have fun storming the castle!', 'Miracle Max Says');
-			$window.location.href = '/';
+			Redirect.to_index();
 		}, function(response) {
 			$scope.errors = response.data.errors;
 		});

@@ -4,7 +4,9 @@ angular.module("offtherecord", [
 	'session.service',
 	'sign-up.controller',
 	'sign-in.controller',
-	'record.controller'
+	'profile.controller',
+	'common.service',
+	'common.directive'
 	])
 
 .config(['RestangularProvider', function (RestangularProvider) {

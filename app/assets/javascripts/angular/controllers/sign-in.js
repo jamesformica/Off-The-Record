@@ -1,6 +1,6 @@
 angular.module("sign-in.controller", [])
 
-.controller('SignInController', ['$scope', '$window', 'Session', function ($scope, $window, Session) {
+.controller('SignInController', ['$scope', 'Redirect', 'Session', function ($scope, Redirect, Session) {
 
 	$scope.signin = {
 		email : "",
@@ -9,7 +9,7 @@ angular.module("sign-in.controller", [])
 
 	$scope.signIn = function(signin) {
 		Session.create(signin).then(function(data) {
-			$window.location.href = '/record';
+			Redirect.to_profile();
 		}, function(response) {
 			$scope.errors = response.data.errors;
 			$scope.signin.password = '';
