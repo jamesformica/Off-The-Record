@@ -4,11 +4,6 @@ angular.module("profile.controller", [])
 
 	$scope.heading_text= "Acquaintances";
 
-	$scope.changeText = function() {
-
-		$scope.heading_text = "boobs!";
-	}
-
 
 	$scope.signOut = function() {
 		Session.destroy().then(function(data) {

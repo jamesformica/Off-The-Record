@@ -1,4 +1,7 @@
-class Agent < ActiveRecord::Base
+class User < ActiveRecord::Base
+
+	has_many :friendships
+	has_many :friends, :through => :friendships
 
 	has_secure_password
 
@@ -15,18 +18,18 @@ class Agent < ActiveRecord::Base
 	validates :password, length: { minimum: 6 }
 
 	
-	def Agent.new_remember_token
+	def User.new_remember_token
 		SecureRandom.urlsafe_base64
 	end
 
-	def Agent.digest(token)
+	def User.digest(token)
 		Digest::SHA1.hexdigest(token.to_s)
 	end
 
 	private
 
 		def create_remember_token
-			self.remember_token = Agent.digest(Agent.new_remember_token)
+			self.remember_token = User.digest(User.new_remember_token)
 		end
 
 

@@ -4,14 +4,14 @@
 	
 	<h4>Become one of us...</h4>
 
-	<form name="signUpForm" ng-submit="signUp(newagent)">
+	<form name="signUpForm" ng-submit="signUp(newuser)">
 
 		<div class="otr-input-group">
-			<input type="text" ng-model="newagent.agent.name" placeholder="full name">
-			<input type="text" ng-model="newagent.agent.email" placeholder="email">
-			<input type="text" ng-model="newagent.agent.username" placeholder="username">
-			<input type="password" ng-model="newagent.agent.password" placeholder="password">
-			<input type="password" ng-model="newagent.agent.password_confirmation" placeholder="confirm password">
+			<input type="text" ng-model="newuser.user.name" placeholder="full name">
+			<input type="text" ng-model="newuser.user.email" placeholder="email">
+			<input type="text" ng-model="newuser.user.username" placeholder="username">
+			<input type="password" ng-model="newuser.user.password" placeholder="password">
+			<input type="password" ng-model="newuser.user.password_confirmation" placeholder="confirm password">
 		</div>
 		
 		<ul class="otr-validation-errors">

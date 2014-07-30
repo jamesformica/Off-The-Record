@@ -2,9 +2,9 @@ class SessionsController < ApplicationController
 
 	def create
 		cred = params[:session][:email].downcase
-		agent = Agent.find_by(email: cred) || Agent.find_by(username: cred)
-		if agent && agent.authenticate(params[:session][:password])
-			sign_in agent
+		user = User.find_by(email: cred) || User.find_by(username: cred)
+		if user && user.authenticate(params[:session][:password])
+			sign_in user
 			render json: { message: "Sign In successful"}, status: :ok
 		else
 			render json: { errors: ["Invalid credentials"]}, status: :unprocessable_entity

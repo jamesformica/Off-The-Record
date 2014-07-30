@@ -1,6 +1,6 @@
 angular.module("offtherecord", [
 	'restangular',
-	'agent.service',
+	'user.service',
 	'session.service',
 	'sign-up.controller',
 	'sign-in.controller',

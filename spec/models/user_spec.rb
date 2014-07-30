@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe Agent do
+describe User do
 
-	before { @agent = Agent.new(name: "Samule Pezza", email: "sam@example.com", username: "pezza123", password: "foobar", password_confirmation: "foobar") }
+	before { @user = User.new(name: "Samule Pezza", email: "sam@example.com", username: "pezza123", password: "foobar", password_confirmation: "foobar") }
 
-	subject { @agent }
+	subject { @user }
 
 	it { should respond_to(:name) }
 	it { should respond_to(:email) }
@@ -18,22 +18,22 @@ describe Agent do
 	it { should be_valid }
 
 	describe "when name is not present" do
-		before { @agent.name = "" }
+		before { @user.name = "" }
 		it { should_not be_valid }
 	end
 
 	describe "when email is not present" do
-		before { @agent.email = "" }
+		before { @user.email = "" }
 		it { should_not be_valid }
 	end
 
 	describe "when username is not present" do
-		before { @agent.username = "" }
+		before { @user.username = "" }
 		it { should_not be_valid }
 	end
 
 	describe "when name is too long" do
-		before { @agent.name = "a" * 51 }
+		before { @user.name = "a" * 51 }
 		it {should_not be_valid }
 	end
 
@@ -42,8 +42,8 @@ describe Agent do
 			addresses = %w[user@foo,com user_at_foo.org example.user@foo.
 				foo@bar_baz.com foo@bar+baz.com]
 				addresses.each do |invalid_address|
-					@agent.email = invalid_address
-					expect(@agent).not_to be_valid
+					@user.email = invalid_address
+					expect(@user).not_to be_valid
 				end
 			end
 		end
@@ -52,15 +52,15 @@ describe Agent do
 			it "should be valid" do
 				addresses = %w[user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn]
 				addresses.each do |valid_address|
-					@agent.email = valid_address
-					expect(@agent).to be_valid
+					@user.email = valid_address
+					expect(@user).to be_valid
 				end
 			end
 		end
 
 		describe "when email address is already taken" do
 			before do
-				user_with_same_email = @agent.dup
+				user_with_same_email = @user.dup
 				user_with_same_email.save
 			end
 
@@ -69,8 +69,8 @@ describe Agent do
 
 		describe "when email address is already taken case sensitive" do
 			before do
-				user_with_same_email = @agent.dup
-				user_with_same_email.email = @agent.email.upcase
+				user_with_same_email = @user.dup
+				user_with_same_email.email = @user.email.upcase
 				user_with_same_email.save
 			end
 
@@ -79,7 +79,7 @@ describe Agent do
 
 		describe "when username is already taken" do
 			before do
-				user_with_same_username = @agent.dup
+				user_with_same_username = @user.dup
 				user_with_same_username.save
 			end
 
@@ -88,8 +88,8 @@ describe Agent do
 
 		describe "when username is already taken case sensitive" do
 			before do
-				user_with_same_username = @agent.dup
-				user_with_same_username.username = @agent.email.upcase
+				user_with_same_username = @user.dup
+				user_with_same_username.username = @user.email.upcase
 				user_with_same_username.save
 			end
 
@@ -98,24 +98,24 @@ describe Agent do
 
 		describe "when password is not present" do
 			before do
-				@agent = Agent.new(name: "Example User", email: "user@example.com",
+				@user = User.new(name: "Example User", email: "user@example.com",
 					password: " ", password_confirmation: " ")
 			end
 			it { should_not be_valid }
 		end
 
 		describe "when password doesn't match confirmation" do
-			before { @agent.password_confirmation = "mismatch" }
+			before { @user.password_confirmation = "mismatch" }
 			it { should_not be_valid }
 		end
 
 
 		describe "return value of authenticate method" do
-			before { @agent.save }
-			let(:found_user) { Agent.find_by(email: @agent.email) }
+			before { @user.save }
+			let(:found_user) { User.find_by(email: @user.email) }
 
 			describe "with valid password" do
-				it { should eq found_user.authenticate(@agent.password) }
+				it { should eq found_user.authenticate(@user.password) }
 			end
 
 			describe "with invalid password" do
@@ -127,12 +127,12 @@ describe Agent do
 		end
 
 		describe "with a password that's too short" do
-			before { @agent.password = @agent.password_confirmation = "a" * 5 }
+			before { @user.password = @user.password_confirmation = "a" * 5 }
 			it { should be_invalid }
 		end
 
 		describe "remember token" do
-			before { @agent.save }
+			before { @user.save }
 			its(:remember_token) { should_not be_blank }
 		end
 

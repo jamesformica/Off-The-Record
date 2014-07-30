@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   match '/profile', to: 'static_pages#profile', via: 'get'
 
   resources :sessions, only: [ :create, :destroy]
-  resources :agents
+  resources :users
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
