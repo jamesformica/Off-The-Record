@@ -15,10 +15,6 @@ Rails.application.routes.draw do
     end
   end
 
-  #get 'api/agents/new' => 'agents#new', as: 'api/agents/new'
-  #post 'api/agents' => 'agents#create', as: 'api/agents'
-
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
