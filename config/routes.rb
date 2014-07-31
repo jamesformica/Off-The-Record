@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'friendship_requests/index'
+
+  get 'friendship_requests/create'
+
+  get 'friendship_requests/destroy'
+
   root 'static_pages#index'
 
   match '/sign_up', to: 'static_pages#signup', via: 'get'
@@ -9,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [ :create, :destroy]
   resources :users
+  resources :friendship_requests
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do

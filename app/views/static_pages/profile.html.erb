@@ -1,5 +1,4 @@
-<div ng-controller="ProfileController">
-	
+<div ng-controller="ProfileController">	
 
 	<otr-header title="{{heading_text}}" radius="600" ></otr-header>
 
@@ -8,6 +7,10 @@
 
 		<button ng-click="changeText()">Change</button>
 	</div>
+
+
+	<input type="text" placeholder="username" ng-model="friend_request.username"/>
+	<button ng-click="send_friend_request(friend_request)">Send Request</button>
 
 </div>
 
