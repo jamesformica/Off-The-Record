@@ -8,7 +8,7 @@ angular.module("profile.controller", [])
 	};
 
 	Friendship.friend_requests().then(function(data) {
-		var i = 3;
+		$scope.requests = data;
 	}, function(response) {
 		var e = 5;
 	});
@@ -18,6 +18,14 @@ angular.module("profile.controller", [])
 			var a = 6;
 		}, function(response) {
 			var b = 7;
+		});
+	}
+
+	$scope.destroy_friend_request = function(request) {
+		Friendship.destroy_friend_request(request).then(function(data) {
+			var d = 7;
+		}, function(response) {
+			var x = 4;
 		});
 	}
 

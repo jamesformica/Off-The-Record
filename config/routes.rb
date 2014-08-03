@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [ :create, :destroy]
   resources :users
-  resources :friendship_requests
+  resources :friendship_requests, only: [:index, :create, :destroy]
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do

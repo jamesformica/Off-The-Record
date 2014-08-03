@@ -31,11 +31,19 @@ class FriendshipRequestsController < ApplicationController
 		end
 	end
 
+	def destroy
+		if current_user.friendship_requests.find(request_params[:request_id]).destroy()
+			render json: { message: "Friendship request deleted successfully"}, status: :ok
+		else
+			render json: { errors: "Friendship Request not exist" }, status: :not_found
+		end
+	end
+
 
 	private
 	def request_params
 		puts params
-		params.permit(:username)
+		params.permit(:request_id, :username)
 	end
 
 	def request_already_sent?(toUser)

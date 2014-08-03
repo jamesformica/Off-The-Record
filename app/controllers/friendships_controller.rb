@@ -5,7 +5,7 @@ class FriendshipsController < ApplicationController
 
 	def create
 		#destroy friendship request
-
+		
 		#create both normal and inverse friendships
 	end
 

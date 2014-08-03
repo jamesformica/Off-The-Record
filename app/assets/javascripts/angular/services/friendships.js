@@ -17,6 +17,10 @@ angular.module("friendship.service", [ 'restangular' ])
 		return this.request_service.post(request);
 	}
 
+	Friendship.prototype.destroy_friend_request = function(request) {
+		return this.request_service.one(request.request_id).remove(request);
+	}
+
 	return new Friendship;
 }])
 

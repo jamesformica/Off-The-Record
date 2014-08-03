@@ -1,16 +1,41 @@
-<div ng-controller="ProfileController">	
-
 	<otr-header title="{{heading_text}}" radius="600" ></otr-header>
 
-	<div >
-		<button ng-click="signOut()">Sign Out</button>
+	<div class="otr-slate-w" ng-controller="ProfileController">	
+	
+	<table class="fr-search">
+		<tr>
+			<td>
+				<input type="text" placeholder="username">
+			</td>
+			<td>
+				<i class="fa fa-plus"></i>
+			</td>
+		</tr>
+	</table>
+	
+	
+		<div class="fr-heading"><span>Friend Requests</span></div>
 
-		<button ng-click="changeText()">Change</button>
+		<table class="fr-req-table">
+			<tr ng-repeat="request in requests">
+				<td class="fr-req-username">
+					<p>{{request.username}}</p>
+				</td>
+				<td class="fr-req-actions">
+					<div class="fr-decline"><i class="fa fa-times"></i></div>
+					<div class="fr-accept"><i class="fa fa-check"></i></div>
+				</td>
+			</tr>
+		</table>
+
+
+		<div >
+			<button ng-click="signOut()">Sign Out</button>
+		</div>
+
+
+		<input type="text" placeholder="username" ng-model="friend_request.username"/>
+		<button ng-click="send_friend_request(friend_request)">Send Request</button>
+
 	</div>
-
-
-	<input type="text" placeholder="username" ng-model="friend_request.username"/>
-	<button ng-click="send_friend_request(friend_request)">Send Request</button>
-
-</div>
 
