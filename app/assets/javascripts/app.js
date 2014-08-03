@@ -11,7 +11,7 @@ angular.module("offtherecord", [
 	])
 
 .config(['RestangularProvider', function (RestangularProvider) {
-	RestangularProvider.setBaseUrl('/');
+	RestangularProvider.setBaseUrl('/api/v1');
 }])
 
 ;

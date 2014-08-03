@@ -13,12 +13,13 @@ Rails.application.routes.draw do
   match '/signedin', to: 'sessions#signedin', via: 'get'
   match '/profile', to: 'static_pages#profile', via: 'get'
 
-  resources :sessions, only: [ :create, :destroy]
-  resources :users
-  resources :friendship_requests, only: [:index, :create, :destroy]
+  
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
+      resources :sessions, only: [ :create, :destroy]
+      resources :users, only: [:new, :create, :destroy]
+      resources :friendship_requests, only: [:index, :create, :destroy]
     end
   end
 
