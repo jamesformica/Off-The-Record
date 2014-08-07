@@ -1,13 +1,3 @@
-class FriendshipRequest < ActiveRecord::Base
-
-	belongs_to :to_user, :class_name => "User"
-	belongs_to :from_user, :class_name => "User"
-
-	validate do |request|
-		FriendRequestValidator.new(request).validate
-	end
-end
-
 class FriendRequestValidator < ActiveModel::Validator
 
 	def initialize(request)

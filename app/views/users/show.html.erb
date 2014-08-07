@@ -1,0 +1,54 @@
+	<otr-header title="{{heading_text}}" radius="600" ></otr-header>
+
+	<div class="otr-slate-w" ng-controller="ProfileController">	
+
+		<h1>{{msg}}</h1>
+
+		<table class="fr-search">
+			<tr>
+				<td>
+					<input type="text" placeholder="username" ng-model="friend_request.username">
+				</td>
+				<td>
+					<i class="fa fa-plus" ng-click="send_friend_request(friend_request)"></i>
+				</td>
+			</tr>
+		</table>
+
+
+		<section ng-show="current_user.friendship_requests">
+			<div class="fr-heading"><span>Friend Requests</span></div>
+
+			<table class="fr-req-table">
+				<tr ng-repeat="request in current_user.friendship_requests">
+					<td class="fr-req-username">
+						<p>{{request.from_username}}</p>
+					</td>
+					<td class="fr-req-actions">
+						<div class="fr-decline"><i class="fa fa-times" ng-click="decline_friend_request(request)"></i></div>
+						<div class="fr-accept"><i class="fa fa-check" ng-click="accept_friend_request(request)"></i></div>
+					</td>
+				</tr>
+			</table>
+		</section>
+
+		<section ng-show="current_user.friendships">
+			<div class="fr-heading"><span>Friends</span></div>
+			<table class="fr-req-table">
+				<tr ng-repeat="friend in current_user.friendships">
+					<td class="fr-req-username">
+						<p>{{friend.friend_username}}</p>
+					</td>
+					<td class="fr-req-actions">
+						<div class="fr-decline"><i class="fa fa-times"></i></div>
+					</td>
+				</tr>
+			</table>
+		</section>
+
+		<div >
+			<button ng-click="signOut()">Sign Out</button>
+		</div>
+
+	</div>
+

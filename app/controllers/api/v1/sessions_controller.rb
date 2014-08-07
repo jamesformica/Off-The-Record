@@ -19,13 +19,13 @@ module Api
 				render json: { message: "Sign out successful"}, status: :ok
 			end
 
-			def signedin
-				if signed_in?
-					render json: { message: "Signed in"}, status: :ok
-				else
-					render json: { message: "Not signed in"}, status: :unauthorized
-				end
-			end
+			# def signedin
+			# 	if signed_in?
+			# 		render json: { message: "Signed in"}, status: :ok
+			# 	else
+			# 		render json: { message: "Not signed in"}, status: :unauthorized
+			# 	end
+			# end
 
 		end
 

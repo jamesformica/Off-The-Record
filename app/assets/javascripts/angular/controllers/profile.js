@@ -1,33 +1,43 @@
 angular.module("profile.controller", [])
 
-.controller('ProfileController', ['$scope', 'Redirect', 'Session', 'Friendship', function ($scope, Redirect, Session, Friendship) {
+.controller('ProfileController', ['$scope', 'User', 'Redirect', 'Session', 'Friendship', function ($scope, User, Redirect, Session, Friendship) {
 
 	$scope.heading_text= "Acquaintances";
 	$scope.friend_request = {
 		username: ""
 	};
 
-	Friendship.friend_requests().then(function(data) {
-		$scope.requests = data;
+	User.current().then(function(data) {
+		$scope.current_user = data.user;
 	}, function(response) {
-		var e = 5;
+		var a = 8;
 	});
 
 	$scope.send_friend_request = function(request) {
 		Friendship.send_friend_request(request).then(function(data) {
-			var a = 6;
+			$scope.msg = "friend request sent";
 		}, function(response) {
-			var b = 7;
+			$scope.msg = response.data.errors;
 		});
 	}
 
-	$scope.destroy_friend_request = function(request) {
+	$scope.decline_friend_request = function(request) {
 		Friendship.destroy_friend_request(request).then(function(data) {
-			var d = 7;
+			$scope.msg = "friend request ignored";
 		}, function(response) {
-			var x = 4;
+			$scope.msg = "error declining friend request";
 		});
 	}
+
+
+	$scope.accept_friend_request = function(request) {
+		Friendship.accept_friend_request(request).then(function(data) {
+			$scope.msg = "friend request accepted";
+		}, function(response) {
+			$scope.msg = "error accepting friend request";
+		});
+	}
+
 
 	$scope.signOut = function() {
 		Session.destroy().then(function(data) {

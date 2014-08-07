@@ -1,6 +1,5 @@
 module Api
 	module V1
-
 		class UsersController < ApplicationController
 			respond_to :json
 
@@ -21,7 +20,9 @@ module Api
 				respond_with User.destroy(params[:id])
 			end
 
-			
+			def get_current_user
+				render json: current_user
+			end
 
 			private
 			def user_params
@@ -29,7 +30,5 @@ module Api
 			end
 
 		end
-
-
 	end
 end
