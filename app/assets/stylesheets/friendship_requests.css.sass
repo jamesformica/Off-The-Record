@@ -1,3 +1,45 @@
+div.fr-name
+	span
+		font-size: 20px
+		line-height: 40px
+		display: inline-block
+
+
+div.fr-actions
+	text-align: right
+
+$fr-action-s: 30px
+.fr-req-action
+	position: relative
+	display: inline-block
+	width: $fr-action-s
+	height: $fr-action-s
+	margin-left: 10px
+	border-radius: 50%
+	text-align: center
+	i
+		font-size: 20px
+		color: white
+		line-height: $fr-action-s
+
+div.fr-accept
+	@extend .fr-req-action
+	background: #00C176
+
+div.fr-accept:hover
+	background: fade-out(#00C176, 0.3)
+
+div.fr-decline
+	@extend .fr-req-action
+	background: #FF003C
+
+div.fr-decline:hover
+	background: fade-out(#FF003C, 0.3)
+
+
+
+
+
 $fr-heading-h: 30px
 $fr-req-h: 60px
 
@@ -54,29 +96,3 @@ td.fr-req-actions
 	width: 110px
 	text-align: right
 
-.fr-req-action
-	position: relative
-	display: inline-block
-	width: 40px
-	height: 40px
-	margin-left: 10px
-	border-radius: 50%
-	text-align: center
-	i
-		font-size: 20px
-		color: white
-		line-height: 40px
-
-div.fr-accept
-	@extend .fr-req-action
-	background: #00C176
-
-div.fr-accept:hover
-	background: fade-out(#00C176, 0.3)
-
-div.fr-decline
-	@extend .fr-req-action
-	background: #FF003C
-
-div.fr-decline:hover
-	background: fade-out(#FF003C, 0.3)

@@ -1,0 +1,85 @@
+@import common
+
+$slate-w: 96%
+$slate-border-r: 4px
+$slate-max-w: 600px
+$slate-min-h: 50px
+
+div.slate-wrapper
+	position: relative
+	width: $slate-w
+	max-width: $slate-max-w
+	margin: 0 auto
+	margin-top: 30px
+	background-color: white
+
+
+div.slate-heading
+	position: relative
+	min-height: $slate-min-h
+	border-top-left-radius: $slate-border-r
+	border-top-right-radius: $slate-border-r
+	background-color: #36b59e
+
+	span
+		position: absolute
+		left: 10px
+		top: -12px
+		font-family: 'Pacifico', cursive
+		font-size: 4.6em
+		color: white
+		z-index: 1001
+		+text-outline(2px, 3px, rgba(0,0,0,0.8))
+
+$slate-sub-heading-c: #383838
+div.slate-sub-heading
+	position: relative
+	background-color: $slate-sub-heading-c
+	padding: 6px 0 6px 6px
+	margin-bottom: 15px
+
+	span
+		font-size: 2em
+		color: white
+
+	span:after
+		content: ""
+		position: absolute
+		top: 40px
+		left: 10px
+		width: 0
+		height: 0
+		border: 10px solid transparent
+		border-top-color: $slate-sub-heading-c
+
+
+
+div.slate-item
+	position: relative
+	padding: 6px 0
+	border-bottom: 1.6px solid fade-out(black, 0.88) 
+
+
+
+
+/* LAYOUT */
+.otr-slate
+	position: relative
+	width: 74%
+	max-width: 600px
+	padding: 24px
+	margin: 0 auto
+	margin-top: 20px
+	border-radius: 6px
+	//box-shadow: $mat-shadow
+	border: 1px solid fade-out(#b5b5b5, 0.7)
+	border-bottom: 5px solid #b5b5b5
+
+div.otr-slate-w
+	@extend .otr-slate
+	background-color: fade-out(white, 0.1)
+	
+
+div.otr-slate-c
+	@extend .otr-slate
+	background-color: #E6F2EC
