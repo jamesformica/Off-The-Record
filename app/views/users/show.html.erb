@@ -9,12 +9,14 @@
 			</div>
 
 			
-			<div class="row">
+			<div class="row fr-add">
 				<div class="col-xs-10">
-					<input type="text" placeholder="username" ng-model="friend_request.username">
+					<div class="slate-heading-input">
+						<input class="slate-heading-input" type="text" placeholder="username" ng-model="friend_request.username">
+					</div>
 				</div>
 				<div class="col-xs-2">
-					<i class="fa fa-plus" ng-click="send_friend_request(friend_request)"></i>
+					<i class="fa fa-paper-plane-o fr-add" ng-click="send_friend_request(friend_request)"></i>
 				</div>
 			</div>
 

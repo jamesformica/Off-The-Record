@@ -1,4 +1,4 @@
-@import common
+@import variables
 
 $slate-w: 96%
 $slate-border-r: 4px
@@ -25,11 +25,42 @@ div.slate-heading
 		position: absolute
 		left: 10px
 		top: -12px
-		font-family: 'Pacifico', cursive
+		font-family: $fancy-font
 		font-size: 4.6em
 		color: white
 		z-index: 1001
 		+text-outline(2px, 3px, rgba(0,0,0,0.8))
+
+input.slate-heading-input
+	position: relative
+	color: white !important
+	font-size: 1.8em !important
+	background-color: transparent
+	border: none
+	border-bottom: 2px solid white !important
+	box-sizing: border-box
+	outline: none
+	margin: 0
+
+div.slate-heading-input
+	position: relative
+	display: block
+
+div.slate-heading-input:before, div.slate-heading-input:after
+	content: ""
+	display: block
+	position: absolute
+	bottom: 2px
+	height: 6px
+	border-left: 2px solid white
+
+div.slate-heading-input:before
+	left: 0
+
+div.slate-heading-input:after
+	right: 0
+
+
 
 $slate-sub-heading-c: #383838
 div.slate-sub-heading

@@ -1,14 +1,5 @@
 @import bootstrap
-
-$normal-font: 'Open Sans', sans-serif
-$fancy-font: 'Pacifico', cursive
-
-$primary-color: #079EA6
-$input-txt-c: #3d3d3d
-$mat-shadow: 1px 1px 2px rgba(0,0,0,0.2)
-
-$default-font-size: 10px
-$default-font-c: #575757
+@import variables
 
 body
 	margin: 0
@@ -39,16 +30,6 @@ span
 	color: $default-font-c
 
 
-=gradient-bg($top, $bottom)
-	background: -webkit-linear-gradient($top, $bottom) /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient($top, $bottom) /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient($top, $bottom) /* For Firefox 3.6 to 15 */
-	background: linear-gradient($top, $bottom) /* Standard syntax */
-
-=text-outline($width, $spread, $color)
-	text-shadow: $width * -1 $width * -1 $spread $color, $width $width * -1 $spread $color, $width * -1 $width $spread $color, $width $width $spread $color 
-
-
 .sm
 	font-size: $default-font-size * 1.2
 
@@ -59,8 +40,7 @@ span
 	font-size: $default-font-size * 2.4
 
 
-$input-border-style: 1.6px solid fade-out(black, 0.88)
-$input-border-radius: 4px
+
 div.otr-input-group
 	position: relative
 	width: 100%		
@@ -82,7 +62,7 @@ div.otr-input-group
 /* INPUT */
 input[type="text"], input[type="password"], input[type="email"]
 	position: relative
-	width: 96%
+	width: 100%
 	height: 40px
 	padding-left: 4%
 	font-size: 1.2em
