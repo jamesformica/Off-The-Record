@@ -2,6 +2,8 @@ angular.module("profile.controller", [])
 
 .controller('ProfileController', ['$scope', 'User', 'Redirect', 'Session', 'Friendship', function ($scope, User, Redirect, Session, Friendship) {
 
+	$scope.action_menu_action = false;
+
 	$scope.friend_request = {
 		username: ""
 	};

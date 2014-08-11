@@ -1,5 +1,35 @@
 @import variables
 
+
+$action-bar-h: 40px
+$action-bar-c: white
+$menu-icon-s: $action-bar-h + 10
+div.action-bar
+	height: $action-bar-h
+	background-color: $action-bar-c
+	color: #575757
+	//border-bottom: 1px solid fade-out(#575757, 0)
+	overflow: hidden
+	i.menu
+		font-size: $action-bar-h - 10
+		line-height: $menu-icon-s
+		width: $menu-icon-s
+		height: $menu-icon-s
+		background-color: #575757
+		color: white
+		border-radius: 50%
+		text-align: center
+		margin-left: -1 * ($menu-icon-s / 2 - 5)
+		margin-top: -1 * (($menu-icon-s - $action-bar-h) / 2)
+	i.menu:hover
+		color: darken(#575757, 10%)
+	div.user
+		text-align: center
+		font-size: $action-bar-h / 2
+		line-height: $action-bar-h
+
+
+
 $slate-w: 96%
 $slate-border-r: 4px
 $slate-max-w: 600px
@@ -11,7 +41,7 @@ div.slate-wrapper
 	width: $slate-w
 	max-width: $slate-max-w
 	margin: 0 auto
-	margin-top: 30px
+	margin-top: 20px
 	background-color: white
 	box-shadow: $mat-shadow
 	padding-bottom: $slate-border-r

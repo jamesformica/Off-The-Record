@@ -1,20 +1,8 @@
 <section ng-controller="ProfileController">
 
 
-	<section>
-		<div class="fluid-container">
-			<div class="row">
-				<div class="col-xs-3">
-					<i class="fa fa-bars"></i>
-				</div>
-			</div>
-			<div class="col-xs-9">
-				{{current_user.username}}
-			</div>
-		</div>
-	</section>
-
-
+	<%= render "layouts/actionbar" %>
+	<%= render "layouts/actionmenu" %>
 
 	<section>
 
@@ -84,10 +72,6 @@
 				</div>
 			</section>
 
-		</div>
-
-		<div >
-			<button ng-click="signOut()">Sign Out</button>
 		</div>
 	</section>
 
