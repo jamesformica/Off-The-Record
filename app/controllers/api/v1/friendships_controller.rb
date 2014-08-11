@@ -11,7 +11,7 @@ module Api
 				if friendship_a.save && friendship_b.save && FriendshipRequest.find(params[:id]).destroy
 					render json: friendship_a, status: :ok
 				else
-					render json: { errors: "shit broke yo" }, status: :unprocessable_entity
+					render json: { errors: friendship_a.errors.full_messages }, status: :unprocessable_entity
 				end
 			end
 
