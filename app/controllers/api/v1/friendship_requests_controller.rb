@@ -18,9 +18,10 @@ module Api
 						render json: {errors: friend_req.errors.full_messages }, status: :unprocessable_entity
 					end
 				else
-					render json: { errors: ["ain't nobody called #{request_params[:username]}"] }, status: :unprocessable_entity
+					render json: { errors: ["Ain't nobody called #{request_params[:username]}"] }, status: :unprocessable_entity
 				end
 			end
+
 
 			def destroy
 				if current_user.friendship_requests.find(request_params[:id]).destroy()

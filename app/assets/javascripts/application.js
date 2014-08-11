@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require angular
+//= require angular-route
 //= require lodash
 //= require restangular.min
 //= require arctext.js

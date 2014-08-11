@@ -1,10 +1,22 @@
-<div class="floater-option floater-left">
-	<i class="fa fa-bars"></i>
-</div>
+<section ng-controller="ProfileController">
+
+
+	<section>
+		<div class="fluid-container">
+			<div class="row">
+				<div class="col-xs-3">
+					<i class="fa fa-bars"></i>
+				</div>
+			</div>
+			<div class="col-xs-9">
+				{{current_user.username}}
+			</div>
+		</div>
+	</section>
 
 
 
-	<section ng-controller="ProfileController">
+	<section>
 
 		<div class="container slate-wrapper" >
 			<!-- heading -->
@@ -29,14 +41,14 @@
 			<!-- friend requests -->
 			<section ng-show="current_user.friendship_requests">
 				<div class="row">
-					<div class="col-xs-12 slate-sub-heading"><span>Friend Requests</span></div>
+					<div class="col-xs-12 slate-sub-heading"><span>Friend requests</span></div>
 				</div>
 
 				<div class="row slate-item" ng-repeat="request in current_user.friendship_requests">
-					<div class="col-xs-8 fr-name">
+					<div class="col-xs-7 fr-name">
 						<span>{{request.from_username}}</span>
 					</div>
-					<div class="col-xs-4 fr-actions">
+					<div class="col-xs-5 fr-actions">
 						<div class="fr-decline"><i class="fa fa-times" ng-click="decline_friend_request(request)"></i></div>
 						<div class="fr-accept"><i class="fa fa-check" ng-click="accept_friend_request(request)"></i></div>
 					</div>
@@ -58,9 +70,25 @@
 					</div>
 				</div>
 			</section>
+
+			<!-- no friends -->
+			<section ng-hide="current_user.friendships">
+				<div class="row">
+					<div class="col-xs-12 slate-sub-heading"><span>Oh so lonely</span></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 no-friends">
+						<i class="fa fa-frown-o"></i>
+						<span>Looks like you need some friends...<br/>Try adding some above</span>
+					</div>
+				</div>
+			</section>
+
 		</div>
 
 		<div >
 			<button ng-click="signOut()">Sign Out</button>
 		</div>
 	</section>
+
+</section>

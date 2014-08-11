@@ -1,4 +1,5 @@
 angular.module("offtherecord", [
+	'ngRoute',
 	'restangular',
 	'user.service',
 	'session.service',
@@ -10,8 +11,17 @@ angular.module("offtherecord", [
 	'common.directive'
 	])
 
-.config(['RestangularProvider', function (RestangularProvider) {
+.config(['RestangularProvider', '$routeProvider', function (RestangularProvider, $routeProvider) {
 	RestangularProvider.setBaseUrl('/api/v1');
+
+	$routeProvider.when('/profile', {
+		controller: 'ProfileController1'
+	});
+
+	$routeProvider.when('/chicken', {
+		controller: 'ProfileController'
+	});
+
 }])
 
 ;
