@@ -17,6 +17,9 @@ class FriendRequestValidator < ActiveModel::Validator
 	end
 
 	def validate
+		if @to_user == @from_user
+			@request.errors[:base] << "Dude, you can't add yourself"
+		end
 		if request_already_sent?
 			@request.errors[:base] << "Request already pending"
 		end

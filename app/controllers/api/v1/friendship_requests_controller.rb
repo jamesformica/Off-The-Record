@@ -8,7 +8,7 @@ module Api
 		class FriendshipRequestsController < ApplicationController
 			respond_to :json
 
-			def create #create single entry with to / from users
+			def create
 				toUser = User.find_by(username: request_params[:username])
 				if toUser
 					friend_req = FriendshipRequest.new(from_user_id: current_user.id, to_user_id: toUser.id)
@@ -18,7 +18,7 @@ module Api
 						render json: {errors: friend_req.errors.full_messages }, status: :unprocessable_entity
 					end
 				else
-					render json: { errors: ["#{request_params[:username]} does not exist"] }, status: :unprocessable_entity
+					render json: { errors: ["ain't nobody called #{request_params[:username]}"] }, status: :unprocessable_entity
 				end
 			end
 

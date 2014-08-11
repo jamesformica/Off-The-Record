@@ -1,4 +1,8 @@
-	<!-- <otr-header title="{{heading_text}}" radius="600" ></otr-header> -->
+<div class="floater-option floater-left">
+	<i class="fa fa-bars"></i>
+</div>
+
+
 
 	<section ng-controller="ProfileController">
 
@@ -8,11 +12,13 @@
 				<div class="col-xs-12 slate-heading"><span>Acquaintances</span></div>
 			</div>
 
-			
+			<!-- Search -->
 			<div class="row fr-add">
 				<div class="col-xs-10">
 					<div class="slate-heading-input">
-						<input class="slate-heading-input" type="text" placeholder="username" ng-model="friend_request.username">
+						<form name="addFriend" ng-submit="send_friend_request(friend_request)">
+							<input class="slate-heading-input" type="text" placeholder="username" ng-model="friend_request.username">
+						</form>
 					</div>
 				</div>
 				<div class="col-xs-2">
@@ -54,9 +60,6 @@
 			</section>
 		</div>
 
-		<hr>
-
-		<h1>{{msg}}</h1>
 		<div >
 			<button ng-click="signOut()">Sign Out</button>
 		</div>

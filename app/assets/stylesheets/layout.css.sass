@@ -5,6 +5,27 @@ $slate-border-r: 4px
 $slate-max-w: 600px
 $slate-min-h: 50px
 
+$floater-offset: 0px
+div.floater-option
+	position: absolute
+	width: 60px
+	height: 60px
+	border-radius: 50%
+	top: $floater-offset
+	background-color: white
+	text-align: center
+	i
+		font-size: 40px
+		line-height: 60px
+
+div.floater-left
+	left: $floater-offset
+
+div.floater-right
+	right: $floater-offset
+
+
+
 div.slate-wrapper
 	position: relative
 	width: $slate-w
@@ -12,6 +33,7 @@ div.slate-wrapper
 	margin: 0 auto
 	margin-top: 30px
 	background-color: white
+	box-shadow: $mat-shadow
 
 
 div.slate-heading
@@ -42,6 +64,7 @@ input.slate-heading-input
 	outline: none
 	margin: 0
 
+//Android style input
 div.slate-heading-input
 	position: relative
 	display: block
