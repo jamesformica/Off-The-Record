@@ -48,6 +48,13 @@ angular.module("profile.controller", [])
 		});
 	}
 
+	$scope.destroy_friendship = function(friendship) {
+		Friendship.destroy_friendship(friendship).then(function(data) {
+			$scope.current_user.friendships = _.without($scope.current_user.friendships, friendship);
+		}, function(response) {
+		});
+	}
+
 
 	$scope.signOut = function() {
 		Session.destroy().then(function(data) {

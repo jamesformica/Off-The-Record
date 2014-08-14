@@ -26,6 +26,10 @@ angular.module("friendship.service", [ 'restangular' ])
 		return this.request_service.one(request.id).remove();
 	}
 
+	Friendship.prototype.destroy_friendship = function(friendship) {
+		return this.friend_service.one(friendship.id).remove();
+	}
+
 	return new Friendship;
 }])
 

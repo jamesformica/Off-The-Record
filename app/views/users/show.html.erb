@@ -55,12 +55,12 @@
 							<div class="col-xs-12 slate-sub-heading"><span>Friends</span></div>
 						</div>
 
-						<div class="row slate-item" ng-repeat="friend in current_user.friendships">
+						<div class="row slate-item" ng-repeat="friendship in current_user.friendships">
 							<div class="col-xs-8 fr-name">
-								<span>{{friend.friend_username}}</span>
+								<span>{{friendship.friend_username}}</span>
 							</div>
 							<div class="col-xs-4 fr-actions">
-								<div class="fr-decline"><i class="fa fa-trash-o"></i></div>
+								<div class="fr-decline"><i class="fa fa-trash-o" ng-click="destroy_friendship(friendship)"></i></div>
 							</div>
 						</div>
 					</section>
