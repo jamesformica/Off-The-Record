@@ -18,5 +18,6 @@
 //= require arctext.js
 //= require app.js
 //= require toastr
+//= require underscore
 //= require_tree ./angular
 //= require_tree .

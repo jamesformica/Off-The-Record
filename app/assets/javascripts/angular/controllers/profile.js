@@ -9,7 +9,7 @@ angular.module("profile.controller", [])
 	};
 
 	toastr.options = {
-		"positionClass": "toast-top-left"
+		"positionClass": "toast-bottom-left"
 	};
 
 	User.current().then(function(data) {
@@ -40,6 +40,8 @@ angular.module("profile.controller", [])
 	$scope.accept_friend_request = function(request) {
 		Friendship.accept_friend_request(request).then(function(data) {
 			toastr.info("friend request accepted");
+			$scope.current_user.friendship_requests = _.without($scope.current_user.friendship_requests, request);
+			$scope.current_user.friendships.push(data.friendship);
 		}, function(response) {
 			toastr.warning("error accepting friend request");
 		});

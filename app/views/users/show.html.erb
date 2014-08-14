@@ -33,7 +33,7 @@
 
 
 					<!-- friend requests -->
-					<section ng-show="current_user.friendship_requests">
+					<section ng-show="current_user.friendship_requests.length > 0">
 						<div class="row">
 							<div class="col-xs-12 slate-sub-heading"><span>Friend requests</span></div>
 						</div>
@@ -50,7 +50,7 @@
 					</section>
 
 					<!-- friends -->
-					<section ng-show="current_user.friendships">
+					<section ng-show="current_user.friendships.length > 0">
 						<div class="row">
 							<div class="col-xs-12 slate-sub-heading"><span>Friends</span></div>
 						</div>
@@ -66,7 +66,7 @@
 					</section>
 
 					<!-- no friends -->
-					<section ng-hide="current_user.friendships">
+					<section ng-hide="current_user.friendships.length > 0">
 						<div class="row">
 							<div class="col-xs-12 slate-sub-heading"><span>Oh so lonely</span></div>
 						</div>
