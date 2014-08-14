@@ -33,4 +33,29 @@ angular.module("common.directive", [])
 }])
 
 
+.directive('placeHolder', [function() {
+	return {
+		restrict: 'A',
+		scope: {
+			placeHolderValue: '@'
+		},
+		link: function (scope, element, attrs) {
+			$(document).ready(function() {
+				$(element)[0].value = scope.placeHolderValue;
+				$(element).focusin(function() {
+					if (this.value == scope.placeHolderValue) {
+						this.value = '';
+					}
+				});
+				$(element).focusout(function() {
+					if (this.value == '') {
+						this.value = scope.placeHolderValue;
+					}
+				});
+			});			
+		}
+	}
+}])
+
+
 ;

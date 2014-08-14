@@ -22,19 +22,21 @@ $fr-action-s: 30px
 		color: white
 		line-height: $fr-action-s
 
+$accept-c: #21AABD
+$decline-c: #FF6B6B// #FF6600
 div.fr-accept
 	@extend .fr-req-action
-	background: #00C176
+	background: $accept-c
 
 div.fr-accept:hover
-	background: fade-out(#00C176, 0.3)
+	background: fade-out($accept-c, 0.3)
 
 div.fr-decline
 	@extend .fr-req-action
-	background: #FF003C
+	background: $decline-c
 
 div.fr-decline:hover
-	background: fade-out(#FF003C, 0.3)
+	background: fade-out($decline-c, 0.3)
 
 div.fr-add
 	background: #36b59e
