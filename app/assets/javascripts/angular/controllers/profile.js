@@ -21,6 +21,7 @@ angular.module("profile.controller", [])
 	$scope.send_friend_request = function(request) {
 		Friendship.send_friend_request(request).then(function(data) {
 			toastr.info("friend request sent");
+			$scope.friend_request.username = "";
 		}, function(response) {
 			toastr.warning(response.data.errors);
 			$scope.friend_request.username = "";
