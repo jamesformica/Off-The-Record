@@ -1,11 +1,24 @@
 @import variables
 
+$action-menu-c: #575757
 div.action-menu-wrapper
 	position: fixed
 	left: 0
 	top: 40px
 	width: 18%
 	min-width: 200px
-	background: #575757
-	height: 400px
+	background: $action-menu-c
 	z-index: 1010
+
+div.action-menu-item
+	border-bottom: 1px solid darken($action-menu-c, 10%)
+	height: 40px
+	span, i
+		color: white
+		font-size: 20px
+		line-height: 40px
+div.action-menu-item:hover
+	background: lighten($action-menu-c, 10%)
+	span, i
+		color: darken($action-menu-c, 10%)
+

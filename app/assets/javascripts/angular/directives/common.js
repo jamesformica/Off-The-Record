@@ -15,6 +15,22 @@ angular.module("common.directive", [])
 
 
 
-});
+})
+
+
+.directive('yToBottom', ['$timeout', function($timeout) {
+	return {
+		restrict: 'A',
+		link: function (scope, element, attrs) {
+			$timeout(function(){
+				var pos = element.offset();
+				var windowH = $(window).height();
+				element.css("height", windowH - pos.top);
+				element.css("overflow-y", "auto");
+			}, 0);
+		}
+	}
+}])
+
 
 ;

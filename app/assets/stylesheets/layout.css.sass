@@ -10,19 +10,19 @@ div.action-bar
 	color: #575757
 	//border-bottom: 1px solid fade-out(#575757, 0)
 	overflow: hidden
+	width: 100%
 	i.menu
 		font-size: $action-bar-h - 10
 		line-height: $menu-icon-s
 		width: $menu-icon-s
 		height: $menu-icon-s
-		background-color: #575757
-		color: white
-		border-radius: 50%
+		color: #575757
 		text-align: center
-		margin-left: -1 * ($menu-icon-s / 2 - 5)
+		margin-left: -1 * ($menu-icon-s / 2)
 		margin-top: -1 * (($menu-icon-s - $action-bar-h) / 2)
 	i.menu:hover
 		color: darken(#575757, 10%)
+
 	div.user
 		text-align: center
 		font-size: $action-bar-h / 2
@@ -30,7 +30,7 @@ div.action-bar
 
 
 
-$slate-w: 96%
+$slate-w: 100%
 $slate-border-r: 4px
 $slate-max-w: 600px
 $slate-min-h: 50px
@@ -41,20 +41,17 @@ div.slate-wrapper
 	width: $slate-w
 	max-width: $slate-max-w
 	margin: 0 auto
-	margin-top: 20px
-	background-color: white
 	box-shadow: $mat-shadow
 	padding-bottom: $slate-border-r
-	border-radius: $slate-border-r
+	background-color: white
 
 
 div.slate-heading
 	position: relative
 	min-height: $slate-min-h
-	border-top-left-radius: $slate-border-r
-	border-top-right-radius: $slate-border-r
 	background-color: #36b59e
-
+	padding-top: 20px
+	
 	span
 		position: absolute
 		left: 10px
@@ -62,7 +59,7 @@ div.slate-heading
 		font-family: $fancy-font
 		font-size: 4.6em
 		color: white
-		z-index: 1001
+		z-index: 1000
 		+text-outline(2px, 3px, rgba(0,0,0,0.8))
 
 input.slate-heading-input
@@ -96,17 +93,22 @@ div.slate-heading-input:after
 	right: 0
 
 
+section.slate-content
+	background-color: white
+	overflow: scroll
 
-$slate-sub-heading-c: #383838
+
+$slate-sub-heading-c: #bbbbbb
 div.slate-sub-heading
 	position: relative
-	background-color: $slate-sub-heading-c
+	//background-color: $slate-sub-heading-c
+	background-color: white
 	padding: 6px 0 6px 6px
 	margin-bottom: 15px
+	border-bottom: 3px solid darken($slate-sub-heading-c, 10%)
 
 	span
 		font-size: 2em
-		color: white
 
 	span:after
 		content: ""
@@ -116,12 +118,13 @@ div.slate-sub-heading
 		width: 0
 		height: 0
 		border: 10px solid transparent
-		border-top-color: $slate-sub-heading-c
+		border-top-color: darken($slate-sub-heading-c, 10%)
 
 
 
 div.slate-item
 	position: relative
+	background-color: white
 	padding: 6px 0
 	border-bottom: 1.6px solid fade-out(black, 0.88) 
 
