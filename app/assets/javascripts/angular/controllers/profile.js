@@ -31,6 +31,7 @@ angular.module("profile.controller", [])
 	$scope.decline_friend_request = function(request) {
 		Friendship.destroy_friend_request(request).then(function(data) {
 			toastr.info("friend request ignored");
+			$scope.current_user.friendship_requests = _.without($scope.current_user.friendship_requests, request);
 		}, function(response) {
 			toastr.warning("error declining friend request");
 		});
