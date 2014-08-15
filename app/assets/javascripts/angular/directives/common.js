@@ -22,12 +22,21 @@ angular.module("common.directive", [])
 	return {
 		restrict: 'A',
 		link: function (scope, element, attrs) {
+
+			$(window).resize(function() {
+				setElementHeight();
+			});
+
 			$timeout(function(){
+				setElementHeight();
+			}, 0);
+
+			function setElementHeight() {
 				var pos = element.offset();
 				var windowH = $(window).height();
 				element.css("height", windowH - pos.top);
 				element.css("overflow-y", "auto");
-			}, 0);
+			}
 		}
 	}
 }])
