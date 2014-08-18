@@ -1,5 +1,5 @@
-require 'spec_helper'
+# require 'spec_helper'
 
-describe FriendshipsController do
+# describe FriendshipsController do
 
-end
+# end
