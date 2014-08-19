@@ -1,8 +1,12 @@
 require 'spec_helper'
 
 describe Friendship do
-	
-	before { @friendship = Friendship.new(user_id: 1, friend_id: 2) }
+
+	before do
+		@user1 = User.create(name: "user1", email: "u1@example.com", username: "user1", password: "password", password_confirmation: "password")
+		@user2 = User.create(name: "user2", email: "u2@example.com", username: "user2", password: "password", password_confirmation: "password")
+		@friendship = Friendship.new(user_id: @user1.id, friend_id: @user2.id)
+	end
 	subject { @friendship }
 
 	it { should respond_to(:user_id) }
