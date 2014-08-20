@@ -1,0 +1,28 @@
+<div class="container action-menu-wrapper animated bounceInUp" ng-show="action_menu_active" y-to-bottom>
+	<div class="row action-menu-item" ng-click="signOut()">
+		<div class="col-xs-3">
+			<i class="fa fa-sign-out"></i>
+		</div>
+		<div class="col-xs-9">
+			<span>Sign Out</span>
+		</div>
+	</div>
+
+	<div class="row action-menu-item" ng-click="viewable = 'edit_profile'">
+		<div class="col-xs-3">
+			<i class="fa fa-pencil"></i>
+		</div>
+		<div class="col-xs-9">
+			<span>Edit Profile</span>
+		</div>
+	</div>
+
+	<div class="row action-menu-item" ng-click="viewable = 'friendships'">
+		<div class="col-xs-3">
+			<i class="fa fa-users"></i>
+		</div>
+		<div class="col-xs-9">
+			<span>View Friends</span>
+		</div>
+	</div>
+</div>

@@ -1,87 +1,39 @@
 <section ng-controller="ProfileController">
 
 
-	<%= render "layouts/actionbar" %>
-	<%= render "layouts/actionmenu" %>
+	<%= render "layouts/profile/actionbar" %>
+	<%= render "layouts/profile/actionmenu" %>
 
-	<section>
+	<%= render "layouts/profile/friendships" %>
 
+	
+	<section ng-show="viewable == 'edit_profile'">
 		<div class="container slate-wrapper">
-			<!-- heading -->
 			<div class="row">
-				<div class="col-xs-12 slate-heading"><span>Acquaintances</span></div>
-			</div>
-
-			<!-- Search -->
-			<div class="row fr-add">
-				<div class="col-xs-10">
-					<div class="slate-heading-input">
-						<form name="addFriend" ng-submit="send_friend_request(friend_request)">
-							<input class="slate-heading-input" type="text" place-holder-value="...username" place-holder ng-model="friend_request.username">
-						</form>
-					</div>
-				</div>
-				<div class="col-xs-2">
-					<i class="fa fa-paper-plane-o fr-add" ng-click="send_friend_request(friend_request)"></i>
-				</div>
+				<div class="col-xs-12 slate-heading"><span>Who Are You?</span></div>
 			</div>
 
 			<div class="row slate-content" y-to-bottom>
 				<div class="col-xs-12">
-					
 
+					<div class="row">
+						<div class="col-xs-12 slate-sub-heading"><span>Update Your information</span></div>
+					</div>
 
-
-					<!-- friend requests -->
-					<section ng-show="current_user.friendship_requests.length > 0">
-						<div class="row">
-							<div class="col-xs-12 slate-sub-heading"><span>Friend requests</span></div>
+					<form name="signUpForm" ng-submit="update_information(edit_user)">
+						<div class="otr-input-group">
+							<input type="text" ng-model="edit_user.name" placeholder="full name">
+							<input type="text" ng-model="edit_user.email" placeholder="email">
+							<input type="text" ng-model="edit_user.username" placeholder="username">
 						</div>
 
-						<div class="row slate-item" ng-repeat="request in current_user.friendship_requests">
-							<div class="col-xs-7 fr-name">
-								<span>{{request.from_username}}</span>
-							</div>
-							<div class="col-xs-5 fr-actions">
-								<div class="fr-decline"><i class="fa fa-times" ng-click="decline_friend_request(request)"></i></div>
-								<div class="fr-accept"><i class="fa fa-check" ng-click="accept_friend_request(request)"></i></div>
-							</div>
-						</div>
-					</section>
-
-					<!-- friends -->
-					<section ng-show="current_user.friendships.length > 0">
-						<div class="row">
-							<div class="col-xs-12 slate-sub-heading"><span>Friends</span></div>
-						</div>
-
-						<div class="row slate-item" ng-repeat="friendship in current_user.friendships">
-							<div class="col-xs-8 fr-name">
-								<span>{{friendship.friend_username}}</span>
-							</div>
-							<div class="col-xs-4 fr-actions">
-								<div class="fr-decline"><i class="fa fa-trash-o" ng-click="destroy_friendship(friendship)"></i></div>
-							</div>
-						</div>
-					</section>
-
-					<!-- no friends -->
-					<section ng-hide="current_user.friendships.length > 0">
-						<div class="row">
-							<div class="col-xs-12 slate-sub-heading"><span>Oh so lonely</span></div>
-						</div>
-						<div class="row">
-							<div class="col-xs-12 no-friends">
-								<i class="fa fa-frown-o"></i>
-								<span>Looks like you need some friends...<br/>Try adding some above</span>
-							</div>
-						</div>
-					</section>
+						<h1><input type="submit" class="otr-btn-primary lg" value="Update"></h1>
+					</form>
 
 				</div>
 			</div>
-
 		</div>
 	</section>
+
 
 </section>

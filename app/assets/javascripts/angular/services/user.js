@@ -20,6 +20,10 @@ angular.module("user.service", [ 'restangular' ])
 		return Restangular.one(entrypoint + '/new').get();
 	}
 
+	User.prototype.update = function(user) {
+		return this.service.one(user.id).patch(user);
+	}
+
 	return new User;
 }])
 

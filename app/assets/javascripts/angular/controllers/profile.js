@@ -3,6 +3,7 @@ angular.module("profile.controller", [])
 .controller('ProfileController', ['$scope', 'User', 'Redirect', 'Session', 'Friendship', function ($scope, User, Redirect, Session, Friendship) {
 
 	$scope.action_menu_action = false;
+	$scope.viewable = 'edit_profile'
 
 	$scope.friend_request = {
 		username: ""
@@ -14,6 +15,7 @@ angular.module("profile.controller", [])
 
 	User.current().then(function(data) {
 		$scope.current_user = data.user;
+		$scope.edit_user = jQuery.extend(true, {}, data.user);
 	}, function(response) {
 		//error
 	});
@@ -56,6 +58,15 @@ angular.module("profile.controller", [])
 	}
 
 
+	$scope.update_information = function(current_user) {
+		User.update(current_user).then(function(data) {
+			toastr.info("successfully updated information");
+			$scope.current_user = data.user;
+		}, function(response) {
+			_.map(response.data.errors, function(error) { toastr.warning(error); });
+		});
+	}
+
 	$scope.signOut = function() {
 		Session.destroy().then(function(data) {
 			Redirect.to_index();
@@ -63,6 +74,8 @@ angular.module("profile.controller", [])
 			$scope.errors = response.data.errors;
 		});
 	}
+
+
 
 }])
 ;

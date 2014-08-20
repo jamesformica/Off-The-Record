@@ -16,6 +16,19 @@ module Api
 				end
 			end
 
+
+			def update
+				user = User.find(params[:id])
+				if user == current_user
+					if (user.update_attributes(user_params))
+						render json: user, status: :ok
+					else
+						render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+					end
+				end
+			end
+
+
 			def destroy
 				respond_with User.destroy(params[:id])
 			end
