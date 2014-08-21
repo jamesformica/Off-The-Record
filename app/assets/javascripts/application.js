@@ -21,3 +21,9 @@
 //= require underscore
 //= require_tree ./angular
 //= require_tree .
+
+
+var headingColours = {
+    friendships: "#36b59e",
+    edit_profile: "#8f5cb5"
+};

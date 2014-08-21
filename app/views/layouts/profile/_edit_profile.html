@@ -1,0 +1,27 @@
+<section ng-show="viewable == 'edit_profile'" class="animated fadeIn">
+	<div class="container slate-wrapper">
+		<div class="row" background-colour color="{{ getHeadingColour('edit_profile') }}">
+			<div class="col-xs-12 slate-heading"><span>Who Are You?</span></div>
+		</div>
+
+		<div class="row slate-content" y-to-bottom>
+			<div class="col-xs-12">
+
+				<div class="row">
+					<div class="col-xs-12 slate-sub-heading"><span>Update Your information</span></div>
+				</div>
+
+				<form name="signUpForm" ng-submit="update_information(edit_user)">
+					<div class="otr-input-group">
+						<input type="text" ng-model="edit_user.name" placeholder="full name">
+						<input type="text" ng-model="edit_user.email" placeholder="email">
+						<input type="text" ng-model="edit_user.username" placeholder="username">
+					</div>
+
+					<h1><input type="submit" class="otr-btn-primary lg" value="Update"></h1>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</section>

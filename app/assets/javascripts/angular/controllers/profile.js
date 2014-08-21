@@ -75,7 +75,9 @@ angular.module("profile.controller", [])
 		});
 	}
 
-
+	$scope.getHeadingColour = function(heading) {
+		return eval("headingColours." + heading);
+	}
 
 }])
 ;

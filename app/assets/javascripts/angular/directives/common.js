@@ -67,4 +67,17 @@ angular.module("common.directive", [])
 }])
 
 
+.directive('backgroundColour', [function() {
+	return {
+		restrict: 'A',
+		scope: {
+			color: '@'
+		},
+		link: function (scope, element, attrs) {
+			$(element).css('background-color', scope.color);
+		}
+	}
+}])
+
+
 ;
