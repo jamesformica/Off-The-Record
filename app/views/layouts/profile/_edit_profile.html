@@ -1,7 +1,7 @@
-<section ng-show="viewable == 'edit_profile'" class="animated fadeInLeft">
+<section ng-show="current_viewable === sections.edit_profile.name">
 	<div class="container slate-wrapper">
-		<div class="row" background-colour color="{{ getHeadingColour('edit_profile') }}">
-			<div class="col-xs-12 slate-heading"><span>Who Are You?</span></div>
+		<div class="row" background-colour color="{{ sections.edit_profile.headingColour }}">
+			<div class="col-xs-12 slate-heading"><span>{{ sections.edit_profile.headingText }}</span></div>
 		</div>
 
 		<div class="row slate-content" y-to-bottom>

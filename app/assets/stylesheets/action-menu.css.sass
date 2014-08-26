@@ -1,23 +1,42 @@
 @import variables
 
-$action-menu-c: #575757
+
+div.action-menu-backdrop
+	position: fixed
+	top: $action-bar-h
+	left: 0
+	width: 100%
+	background-color: rgba(0,0,0,0.6)
+	z-index: 150
+
+$action-menu-bg-c: white
+$action-menu-text-c: #575757
 div.action-menu-wrapper
 	position: fixed
 	top: 40px
 	width: 18%
 	min-width: 200px
-	background: $action-menu-c
+	background: $action-menu-bg-c
 	z-index: 160
 
 div.action-menu-item
-	border-bottom: 1px solid darken($action-menu-c, 10%)
+	border-bottom: 1px solid darken($action-menu-bg-c, 10%)
 	height: 40px
 	span, i
-		color: white
+		color: $action-menu-text-c
 		font-size: 20px
 		line-height: 40px
 div.action-menu-item:hover
-	background: lighten($action-menu-c, 10%)
+	background: darken($action-menu-bg-c, 10%)
 	span, i
-		color: darken($action-menu-c, 10%)
+		color: lighten($action-menu-text-c, 10%)
+
+div.action-menu-item-active:after
+	content: ""
+	position: absolute
+	width: 4px
+	height: 40px
+	top: 0
+	right: 0
+	background: #08b5af
 

@@ -27,9 +27,9 @@ angular.module("common.directive", [])
 				setElementHeight();
 			});
 
-			$timeout(function(){
+			$(document).ready(function(){
 				setElementHeight();
-			}, 0);
+			});
 
 			function setElementHeight() {
 				var pos = element.offset();

@@ -22,8 +22,15 @@
 //= require_tree ./angular
 //= require_tree .
 
-
-var headingColours = {
-    friendships: "#36b59e",
-    edit_profile: "#8f5cb5"
+var viewable_sections = {
+	friendships: {
+		name: "friendships",
+		headingText: "Acquaintances",
+		headingColour: "#36b59e"
+	},
+	edit_profile: {
+		name: "edit_profile",
+		headingText: "Who Are You?",
+		headingColour: "#8f5cb5"
+	}
 };

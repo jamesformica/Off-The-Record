@@ -1,0 +1,22 @@
+angular.module("layout.directive", [])
+
+.directive('actionMenuItem', function() {
+	return {
+
+		restrict: 'E',
+		replace: 'true',
+		scope: {
+			icon: '@',
+			text: '@',
+			action: "&"
+		},
+		templateUrl: '<%= asset_path("action_menu_item.html") %>',
+		link: function(scope, elem, attrs) {
+			var i =3;
+		}
+
+	}
+})
+
+
+;

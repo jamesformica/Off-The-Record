@@ -1,13 +1,13 @@
-<section ng-show="viewable == 'friendships'" class="animated fadeIn">
+<section ng-show="current_viewable === sections.friendships.name">
 
 		<div class="container slate-wrapper">
 			<!-- heading -->
-			<div class="row" background-colour color="{{ getHeadingColour('friendships') }}">
-				<div class="col-xs-12 slate-heading"><span>Acquaintances</span></div>
+			<div class="row" background-colour color="{{ sections.friendships.headingColour }}">
+				<div class="col-xs-12 slate-heading"><span>{{ sections.friendships.headingText }}</span></div>
 			</div>
 
 			<!-- Search -->
-			<div class="row" style="background: {{ getHeadingColour('friendships') }}">
+			<div class="row" style="background: {{ sections.friendships.headingColour }}">
 				<div class="col-xs-10">
 					<div class="slate-heading-input">
 						<form name="addFriend" ng-submit="send_friend_request(friend_request)">

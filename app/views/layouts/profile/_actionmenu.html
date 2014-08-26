@@ -1,28 +1,13 @@
+<div class="action-menu-backdrop animated fadeIn" ng-show="action_menu_active" y-to-bottom ng-click="setCurrentViewable(current_viewable)"></div>
+
 <div class="container action-menu-wrapper animated slideInLeft" ng-show="action_menu_active" y-to-bottom>
-	<div class="row action-menu-item" ng-click="signOut()">
-		<div class="col-xs-3">
-			<i class="fa fa-sign-out"></i>
-		</div>
-		<div class="col-xs-9">
-			<span>Sign Out</span>
-		</div>
-	</div>
+	
+	<h1>OFF THE RECORD</h1>
 
-	<div class="row action-menu-item" ng-click="viewable = 'edit_profile'">
-		<div class="col-xs-3">
-			<i class="fa fa-pencil"></i>
-		</div>
-		<div class="col-xs-9">
-			<span>Edit Profile</span>
-		</div>
-	</div>
+	<action-menu-item icon="pencil" text="Edit Profile" action="setCurrentViewable(sections.edit_profile.name)"></action-menu-item>
 
-	<div class="row action-menu-item" ng-click="viewable = 'friendships'">
-		<div class="col-xs-3">
-			<i class="fa fa-users"></i>
-		</div>
-		<div class="col-xs-9">
-			<span>View Friends</span>
-		</div>
-	</div>
+	<action-menu-item icon="users" text="View Friends" action="setCurrentViewable(sections.friendships.name)"></action-menu-item>
+
+	<action-menu-item icon="sign-out" text="Log Out" action="signOut()"></action-menu-item>
+
 </div>

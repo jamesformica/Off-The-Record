@@ -2,8 +2,9 @@ angular.module("profile.controller", [])
 
 .controller('ProfileController', ['$scope', 'User', 'Redirect', 'Session', 'Friendship', function ($scope, User, Redirect, Session, Friendship) {
 
-	$scope.action_menu_action = false;
-	$scope.viewable = 'edit_profile'
+	$scope.action_menu_active = false;
+	$scope.sections = viewable_sections;
+	$scope.current_viewable = viewable_sections.edit_profile.name;
 
 	$scope.friend_request = {
 		username: ""
@@ -75,8 +76,9 @@ angular.module("profile.controller", [])
 		});
 	}
 
-	$scope.getHeadingColour = function(heading) {
-		return eval("headingColours." + heading);
+	$scope.setCurrentViewable = function(name) {
+		$scope.current_viewable = name;
+		$scope.action_menu_active = false;
 	}
 
 }])
