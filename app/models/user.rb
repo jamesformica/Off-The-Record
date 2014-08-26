@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
 
+	has_many :user_questions
+	has_many :questions, :through => :user_questions
+
 	has_many :friendships
 	has_many :friends, :through => :friendships
 
