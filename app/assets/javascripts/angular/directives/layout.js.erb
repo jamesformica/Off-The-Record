@@ -8,15 +8,35 @@ angular.module("layout.directive", [])
 		scope: {
 			icon: '@',
 			text: '@',
-			action: "&"
+			action: '&'
 		},
-		templateUrl: '<%= asset_path("action_menu_item.html") %>',
-		link: function(scope, elem, attrs) {
-			var i =3;
-		}
-
+		templateUrl: '<%= asset_path("action_menu_item.html") %>'
 	}
 })
 
+.directive('friendship', function() {
+	return {
+		restrict: 'E',
+		replace: 'true',
+		scope: {
+			friend: '=',
+			destroy: '&'
+		},
+		templateUrl: '<%= asset_path("friendship.html") %>'
+	}
+})
+
+.directive('friendshipRequest', function() {
+	return {
+		restrict: 'E',
+		replace: 'true',
+		scope: {
+			request: '=',
+			accept: '&',
+			decline: '&'
+		},
+		templateUrl: '<%= asset_path("friendship_request.html") %>'
+	}
+})
 
 ;

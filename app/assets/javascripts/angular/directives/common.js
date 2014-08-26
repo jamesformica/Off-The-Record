@@ -17,7 +17,6 @@ angular.module("common.directive", [])
 
 })
 
-
 .directive('yToBottom', ['$timeout', function($timeout) {
 	return {
 		restrict: 'A',
@@ -78,6 +77,4 @@ angular.module("common.directive", [])
 		}
 	}
 }])
-
-
 ;
