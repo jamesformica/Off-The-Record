@@ -13,6 +13,7 @@
 //= require jquery
 //= require angular
 //= require angular-route
+//= require angular-rails-templates
 //= require lodash
 //= require restangular.min
 //= require arctext.js
@@ -20,6 +21,7 @@
 //= require toastr
 //= require underscore
 //= require_tree ./angular
+//= require_tree ../templates
 //= require_tree .
 
 var viewable_sections = {

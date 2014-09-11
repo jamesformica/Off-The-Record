@@ -1,7 +1,7 @@
 angular.module("profile.controller", [])
 
-.controller('ProfileSetupController', ['$rootScope', '$location' ,'$scope', 'User', 
-	function ($rootScope, $location, $scope, User) {
+.controller('ProfileSetupController', ['$rootScope', '$location' ,'$scope', 'User', 'Session', 'Redirect',
+	function ($rootScope, $location, $scope, User, Session, Redirect) {
 
 		$scope.action_menu_active = false;
 		$scope.sections = viewable_sections;

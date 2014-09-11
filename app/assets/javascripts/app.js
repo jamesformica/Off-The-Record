@@ -1,13 +1,11 @@
-angular.module("offtherecord", [
+angular.module("publicapp", [
+	'templates',
 	'ngRoute',
 	'restangular',
 	'user.service',
 	'session.service',
-	'friendship.service',
-	'question.service',
 	'sign-up.controller',
 	'sign-in.controller',
-	'profile.controller',
 	'common.service',
 	'common.directive',
 	'layout.directive'
@@ -20,6 +18,7 @@ angular.module("offtherecord", [
 
 
 angular.module("profileapp", [
+	'templates',
 	'ngRoute',
 	'restangular',
 	'user.service',
@@ -36,19 +35,19 @@ angular.module("profileapp", [
 	RestangularProvider.setBaseUrl('/api/v1');
 
 	$routeProvider.when('/', {
-		templateUrl: '/assets/profile/friendships_view.html',
+		templateUrl: 'profile/friendships_view.html',
 		controller: 'FriendshipsController'
 	})
 	.when('/friendships', {
-		templateUrl: '/assets/profile/friendships_view.html',
+		templateUrl: 'profile/friendships_view.html',
 		controller: 'FriendshipsController'
 	})
 	.when('/questions', {
-		templateUrl: '/assets/profile/questions_view.html',
+		templateUrl: 'profile/questions_view.html',
 		controller: 'QuestionsController'
 	})
 	.when('/editprofile', {
-		templateUrl: '/assets/profile/edit_profile_view.html',
+		templateUrl: 'profile/edit_profile_view.html',
 		controller: 'EditProfileController'
 	})
 	.otherwise({ redirectTo: "/"});
