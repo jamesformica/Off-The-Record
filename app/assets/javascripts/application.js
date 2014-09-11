@@ -23,13 +23,18 @@
 //= require_tree .
 
 var viewable_sections = {
+	questions: {
+		name: "questions",
+		headingText: "Answer Thy",
+		headingColour: "#30e0ae"
+	},
 	friendships: {
 		name: "friendships",
 		headingText: "Acquaintances",
 		headingColour: "#36b59e"
 	},
 	edit_profile: {
-		name: "edit_profile",
+		name: "editprofile",
 		headingText: "Who Are You?",
 		headingColour: "#8f5cb5"
 	}

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   match '/sign_up', to: 'users#new', via: 'get'
   match '/profile', to: 'users#show', via: 'get'
+  match '/profile/*path', to: 'users#show', via: 'get'
   
   resources :users, only: [:new, :show]
 
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
       resources :users, only: [:new, :create, :update, :destroy]
       resources :friendship_requests, only: [:index, :create, :destroy]
       resources :friendships, only: [:create, :destroy]
+      resources :questions, only: [:new, :create]
 
       match 'signout', to: 'sessions#destroy', via: 'delete'
       match 'users/current_user', to: 'users#get_current_user', via: 'get'

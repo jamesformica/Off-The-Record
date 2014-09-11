@@ -39,4 +39,16 @@ angular.module("layout.directive", [])
 	}
 })
 
+.directive('questionFriendRow', function() {
+	return {
+		restrict: 'E',
+		replace: 'true',
+		scope: {
+			friend: '=',
+			toggle: '&'
+		},
+		templateUrl: '<%= asset_path("question_friend_row.html") %>'
+	}
+})
+
 ;

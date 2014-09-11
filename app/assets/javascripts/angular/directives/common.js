@@ -27,7 +27,10 @@ angular.module("common.directive", [])
 			});
 
 			$(document).ready(function(){
-				setElementHeight();
+				var t = setTimeout( function() {
+					setElementHeight();
+					clearTimeout(t);
+				}, 0);
 			});
 
 			function setElementHeight() {

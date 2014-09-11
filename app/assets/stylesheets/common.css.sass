@@ -6,7 +6,7 @@ body
 	padding: 0
 	font-family: $normal-font
 	font-weight: 300
-	color: darken($primary-color, 20%)
+	color: black
 	font-size: $default-font-size
 	background-image: url('/assets/cake-bg-drk.png')
 	background-repeat: repeat
@@ -20,10 +20,10 @@ a
 	margin: 0 10px 0 10px
 
 h4
-	font-size: 1.4em
-	font-weight: normal
+	font-size: 2.2em
+	font-weight: 300
 	margin: 4px 0 4px 0
-	color: $primary-color
+	color: black
 
 p
 	font-size: 1.2em
@@ -74,6 +74,13 @@ input[type="text"], input[type="password"], input[type="email"]
 	color: black
 	
 
+textarea
+	position: relative
+	width: 100%
+	padding: 2px
+	border: $input-border-style
+	border-radius: $input-border-radius
+	font-size: 2.2em
 
 /* BUTTONS */
 .otr-btn
@@ -148,6 +155,21 @@ span.otr-logo
 	color: white
 	text-shadow: 1px 1px 6px black
 	padding: 10px 50px 0 50px
+
+
+$ok-c: #21AABD
+$cancel-c: #FF6B6B
+i.btn-ok
+	+i-btn($ok-c)
+
+i.btn-ok:hover
+	+i-btn(fade-out($ok-c, 0.3))
+
+i.btn-cancel
+	+i-btn($cancel-c)
+
+i.btn-cancel:hover
+	+i-btn(fade-out($cancel-c, 0.3))
 
 
 

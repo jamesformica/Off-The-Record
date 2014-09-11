@@ -3,6 +3,7 @@ angular.module("user.service", [ 'restangular' ])
 .factory('User', ['Restangular', function(Restangular) {
 	
 	var entrypoint = "users";
+	var current_user;
 
 	function User() {
 		this.service = Restangular.service(entrypoint);
@@ -22,6 +23,16 @@ angular.module("user.service", [ 'restangular' ])
 
 	User.prototype.update = function(user) {
 		return this.service.one(user.id).patch(user);
+	}
+
+	User.prototype.getCurrentUser = function() {
+		if (!current_user) {
+			this.current().then(function(data) {
+				current_user = data.user;
+				return current_user; //this wont work
+			});
+		}
+		return current_user;
 	}
 
 	return new User;

@@ -1,11 +1,11 @@
 class StaticPagesController < ApplicationController
 
-	before_action :redirect_to_profile, except: :profile
+	#before_action :redirect_to_profile, except: :profile
 
 	def index
 	end
 
-	def signup
+	def test
 	end
 
 	def profile

@@ -3,9 +3,7 @@ angular.module("sign-up.controller", [])
 .controller('SignUpController', ['$scope', 'Redirect', 'User', function ($scope, Redirect, User) {
 
 	User.new().then(function(data){
-		$scope.newuser = {
-			user: data
-		};
+		$scope.newuser = data;
 	}, function(response) {
 		//big problem
 	});

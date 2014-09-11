@@ -1,0 +1,43 @@
+<div class="container slate-wrapper">
+	<div class="row" background-colour color="{{ sections.questions.headingColour }}">
+		<div class="col-xs-12 slate-heading"><span>{{ sections.questions.headingText }}</span></div>
+	</div>
+
+	<div class="row slate-content" y-to-bottom>
+
+		<div class="col-xs-12">
+
+
+			<section ng-init="step='q'" ng-show="step == 'q'">
+				<div class="row">
+					<div class="col-xs-12 slate-sub-heading"><span>What you wanna ask?</span></div>
+				</div>
+
+				<i class="fa fa-times btn-cancel"></i>
+				<i class="fa fa-arrow-right btn-ok" ng-click="step = 'f'"></i>
+				
+				<h4>Your Question</h4>
+				<textarea rows="2" cols="50" style="width: 100%;" ng-model="new_question.question.question"></textarea>
+
+				<h4>Your Answer</h4>
+				<textarea rows="2" cols="50" style="width: 100%;" ng-model="new_question.question.answer"></textarea>
+				
+			</section>
+
+			<section ng-show="step == 'f'">
+				<div class="row">
+					<div class="col-xs-12 slate-sub-heading"><span>Who you gonna ask?</span></div>
+				</div>
+
+				<i class="fa fa-times btn-cancel" ng-click="step = 'q'"></i>
+				<i class="fa fa-arrow-right btn-ok" ng-click="createQuestion(new_question)"></i>
+				
+				<question-friend-row ng-repeat="friendship in current_user.friendships" friend="friendship" toggle="addFriendToQuestion(friendship)"></question-friend-row>
+
+
+				
+			</section>
+
+		</div>
+	</div>
+</div>

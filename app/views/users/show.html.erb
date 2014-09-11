@@ -1,11 +1,18 @@
-<section ng-controller="ProfileController">
+<section ng-app="profileapp" ng-controller="ProfileSetupController">
 
 
 	<%= render "layouts/profile/actionbar" %>
 	<%= render "layouts/profile/actionmenu" %>
 
-	<%= render "layouts/profile/friendships" %>
-	<%= render "layouts/profile/edit_profile" %>
+	<div ng-view>
+		
+	</div>
+
+	<%# render "layouts/profile/questions" %>
+	<%# render "layouts/profile/edit_profile" %>
+
+
+	
 
 
 </section>

@@ -4,6 +4,7 @@ angular.module("offtherecord", [
 	'user.service',
 	'session.service',
 	'friendship.service',
+	'question.service',
 	'sign-up.controller',
 	'sign-in.controller',
 	'profile.controller',
@@ -14,15 +15,45 @@ angular.module("offtherecord", [
 
 .config(['RestangularProvider', '$routeProvider', function (RestangularProvider, $routeProvider) {
 	RestangularProvider.setBaseUrl('/api/v1');
+}])
+;
 
-	$routeProvider.when('/profile', {
-		controller: 'ProfileController1'
-	});
 
-	$routeProvider.when('/chicken', {
-		controller: 'ProfileController'
-	});
+angular.module("profileapp", [
+	'ngRoute',
+	'restangular',
+	'user.service',
+	'session.service',
+	'friendship.service',
+	'question.service',
+	'profile.controller',
+	'common.service',
+	'common.directive',
+	'layout.directive'
+	])
+
+.config(['RestangularProvider', '$routeProvider', function (RestangularProvider, $routeProvider) {
+	RestangularProvider.setBaseUrl('/api/v1');
+
+	$routeProvider.when('/', {
+		templateUrl: '/assets/profile/friendships_view.html',
+		controller: 'FriendshipsController'
+	})
+	.when('/friendships', {
+		templateUrl: '/assets/profile/friendships_view.html',
+		controller: 'FriendshipsController'
+	})
+	.when('/questions', {
+		templateUrl: '/assets/profile/questions_view.html',
+		controller: 'QuestionsController'
+	})
+	.when('/editprofile', {
+		templateUrl: '/assets/profile/edit_profile_view.html',
+		controller: 'EditProfileController'
+	})
+	.otherwise({ redirectTo: "/"});
 
 }])
+
 
 ;

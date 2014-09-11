@@ -1,0 +1,9 @@
+<div class="row slate-item" ng-class="{'slate-item-highlight' : check}" ng-click="toggle(); check = !check" ng-init="check = false">
+	<div class="col-xs-8 fr-name">
+		<span>{{friend.friend_username}}</span>
+	</div>
+	<div class="col-xs-4 q-check">
+		<i class="fa fa-square-o" ng-show="check == false"></i>
+		<i class="fa fa-check-square-o q-checked" ng-show="check == true"></i>
+	</div>
+</div>
