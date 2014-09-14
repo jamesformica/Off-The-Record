@@ -10,11 +10,11 @@ angular.module("layout.directive", [])
 			text: '@',
 			action: '&'
 		},
-		templateUrl: 'action_menu_item.html'
+		templateUrl: 'profile/rows/action_menu_item.html'
 	}
 })
 
-.directive('friendship', function() {
+.directive('friendshipRow', function() {
 	return {
 		restrict: 'E',
 		replace: 'true',
@@ -22,11 +22,11 @@ angular.module("layout.directive", [])
 			friend: '=',
 			destroy: '&'
 		},
-		templateUrl: 'friendship.html'
+		templateUrl: 'profile/rows/friendship_row.html'
 	}
 })
 
-.directive('friendshipRequest', function() {
+.directive('friendshipRequestRow', function() {
 	return {
 		restrict: 'E',
 		replace: 'true',
@@ -35,11 +35,11 @@ angular.module("layout.directive", [])
 			accept: '&',
 			decline: '&'
 		},
-		templateUrl: 'friendship_request.html'
+		templateUrl: 'profile/rows/friendship_request_row.html'
 	}
 })
 
-.directive('questionFriendRow', function() {
+.directive('newQuestionAddFriendRow', function() {
 	return {
 		restrict: 'E',
 		replace: 'true',
@@ -47,7 +47,7 @@ angular.module("layout.directive", [])
 			friend: '=',
 			toggle: '&'
 		},
-		templateUrl: 'question_friend_row.html'
+		templateUrl: 'profile/rows/new_question_add_friend_row.html'
 	}
 })
 

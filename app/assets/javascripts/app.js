@@ -35,19 +35,23 @@ angular.module("profileapp", [
 	RestangularProvider.setBaseUrl('/api/v1');
 
 	$routeProvider.when('/', {
-		templateUrl: 'profile/friendships_view.html',
+		templateUrl: 'profile/pages/questions_view.html',
 		controller: 'FriendshipsController'
 	})
 	.when('/friendships', {
-		templateUrl: 'profile/friendships_view.html',
+		templateUrl: 'profile/pages/friendships_view.html',
 		controller: 'FriendshipsController'
 	})
 	.when('/questions', {
-		templateUrl: 'profile/questions_view.html',
+		templateUrl: 'profile/pages/questions_view.html',
 		controller: 'QuestionsController'
 	})
+	.when('/questions/new', {
+		templateUrl: 'profile/pages/questions_new_view.html',
+		controller: 'QuestionsNewController'
+	})
 	.when('/editprofile', {
-		templateUrl: 'profile/edit_profile_view.html',
+		templateUrl: 'profile/pages/edit_profile_view.html',
 		controller: 'EditProfileController'
 	})
 	.otherwise({ redirectTo: "/"});

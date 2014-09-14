@@ -1,6 +1,6 @@
 <div class="container slate-wrapper">
-	<div class="row" background-colour color="{{ sections.questions.headingColour }}">
-		<div class="col-xs-12 slate-heading"><span>{{ sections.questions.headingText }}</span></div>
+	<div class="row" background-colour color="{{ sections.questions_new.headingColour }}">
+		<div class="col-xs-12 slate-heading"><span>{{ sections.questions_new.headingText }}</span></div>
 	</div>
 
 	<div class="row slate-content" y-to-bottom>
@@ -32,9 +32,7 @@
 				<i class="fa fa-times btn-cancel" ng-click="step = 'q'"></i>
 				<i class="fa fa-arrow-right btn-ok" ng-click="createQuestion(new_question)"></i>
 				
-				<question-friend-row ng-repeat="friendship in current_user.friendships" friend="friendship" toggle="addFriendToQuestion(friendship)"></question-friend-row>
-
-
+				<new-question-add-friend-row ng-repeat="friendship in current_user.friendships" friend="friendship" toggle="addFriendToQuestion(friendship)"></new-question-add-friend-row>
 				
 			</section>
 

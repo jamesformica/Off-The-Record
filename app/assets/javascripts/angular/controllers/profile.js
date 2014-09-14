@@ -30,8 +30,13 @@ angular.module("profile.controller", [])
 
 	}])
 
-
 .controller('QuestionsController', ['$scope', 'Question', 
+	function ($scope, Question) {
+
+		
+	}])
+
+.controller('QuestionsNewController', ['$scope', 'Question', 
 	function ($scope, Question) {
 
 		Question.new().then(function(data) {

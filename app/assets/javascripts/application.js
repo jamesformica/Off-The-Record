@@ -26,17 +26,22 @@
 
 var viewable_sections = {
 	questions: {
-		name: "questions",
+		url: "questions",
+		headingText: "What Is Asked...",
+		headingColour: "#e03f67"
+	},
+	questions_new: {
+		url: "questions/new",
 		headingText: "Answer Thy",
 		headingColour: "#30e0ae"
 	},
 	friendships: {
-		name: "friendships",
+		url: "friendships",
 		headingText: "Acquaintances",
 		headingColour: "#36b59e"
 	},
 	edit_profile: {
-		name: "editprofile",
+		url: "editprofile",
 		headingText: "Who Are You?",
 		headingColour: "#8f5cb5"
 	}
