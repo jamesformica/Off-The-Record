@@ -4,9 +4,10 @@ div.action-bar
 	height: $action-bar-h
 	background-color: $action-bar-c
 	color: #575757
-	//border-bottom: 1px solid fade-out(#575757, 0.8)
+	//border-bottom: 2px solid fade-out(#575757, 0.6)
 	overflow: hidden
 	width: 100%
+	//box-shadow: $dark-shadow
 	i.menu
 		position: absolute
 		font-size: $action-bar-h - 10
@@ -38,7 +39,7 @@ div.slate-wrapper
 	width: $slate-w
 	max-width: $slate-max-w
 	margin: 0 auto
-	box-shadow: $mat-shadow
+	box-shadow: 2px 10px 22px rgba(0,0,0,0.2), -2px 10px 22px rgba(0,0,0,0.2)
 	background-color: white
 
 
@@ -88,7 +89,7 @@ div.slate-heading-input:after
 	right: 0
 
 
-section.slate-content
+.slate-content
 	background-color: white
 	overflow: scroll
 

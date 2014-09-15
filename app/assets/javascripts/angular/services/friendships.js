@@ -14,6 +14,10 @@ angular.module("friendship.service", [ 'restangular' ])
 		return this.request_service.one('').get();
 	}
 
+	Friendship.prototype.new_friend_request = function() {
+		return Restangular.one(request_entry + '/new').get();
+	}
+
 	Friendship.prototype.send_friend_request = function(request) {
 		return this.request_service.post(request);
 	}

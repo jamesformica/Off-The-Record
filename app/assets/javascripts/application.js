@@ -27,7 +27,7 @@
 var viewable_sections = {
 	questions: {
 		url: "questions",
-		headingText: "What Is Asked...",
+		headingText: "Questions",
 		headingColour: "#e03f67"
 	},
 	questions_new: {

@@ -33,7 +33,7 @@ angular.module("profile.controller", [])
 .controller('QuestionsController', ['$scope', 'Question', 
 	function ($scope, Question) {
 
-		
+
 	}])
 
 .controller('QuestionsNewController', ['$scope', 'Question', 
@@ -63,6 +63,10 @@ angular.module("profile.controller", [])
 .controller('FriendshipsController', ['$scope', 'Friendship',
 	function ($scope, Friendship) {
 		
+		Friendship.new_friend_request().then(function(data) {
+			$scope.friend_request =data.friendship_request;
+		});
+
 		$scope.send_friend_request = function(request) {
 			Friendship.send_friend_request(request).then(function(data) {
 				toastr.info("friend request sent");

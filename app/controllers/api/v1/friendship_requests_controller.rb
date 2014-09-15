@@ -8,8 +8,12 @@ module Api
 		class FriendshipRequestsController < ApplicationController
 			respond_to :json
 
+			def new
+				render json: FriendshipRequest.new
+			end
+
 			def create
-				toUser = User.find_by(username: request_params[:username])
+				toUser = User.find_by(username: request_params[:to_username])
 				if toUser
 					friend_req = FriendshipRequest.new(from_user_id: current_user.id, to_user_id: toUser.id)
 					if friend_req.save
@@ -18,7 +22,7 @@ module Api
 						render json: {errors: friend_req.errors.full_messages }, status: :unprocessable_entity
 					end
 				else
-					render json: { errors: ["Ain't nobody called #{request_params[:username]}"] }, status: :unprocessable_entity
+					render json: { errors: ["Ain't nobody called #{request_params[:to_username]}"] }, status: :unprocessable_entity
 				end
 			end
 
@@ -35,7 +39,7 @@ module Api
 			private
 			def request_params
 				puts params
-				params.permit(:id, :username)
+				params.permit(:id, :to_username)
 			end
 
 			
