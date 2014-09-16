@@ -8,10 +8,6 @@ module Api
 		class FriendshipRequestsController < ApplicationController
 			respond_to :json
 
-			def new
-				render json: FriendshipRequest.new
-			end
-
 			def create
 				toUser = User.find_by(username: request_params[:to_username])
 				if toUser

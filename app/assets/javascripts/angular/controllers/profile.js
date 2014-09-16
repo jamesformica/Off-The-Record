@@ -63,9 +63,9 @@ angular.module("profile.controller", [])
 .controller('FriendshipsController', ['$scope', 'Friendship',
 	function ($scope, Friendship) {
 		
-		Friendship.new_friend_request().then(function(data) {
-			$scope.friend_request =data.friendship_request;
-		});
+		$scope.friend_request = {
+			to_username: ""
+		}
 
 		$scope.send_friend_request = function(request) {
 			Friendship.send_friend_request(request).then(function(data) {

@@ -8,6 +8,10 @@ angular.module("user.service", [ 'restangular' ])
 	function User() {
 		this.service = Restangular.service(entrypoint);
 	};
+	
+	User.prototype.new = function() {
+		return Restangular.one(entrypoint + '/new').get();
+	}
 
 	User.prototype.current = function() {
 		return this.service.one('current_user').get();
@@ -15,10 +19,6 @@ angular.module("user.service", [ 'restangular' ])
 
 	User.prototype.create = function(user) {
 		return this.service.post(user);
-	}
-
-	User.prototype.new = function() {
-		return Restangular.one(entrypoint + '/new').get();
 	}
 
 	User.prototype.update = function(user) {
