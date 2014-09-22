@@ -84,9 +84,13 @@ textarea
 
 /* BUTTONS */
 .otr-btn
+	position: relative
+	display: block
+	outline: 0
 	padding: 6px 14px 6px 14px
 	border: 0
-	border-radius: 2px
+	border-bottom: 4px solid transparent
+	border-radius: 4px
 	color: white
 	cursor: pointer
 
@@ -96,6 +100,12 @@ $btn-secondary-c: #E37C76
 .otr-btn-primary
 	@extend .otr-btn
 	background: $btn-primary-c
+	border-bottom-color: darken($btn-primary-c, 10%)
+
+.otr-btn-primary:active
+	border-bottom: 0
+	border-top: 4px solid transparent
+	top: 4px
 
 .otr-btn-primary:hover
 	background: lighten($btn-primary-c, $btn-hover-amt)
@@ -103,6 +113,12 @@ $btn-secondary-c: #E37C76
 .otr-btn-secondary
 	@extend .otr-btn
 	background: $btn-secondary-c
+	border-bottom-color: darken($btn-secondary-c, 10%)
+
+.otr-btn-secondary:active
+	border-bottom: 0
+	border-top: 4px solid transparent
+	top: 4px
 
 .otr-btn-secondary:hover
 	background: lighten($btn-secondary-c, $btn-hover-amt)
