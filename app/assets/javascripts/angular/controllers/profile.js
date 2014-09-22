@@ -10,7 +10,6 @@ angular.module("profile.controller", [])
 			"positionClass": "toast-bottom-left"
 		};
 
-		//set up user and other empty templates
 		User.current().then(function(data) {
 			$scope.current_user = data.user;
 		});
@@ -30,11 +29,13 @@ angular.module("profile.controller", [])
 
 	}])
 
+
 .controller('QuestionsController', ['$scope', 'Question', 
 	function ($scope, Question) {
 
 
 	}])
+
 
 .controller('QuestionsNewController', ['$scope', 'Question', 
 	function ($scope, Question) {
@@ -60,9 +61,22 @@ angular.module("profile.controller", [])
 
 	}])
 
+
 .controller('FriendshipsController', ['$scope', 'Friendship',
 	function ($scope, Friendship) {
 		
+
+		//get friend requests
+		//sort them
+		//turn them into a new object with boolean to add
+
+
+		function compareFriends(friend_a, friend_b)
+		{
+			//if (friend_a.username)
+		}
+
+
 		$scope.friend_request = {
 			to_username: ""
 		}
@@ -86,7 +100,6 @@ angular.module("profile.controller", [])
 			});
 		}
 
-
 		$scope.accept_friend_request = function(request) {
 			Friendship.accept_friend_request(request).then(function(data) {
 				toastr.info("friend request accepted");
@@ -106,6 +119,7 @@ angular.module("profile.controller", [])
 
 	}])
 
+
 .controller('EditProfileController', ['$scope', 'User', 
 	function ($scope, User) {
 
@@ -115,6 +129,7 @@ angular.module("profile.controller", [])
 			User.update(current_user).then(function(data) {
 				toastr.info("successfully updated information");
 				$scope.$parent.current_user = data.user;
+				$scope.$parent.setCurrentViewable($scope.$parent.sections.questions.url);
 			}, function(response) {
 				_.map(response.data.errors, function(error) { toastr.warning(error); });
 			});

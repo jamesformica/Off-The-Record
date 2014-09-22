@@ -25,16 +25,6 @@ angular.module("user.service", [ 'restangular' ])
 		return this.service.one(user.id).patch(user);
 	}
 
-	User.prototype.getCurrentUser = function() {
-		if (!current_user) {
-			this.current().then(function(data) {
-				current_user = data.user;
-				return current_user; //this wont work
-			});
-		}
-		return current_user;
-	}
-
 	return new User;
 }])
 
