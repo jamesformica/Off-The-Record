@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 
+	has_many :answers
 	has_many :user_questions
 	has_many :questions, :through => :user_questions
 
