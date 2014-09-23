@@ -53,12 +53,12 @@ angular.module("profile.controller", [])
 
 		$scope.createQuestion = function(question) {
 			Question.create(question).then(function(data) {
-				var i = 3;
+				$scope.current_user.questions.push(data.question);
+				$scope.setCurrentViewable($scope.sections.questions.url);
 			}, function(response) {
-				var i  = 4;
+				_.map(response.data.errors, function(error) { toastr.warning(error); });
 			});
 		}
-
 	}])
 
 
@@ -128,8 +128,8 @@ angular.module("profile.controller", [])
 		$scope.update_information = function(current_user) {
 			User.update(current_user).then(function(data) {
 				toastr.info("successfully updated information");
-				$scope.$parent.current_user = data.user;
-				$scope.$parent.setCurrentViewable($scope.$parent.sections.questions.url);
+				$scope.current_user = data.user;
+				$scope.setCurrentViewable($scope.sections.questions.url);
 			}, function(response) {
 				_.map(response.data.errors, function(error) { toastr.warning(error); });
 			});
