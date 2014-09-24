@@ -11,6 +11,7 @@ angular.module("profile.controller", [])
 		};
 
 		User.current().then(function(data) {
+			//data.user.friendships = _.sortBy(data.user.friendships, function(friend) { return friend.friend_username; })
 			$scope.current_user = data.user;
 		});
 
@@ -33,9 +34,6 @@ angular.module("profile.controller", [])
 .controller('QuestionsController', ['$scope', 'Question', '$location',
 	function ($scope, Question, $location) {
 
-		$scope.newQuestion = function() {
-			$location.path("/" + $scope.sections.questions_new.url);
-		}
 
 	}])
 

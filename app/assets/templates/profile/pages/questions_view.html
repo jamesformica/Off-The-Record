@@ -1,4 +1,5 @@
 <div class="container slate-wrapper">
+
 	<!-- Heading -->
 	<div class="row" background-colour color="{{ sections.questions.headingColour }}">
 		<div class="col-xs-12 slate-heading"><span>{{ sections.questions.headingText }}</span></div>
@@ -7,7 +8,7 @@
 	<!-- New Question -->
 	<div class="row" style="padding: 10px 10px 0 0">
 		<div class="col-xs-12" style="text-align:right">
-			<button class="otr-btn-primary md" style="display: inline" ng-click="newQuestion()">
+			<button class="otr-btn-primary md" style="display: inline" ng-click="setCurrentViewable(sections.questions_new.url)">
 				<i class="fa fa-plus"></i>&nbsp;&nbsp;New
 			</button>
 		</div>
@@ -20,7 +21,12 @@
 			<table class="qu-question" ng-repeat="question in current_user.questions">
 				<tr class="row qu-question-row">
 					<td class="col-xs-10 qu-question-row-question"><p>{{question.question}}</p></td>
-					<td class="col-xs-2 qu-question-row-status"><i class="fa fa-circle"></i></td>
+
+					<td class="col-xs-2 qu-question-row-status">
+						<i class="fa fa-circle-o" ng-hide="question.completely_answered" ng-class="question.answered ? 'qu-waiting' : 'qu-answer'"></i>
+
+						<i class="fa fa-circle" ng-show="question.completely_answered" ng-class="question.viewed ? 'qu-viewed' : 'qu-ready' "></i>
+					</td>
 				</tr>
 				<tr class="row qu-to-row">
 					<td class="col-xs-10 qu-to-row-to">

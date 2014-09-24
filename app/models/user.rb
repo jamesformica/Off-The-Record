@@ -5,8 +5,6 @@ class User < ActiveRecord::Base
 	has_many :questions, :through => :user_questions
 
 	has_many :friendships
-	has_many :friends, :through => :friendships
-
 	has_many :friendship_requests, :foreign_key => 'to_user_id'
 
 	has_secure_password

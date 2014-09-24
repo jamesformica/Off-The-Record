@@ -7,4 +7,6 @@ class Question < ActiveRecord::Base
 	validates :question, presence: true, length: { minimum: 1 }
 	validates :owner_id, presence: true
 
+	#validates_with QuestionValidator
+
 end

@@ -1,4 +1,5 @@
 <div class="container slate-wrapper">
+	
 	<div class="row" background-colour color="{{ sections.questions_new.headingColour }}">
 		<div class="col-xs-12 slate-heading"><span>{{ sections.questions_new.headingText }}</span></div>
 	</div>
@@ -9,9 +10,6 @@
 
 
 			<section ng-init="step='q'" ng-show="step == 'q'">
-				<div class="row">
-					<div class="col-xs-12 slate-sub-heading"><span>What you wanna ask?</span></div>
-				</div>
 
 				<table style="margin: 20px 0">
 					<tr>
@@ -28,18 +26,15 @@
 					</tr>
 				</table>
 				
-				<h4>Your Question</h4>
+				<h4>Question</h4>
 				<textarea rows="2" cols="50" style="width: 100%;" ng-model="new_question.question"></textarea>
-
+				<br/><br/>
 				<h4>Your Answer</h4>
 				<textarea rows="2" cols="50" style="width: 100%;" ng-model="new_question.answer"></textarea>
 
 			</section>
 
 			<section ng-show="step == 'f'">
-				<div class="row">
-					<div class="col-xs-12 slate-sub-heading"><span>Who you gonna ask?</span></div>
-				</div>
 
 				<table style="margin: 20px 0">
 					<tr>
@@ -59,10 +54,6 @@
 				<new-question-add-friend-row ng-repeat="friendship in current_user.friendships" friend="friendship" toggle="addFriendToQuestion(friendship)"></new-question-add-friend-row>
 				
 			</section>
-
-			
-			
-			
 
 		</div>
 	</div>
