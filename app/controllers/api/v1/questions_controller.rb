@@ -3,10 +3,6 @@ module Api
 
 		class QuestionsController < ApplicationController
 
-			def new
-				render json: Question.new
-			end
-
 			def create
 
 				question = Question.new(question: question_params[:question], owner_id: current_user.id)
@@ -16,8 +12,9 @@ module Api
 					current_user.answers.create(question_id: question.id, answer: question_params[:answer])
 
 					question_params[:to].each do |friend|
-						UserQuestion.create(user_id: friend[:friend_id], question_id: question.id)
-						Answer.create(user_id: friend[:friend_id], question_id: question.id)
+						qFriend = User.find(friend[:friend_id])
+						qFriend.user_questions.create(question_id: question.id)
+						qFriend.answers.create(question_id: question.id)
 					end
 
 					render json: question, status: :ok

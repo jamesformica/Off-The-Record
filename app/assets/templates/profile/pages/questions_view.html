@@ -6,10 +6,18 @@
 	<div class="row slate-content" y-to-bottom>
 		<div class="col-xs-12">
 
-
-			<div ng-repeat="question in current_user.questions">
-				<h2>{{question.question}}</h2>
-			</div>
+			<table class="qu-question" ng-repeat="question in current_user.questions">
+				<tr class="row qu-question-row">
+					<td class="col-xs-10 qu-question-row-question"><p>{{question.question}}</p></td>
+					<td class="col-xs-2 qu-question-row-status"><i class="fa fa-circle"></i></td>
+				</tr>
+				<tr class="row qu-to-row">
+					<td class="col-xs-10 qu-to-row-to">
+						<span ng-repeat="answer in question.answers">{{answer.user_username}}</span>
+					</td>
+					<td class="col-xs-2 qu-to-row-owner"><i class="fa fa-user" ng-show="question.is_owner"></i></td>
+				</tr>
+			</table>
 			
 		</div>
 	</div>

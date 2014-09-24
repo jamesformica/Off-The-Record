@@ -14,3 +14,44 @@ $fr-action-s: 30px
 		margin-right: 6px
 	i.q-checked
 		color: #6ed5e0
+
+
+
+
+// Questions - show
+table.qu-question
+	padding: 0
+	width: 100%
+	border-bottom: 1px solid #e6e6e6
+
+	tr.qu-question-row
+		height: 40px
+		td.qu-question-row-question
+			overflow-x: hidden
+			p
+				font-size: 25px
+			p:first-letter
+				font-size: 40px
+				text-transform: uppercase
+		td.qu-question-row-status
+			text-align: right
+			i
+				font-size: 20px
+
+	tr.qu-to-row
+		height: 30px
+
+		td.qu-to-row-to
+			span
+				font-size: 16px
+			span:after
+				content: ", "
+			span:last-child:after
+				content: ""
+
+		td.qu-to-row-owner
+			text-align: right
+			padding-bottom: 0
+			i
+				font-size: 20px
+				color: #d2d2d2

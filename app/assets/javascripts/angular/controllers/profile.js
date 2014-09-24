@@ -40,19 +40,25 @@ angular.module("profile.controller", [])
 .controller('QuestionsNewController', ['$scope', 'Question', 
 	function ($scope, Question) {
 
-		Question.new().then(function(data) {
-			$scope.new_question = data;
-		});
+		$scope.new_question = {
+			question: "",
+			answer: "",
+			to: []
+		};
 
 		$scope.addFriendToQuestion = function(friend) {
-			if (_.contains($scope.new_question.question.to, friend))
-				$scope.new_question.question.to = _.without($scope.new_question.question.to, friend);
+			if (_.contains($scope.new_question.to, friend))
+				$scope.new_question.to = _.without($scope.new_question.to, friend);
 			else 
-				$scope.new_question.question.to.push(friend);
+				$scope.new_question.to.push(friend);
 		}
 
 		$scope.createQuestion = function(question) {
-			Question.create(question).then(function(data) {
+			//need to create wrapper funciton
+			var newQuestion = {
+				question: question
+			}
+			Question.create(newQuestion).then(function(data) {
 				$scope.current_user.questions.push(data.question);
 				$scope.setCurrentViewable($scope.sections.questions.url);
 			}, function(response) {
