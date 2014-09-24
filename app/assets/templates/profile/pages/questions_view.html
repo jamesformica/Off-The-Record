@@ -1,7 +1,7 @@
 <div class="container slate-wrapper">
 	<div class="row" background-colour color="{{ sections.questions.headingColour }}">
 		<div class="col-xs-12 slate-heading"><span>{{ sections.questions.headingText }}</span></div>
-		<a href="#/{{sections.questions_new.url}}"><i class="fa fa-plus fr-add" ng-click="send_friend_request(friend_request)"></i></a>
+		<a href="#/{{sections.questions_new.url}}"><i class="fa fa-plus fr-add"></i></a>
 	</div>
 	<div class="row slate-content" y-to-bottom>
 		<div class="col-xs-12">
@@ -13,7 +13,7 @@
 				</tr>
 				<tr class="row qu-to-row">
 					<td class="col-xs-10 qu-to-row-to">
-						<span ng-repeat="answer in question.answers">{{answer.user_username}}</span>
+						<span ng-repeat="answer in question.answers">{{answer.user_username == current_user.username ? "you" : answer.user_username}}</span>
 					</td>
 					<td class="col-xs-2 qu-to-row-owner"><i class="fa fa-user" ng-show="question.is_owner"></i></td>
 				</tr>
