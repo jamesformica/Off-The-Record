@@ -8,6 +8,7 @@ angular.module("layout.directive", [])
 		scope: {
 			icon: '@',
 			text: '@',
+			color: '@',
 			action: '&'
 		},
 		templateUrl: 'profile/rows/action_menu_item.html'
