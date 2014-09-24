@@ -30,9 +30,12 @@ angular.module("profile.controller", [])
 	}])
 
 
-.controller('QuestionsController', ['$scope', 'Question', 
-	function ($scope, Question) {
+.controller('QuestionsController', ['$scope', 'Question', '$location',
+	function ($scope, Question, $location) {
 
+		$scope.newQuestion = function() {
+			$location.path("/" + $scope.sections.questions_new.url);
+		}
 
 	}])
 
@@ -71,18 +74,6 @@ angular.module("profile.controller", [])
 .controller('FriendshipsController', ['$scope', 'Friendship',
 	function ($scope, Friendship) {
 		
-
-		//get friend requests
-		//sort them
-		//turn them into a new object with boolean to add
-
-
-		function compareFriends(friend_a, friend_b)
-		{
-			//if (friend_a.username)
-		}
-
-
 		$scope.friend_request = {
 			to_username: ""
 		}

@@ -58,13 +58,14 @@ div.slate-heading
 		z-index: 100
 		+text-outline(2px, 3px, rgba(0,0,0,0.8))
 
+$heading-input-c: lighten($default-font-c, 20%)
 input.slate-heading-input
+	color: $heading-input-c !important
 	position: relative
-	color: white !important
 	font-size: 1.8em !important
 	background-color: transparent
 	border: none
-	border-bottom: 2px solid white !important
+	border-bottom: 2px solid $heading-input-c !important
 	box-sizing: border-box
 	outline: none
 	margin: 0
@@ -80,7 +81,7 @@ div.slate-heading-input:before, div.slate-heading-input:after
 	position: absolute
 	bottom: 2px
 	height: 6px
-	border-left: 2px solid white
+	border-left: 2px solid $heading-input-c
 
 div.slate-heading-input:before
 	left: 0

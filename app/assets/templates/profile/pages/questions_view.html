@@ -1,10 +1,19 @@
 <div class="container slate-wrapper">
+	<!-- Heading -->
 	<div class="row" background-colour color="{{ sections.questions.headingColour }}">
-		<div class="col-xs-10 slate-heading"><span>{{ sections.questions.headingText }}</span></div>
-		<div class="col-xs-2" style="padding-top: 10px">
-			<a href="#/{{sections.questions_new.url}}"><i class="fa fa-plus qu-new"></i></a>
+		<div class="col-xs-12 slate-heading"><span>{{ sections.questions.headingText }}</span></div>
+	</div>
+	
+	<!-- New Question -->
+	<div class="row" style="padding: 10px 10px 0 0">
+		<div class="col-xs-12" style="text-align:right">
+			<button class="otr-btn-primary md" style="display: inline" ng-click="newQuestion()">
+				<i class="fa fa-plus"></i>&nbsp;&nbsp;New
+			</button>
 		</div>
 	</div>
+	
+	<!-- Questions -->
 	<div class="row slate-content" y-to-bottom>
 		<div class="col-xs-12">
 

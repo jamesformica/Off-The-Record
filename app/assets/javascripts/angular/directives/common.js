@@ -52,7 +52,11 @@ angular.module("common.directive", [])
 		},
 		link: function (scope, element, attrs) {
 			$(document).ready(function() {
-				$(element)[0].value = scope.placeHolderValue;
+				var t = setTimeout( function() {
+					$(element)[0].value = scope.placeHolderValue;
+					clearTimeout(t);
+				}, 0);
+				
 				$(element).focusin(function() {
 					if (this.value == scope.placeHolderValue) {
 						this.value = '';
