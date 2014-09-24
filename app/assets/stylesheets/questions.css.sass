@@ -29,20 +29,22 @@ i.qu-new
 
 
 // Questions - show
+table.qu-question:last-child
+	border-bottom: 0
+
 table.qu-question
 	padding: 0
 	width: 100%
 	border-bottom: 1px solid #e6e6e6
 	cursor: pointer
-
 	tr.qu-question-row
 		height: 40px
 		td.qu-question-row-question
+			padding-top: 10px
 			overflow-x: hidden
 			p
 				font-size: 25px
 			p:first-letter
-				font-size: 40px
 				text-transform: uppercase
 		td.qu-question-row-status
 			text-align: right
@@ -51,8 +53,8 @@ table.qu-question
 
 	tr.qu-to-row
 		height: 30px
-
 		td.qu-to-row-to
+			padding-bottom: 10px
 			span
 				font-size: 16px
 				color: #b3b3b3

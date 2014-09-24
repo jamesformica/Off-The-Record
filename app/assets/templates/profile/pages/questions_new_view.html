@@ -13,15 +13,27 @@
 					<div class="col-xs-12 slate-sub-heading"><span>What you wanna ask?</span></div>
 				</div>
 
-				<i class="fa fa-times btn-cancel"></i>
-				<i class="fa fa-arrow-right btn-ok" ng-click="step = 'f'"></i>
+				<table style="margin: 20px 0">
+					<tr>
+						<td>
+							<button class="otr-btn-secondary md" ng-click="setCurrentViewable(sections.questions.url)">
+								<i class="fa fa-times"></i></i>&nbsp;&nbsp;Nope
+							</button>
+						</td>
+						<td style="padding-left: 20px">
+							<button class="otr-btn-primary md" ng-click="step = 'f'">
+								<i class="fa fa-arrow-right"></i>&nbsp;&nbsp;Onwards
+							</button>
+						</td>
+					</tr>
+				</table>
 				
 				<h4>Your Question</h4>
 				<textarea rows="2" cols="50" style="width: 100%;" ng-model="new_question.question"></textarea>
 
 				<h4>Your Answer</h4>
 				<textarea rows="2" cols="50" style="width: 100%;" ng-model="new_question.answer"></textarea>
-				
+
 			</section>
 
 			<section ng-show="step == 'f'">
@@ -29,12 +41,28 @@
 					<div class="col-xs-12 slate-sub-heading"><span>Who you gonna ask?</span></div>
 				</div>
 
-				<i class="fa fa-times btn-cancel" ng-click="step = 'q'"></i>
-				<i class="fa fa-arrow-right btn-ok" ng-click="createQuestion(new_question)"></i>
+				<table style="margin: 20px 0">
+					<tr>
+						<td>
+							<button class="otr-btn-secondary md" ng-click="step = 'q'">
+								<i class="fa fa-arrow-left"></i></i>&nbsp;&nbsp;Back it up
+							</button>
+						</td>
+						<td style="padding-left: 20px">
+							<button class="otr-btn-primary md" ng-click="createQuestion(new_question)">
+								<i class="fa fa-send"></i>&nbsp;&nbsp;Wheeeee
+							</button>
+						</td>
+					</tr>
+				</table>
 				
 				<new-question-add-friend-row ng-repeat="friendship in current_user.friendships" friend="friendship" toggle="addFriendToQuestion(friendship)"></new-question-add-friend-row>
 				
 			</section>
+
+			
+			
+			
 
 		</div>
 	</div>
