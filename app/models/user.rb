@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
 	has_many :answers
 	has_many :user_questions
-	has_many :questions, :through => :user_questions
+	has_many :questions, -> { order(created_at: :desc )}, :through => :user_questions
 
 	has_many :friendships
 	has_many :friendship_requests, :foreign_key => 'to_user_id'
