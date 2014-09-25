@@ -24,6 +24,15 @@ module Api
 				end
 			end
 
+			
+			def show
+				if Question.exists?(q_id = params[:id])
+					render json: Question.find(q_id), status: :ok
+				else
+					render json: { errors: ["Question not found"]}, status: :unprocessable_entity
+				end
+			end
+
 
 			private
 			def question_params
