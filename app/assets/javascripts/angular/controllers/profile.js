@@ -77,8 +77,9 @@ angular.module("profile.controller", [])
 .controller('QuestionsShowController', ['$scope', 'Question', 'Answer', '$location', '$routeParams',
 	function ($scope, Question, Answer, $location, $routeParams) {
 
-		$scope.current_state = null;
+		var q_id = $routeParams.id;
 
+		$scope.current_state = null;
 		$scope.states = {
 			answer: 0,
 			waiting: 1,
@@ -86,11 +87,19 @@ angular.module("profile.controller", [])
 			viewed: 3
 		}
 
-		var q_id = $routeParams.id;
 		Question.show(q_id).then(function(data) {
 			$scope.setCurrentQuestionAndState(data.question);
 		});
 
+		var timer = setInterval( function() {
+			if ($scope.current_state === $scope.states.waiting) {
+				Question.show(q_id).then(function(data) {
+					$scope.setCurrentQuestionAndState(data.question);
+				});
+			}
+		}, 7500);
+
+		
 		$scope.updateAnswer = function(answer) {
 			var answer = {
 				id: $scope.current_question.user_answer_id,
@@ -113,7 +122,6 @@ angular.module("profile.controller", [])
 
 		$scope.setCurrentQuestionAndState = function(question) {
 			$scope.current_question = question;
-
 			if (!question.answered) {
 				$scope.current_state = $scope.states.answer;
 			} else if (!question.completely_answered) {

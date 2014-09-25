@@ -4,17 +4,19 @@
 	<div class="row" background-colour color="{{ sections.questions_show.headingColour }}">
 		<div class="col-xs-12 slate-heading"><span>{{ sections.questions_show.headingText }}</span></div>
 	</div>
+
+	<button class="otr-btn-secondary md" style="margin-top: 20px" ng-click="setCurrentViewable(sections.questions.url)">
+		<i class="fa fa-arrow-left"></i></i>&nbsp;&nbsp;Back to questions
+	</button>
 	
 	<div class="row slate-content" y-to-bottom>
 		<div class="col-xs-12">
 			
-			<button class="otr-btn-secondary md" style="margin-top: 20px" ng-click="setCurrentViewable(sections.questions.url)">
-				<i class="fa fa-arrow-left"></i></i>&nbsp;&nbsp;Back to questions
-			</button>
+			
 
 			<div class="row">
 				<div class="col-xs-12">
-					<h2>{{current_question.question}}</h2>
+					<h2 class="qu-question-question">{{current_question.question}}</h2>
 				</div>
 			</div>
 
@@ -28,27 +30,43 @@
 			<section ng-show="current_state == states.answer">
 				<h4>Your Answer</h4>
 				<textarea rows="2" cols="50" style="width: 100%;" ng-model="users_answer"></textarea>
-				<button class="otr-btn-primary md" ng-click="updateAnswer(users_answer)">
+				<button class="otr-btn-primary md" style="margin-top: 10px" ng-click="updateAnswer(users_answer)">
 					<i class="fa fa-arrow-right"></i>&nbsp;&nbsp;Answer
 				</button>
 			</section>
 			
 			<!-- Waiting -->
 			<section ng-show="current_state == states.waiting">
-				WAITING
+				<div class="row">
+					<div class="col-xs-12 qu-waiting">
+						<i class="fa fa-clock-o animated swing" style="color: {{sections.questions_show.headingColour}}"></i><br/>
+						<span>Seems like we are waiting on some individuals...</span>
+					</div>
+				</div>
 			</section>
 
 			<!-- Ready -->
 			<section ng-show="current_state == states.ready">
-			<button class="otr-btn-primary md" ng-click="setViewed()">
-					<i class="fa fa-arrow-right"></i>&nbsp;&nbsp;View Answers
-				</button>
+				<div class="row">
+					<div class="col-xs-12 qu-ready">
+						<button class="otr-btn-primary md" ng-click="setViewed()">
+							<i class="fa fa-arrow-right"></i>&nbsp;&nbsp;View Answers
+						</button>
+						<br/><br/>
+						<span style="color: #c6cbcb">Looks like everyone has answered. Are you ready to see them?</span>
+					</div>
+				</div>
+				
 			</section>
 
 			<!-- Viewed -->
 			<section ng-show="current_state == states.viewed">
-				
-				<h2 ng-repeat="answer in current_question.answers">{{answer.answer}}</h2>
+				<p class="qu-viewed-heading">Answers:</p>
+				<div class="row" ng-repeat="answer in current_question.answers">
+					<div class="col-xs-12 qu-viewed">
+						<span class="animated flipInX">{{answer.answer}}</span>
+					</div>
+				</div>
 
 			</section>
 
