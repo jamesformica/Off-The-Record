@@ -34,6 +34,9 @@ angular.module("profile.controller", [])
 .controller('QuestionsController', ['$scope', 'Question', '$location',
 	function ($scope, Question, $location) {
 
+		$scope.showQuestion = function(question) {
+			$location.path("/question/" + question.id)
+		}
 
 	}])
 
@@ -68,6 +71,50 @@ angular.module("profile.controller", [])
 		}
 	}])
 
+.controller('QuestionsShowController', ['$scope', 'Question', '$location', '$routeParams',
+	function ($scope, Question, $location, $routeParams) {
+
+		$scope.current_state = null;
+
+		$scope.states = {
+			answer: 0,
+			waiting: 1,
+			ready: 2,
+			viewed: 3
+		}
+
+		var q_id = $routeParams.id;
+		Question.show(q_id).then(function(data) {
+			$scope.setCurrentQuestionAndState(data.question);
+		});
+
+		$scope.updateAnswer = function(answer) {
+			var updated_question = {
+				question: {
+					id: $scope.current_question.id,
+					answer: answer
+				}
+			}
+			Question.update(updated_question).then(function(data) {
+				$scope.setCurrentQuestionAndState(data.question);
+			});
+		}
+
+		$scope.setCurrentQuestionAndState = function(question) {
+			$scope.current_question = question;
+
+			if (!question.answered) {
+				$scope.current_state = $scope.states.answer;
+			} else if (!question.completely_answered) {
+				$scope.current_state = $scope.states.waiting;
+			} else if (!question.viewed) {
+				$scope.current_state = $scope.states.ready;
+			} else {
+				$scope.current_state = $scope.states.viewed;
+			}
+		}
+
+	}])
 
 .controller('FriendshipsController', ['$scope', 'Friendship',
 	function ($scope, Friendship) {

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       resources :users, only: [:new, :create, :update, :destroy]
       resources :friendship_requests, only: [:index, :create, :destroy]
       resources :friendships, only: [:create, :destroy]
-      resources :questions, only: [:create, :show]
+      resources :questions, only: [:create, :show, :update]
 
       match 'signout', to: 'sessions#destroy', via: 'delete'
       match 'users/current_user', to: 'users#get_current_user', via: 'get'

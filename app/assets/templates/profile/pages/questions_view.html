@@ -18,7 +18,7 @@
 	<div class="row slate-content" y-to-bottom>
 		<div class="col-xs-12">
 
-			<table class="qu-question" ng-repeat="question in current_user.questions">
+			<table class="qu-question" ng-repeat="question in current_user.questions" ng-click="showQuestion(question)">
 				<tr class="row qu-question-row">
 					<td class="col-xs-10 qu-question-row-question"><p>{{question.question}}</p></td>
 

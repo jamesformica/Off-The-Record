@@ -36,7 +36,7 @@ angular.module("profileapp", [
 
 	$routeProvider.when('/', {
 		templateUrl: 'profile/pages/questions_view.html',
-		controller: 'FriendshipsController'
+		controller: 'QuestionsController'
 	})
 	.when('/friendships', {
 		templateUrl: 'profile/pages/friendships_view.html',
@@ -50,6 +50,10 @@ angular.module("profileapp", [
 		templateUrl: 'profile/pages/questions_new_view.html',
 		controller: 'QuestionsNewController'
 	})
+	.when('/question/:id', {
+		templateUrl: 'profile/pages/questions_show_view.html',
+		controller: 'QuestionsShowController'
+	})
 	.when('/editprofile', {
 		templateUrl: 'profile/pages/edit_profile_view.html',
 		controller: 'EditProfileController'
@@ -59,4 +63,4 @@ angular.module("profileapp", [
 }])
 
 
-;
+	;

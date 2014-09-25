@@ -34,6 +34,18 @@ module Api
 			end
 
 
+			def update #only ever update answer
+				question = Question.find(params[:id])
+				answer = question.answers.find_by(user_id: current_user.id) 
+				if (answer.update_attributes(answer: question_params[:answer]))
+					render json: question, status: :ok
+				else
+					render json: {errors: answer.errors.full_messages }, status: :unprocessable_entity 
+				end
+			end
+
+
+
 			private
 			def question_params
 				params[:question][:to] ||= []

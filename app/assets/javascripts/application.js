@@ -35,6 +35,11 @@ var viewable_sections = {
 		headingText: "Answer Thy",
 		headingColour: "#e03f67"
 	},
+	questions_show: {
+		url: "questions/:id",
+		headingText: "Answers...",
+		headingColour: "#e03f67"
+	},
 	friendships: {
 		url: "friendships",
 		headingText: "Acquaintances",
