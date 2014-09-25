@@ -16,10 +16,6 @@ angular.module("question.service", [ 'restangular' ])
 		return this.service.one(id).get();
 	}
 
-	Question.prototype.update = function(question) {
-		return this.service.one(question.question.id).patch(question);
-	}
-
 	return new Question;
 }])
 

@@ -71,8 +71,8 @@ angular.module("profile.controller", [])
 		}
 	}])
 
-.controller('QuestionsShowController', ['$scope', 'Question', '$location', '$routeParams',
-	function ($scope, Question, $location, $routeParams) {
+.controller('QuestionsShowController', ['$scope', 'Question', 'Answer', '$location', '$routeParams',
+	function ($scope, Question, Answer, $location, $routeParams) {
 
 		$scope.current_state = null;
 
@@ -89,13 +89,11 @@ angular.module("profile.controller", [])
 		});
 
 		$scope.updateAnswer = function(answer) {
-			var updated_question = {
-				question: {
-					id: $scope.current_question.id,
-					answer: answer
-				}
+			var answer = {
+				id: $scope.current_question.user_answer_id,
+				answer: answer
 			}
-			Question.update(updated_question).then(function(data) {
+			Answer.update(answer).then(function(data) {
 				$scope.setCurrentQuestionAndState(data.question);
 			});
 		}

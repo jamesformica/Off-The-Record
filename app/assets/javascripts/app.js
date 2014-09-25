@@ -25,6 +25,7 @@ angular.module("profileapp", [
 	'session.service',
 	'friendship.service',
 	'question.service',
+	'answer.service',
 	'profile.controller',
 	'common.service',
 	'common.directive',
@@ -63,4 +64,4 @@ angular.module("profileapp", [
 }])
 
 
-	;
+;
