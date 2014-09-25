@@ -11,7 +11,6 @@ angular.module("profile.controller", [])
 		};
 
 		User.current().then(function(data) {
-			//data.user.friendships = _.sortBy(data.user.friendships, function(friend) { return friend.friend_username; })
 			$scope.current_user = data.user;
 		});
 
@@ -31,8 +30,12 @@ angular.module("profile.controller", [])
 	}])
 
 
-.controller('QuestionsController', ['$scope', 'Question', '$location',
-	function ($scope, Question, $location) {
+.controller('QuestionsController', ['$scope', 'User', '$location',
+	function ($scope, User, $location) {
+
+		User.current().then(function(data) {
+			$scope.current_user = data.user;
+		});
 
 		$scope.showQuestion = function(question) {
 			$location.path("/question/" + question.id)
@@ -92,6 +95,16 @@ angular.module("profile.controller", [])
 			var answer = {
 				id: $scope.current_question.user_answer_id,
 				answer: answer
+			}
+			Answer.update(answer).then(function(data) {
+				$scope.setCurrentQuestionAndState(data.question);
+			});
+		}
+
+		$scope.setViewed = function() {
+			var answer = {
+				id: $scope.current_question.user_answer_id,
+				viewed: true
 			}
 			Answer.update(answer).then(function(data) {
 				$scope.setCurrentQuestionAndState(data.question);

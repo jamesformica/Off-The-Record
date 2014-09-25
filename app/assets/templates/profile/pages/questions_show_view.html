@@ -40,12 +40,16 @@
 
 			<!-- Ready -->
 			<section ng-show="current_state == states.ready">
-				READY
+			<button class="otr-btn-primary md" ng-click="setViewed()">
+					<i class="fa fa-arrow-right"></i>&nbsp;&nbsp;View Answers
+				</button>
 			</section>
 
 			<!-- Viewed -->
 			<section ng-show="current_state == states.viewed">
-				VIEWED
+				
+				<h2 ng-repeat="answer in current_question.answers">{{answer.answer}}</h2>
+
 			</section>
 
 		</div>
