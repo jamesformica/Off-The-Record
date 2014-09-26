@@ -122,6 +122,7 @@ angular.module("profile.controller", [])
 
 		$scope.setCurrentQuestionAndState = function(question) {
 			$scope.current_question = question;
+			$scope.randomised_answers = _.shuffle(question.answers);
 			if (!question.answered) {
 				$scope.current_state = $scope.states.answer;
 			} else if (!question.completely_answered) {

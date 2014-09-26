@@ -62,7 +62,7 @@
 			<!-- Viewed -->
 			<section ng-show="current_state == states.viewed">
 				<p class="qu-viewed-heading">Answers:</p>
-				<div class="row" ng-repeat="answer in current_question.answers">
+				<div class="row" ng-repeat="answer in randomised_answers">
 					<div class="col-xs-12 qu-viewed">
 						<span class="animated flipInX">{{answer.answer}}</span>
 					</div>
