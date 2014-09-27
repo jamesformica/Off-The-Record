@@ -33,9 +33,11 @@ angular.module("profile.controller", [])
 .controller('QuestionsController', ['$scope', 'User', '$location',
 	function ($scope, User, $location) {
 
-		User.current().then(function(data) {
-			$scope.current_user = data.user;
-		});
+		var timer = setInterval( function() {
+			User.current().then(function(data) {
+				$scope.current_user = data.user;
+			});
+		}, 7500);
 
 		$scope.showQuestion = function(question) {
 			$location.path("/question/" + question.id)
