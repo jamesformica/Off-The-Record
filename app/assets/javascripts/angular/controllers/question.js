@@ -1,7 +1,7 @@
 angular.module("question.controller", [])
 
-.controller('QuestionsController', ['$scope', 'User', '$location',
-	function ($scope, User, $location) {
+.controller('QuestionsController', ['$scope', '$location',
+	function ($scope, $location) {
 
 		$scope.setCurrentUser();
 
@@ -47,8 +47,8 @@ angular.module("question.controller", [])
 	}])
 
 
-.controller('QuestionsShowController', ['$scope', 'Question', 'Answer', '$location', '$routeParams',
-	function ($scope, Question, Answer, $location, $routeParams) {
+.controller('QuestionsShowController', ['$scope', 'Question', 'Answer', '$routeParams',
+	function ($scope, Question, Answer, $routeParams) {
 
 		var q_id = $routeParams.id;
 

@@ -4,8 +4,8 @@ angular.module("publicapp", [
 	'restangular',
 	'user.service',
 	'session.service',
-	'sign-up.controller',
-	'sign-in.controller',
+	'sign_up.controller',
+	'sign_in.controller',
 	'common.service',
 	'common.directive',
 	'layout.directive'
@@ -21,15 +21,19 @@ angular.module("profileapp", [
 	'templates',
 	'ngRoute',
 	'restangular',
+
 	'user.service',
 	'session.service',
-	'friendship.controller',
 	'friendship.service',
-	'question.controller',
 	'question.service',
 	'answer.service',
-	'profile.controller',
 	'common.service',
+
+	'profile.controller',
+	'question.controller',
+	'friendship.controller',
+	'edit_profile.controller',
+
 	'common.directive',
 	'layout.directive'
 	])
@@ -64,6 +68,4 @@ angular.module("profileapp", [
 	.otherwise({ redirectTo: "/"});
 
 }])
-
-
 ;

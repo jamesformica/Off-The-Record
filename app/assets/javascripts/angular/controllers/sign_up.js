@@ -1,6 +1,7 @@
-angular.module("sign-up.controller", [])
+angular.module("sign_up.controller", [])
 
-.controller('SignUpController', ['$scope', 'Redirect', 'User', function ($scope, Redirect, User) {
+.controller('SignUpController', ['$scope', 'Redirect', 'User', 
+	function ($scope, Redirect, User) {
 
 	User.new().then(function(data){
 		$scope.newuser = data;

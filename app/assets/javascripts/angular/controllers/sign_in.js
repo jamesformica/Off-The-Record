@@ -1,6 +1,7 @@
-angular.module("sign-in.controller", [])
+angular.module("sign_in.controller", [])
 
-.controller('SignInController', ['$scope', 'Redirect', 'Session', function ($scope, Redirect, Session) {
+.controller('SignInController', ['$scope', 'Redirect', 'Session', 
+	function ($scope, Redirect, Session) {
 
 	$scope.signin = {
 		email : "",

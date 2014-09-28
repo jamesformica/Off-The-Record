@@ -10,10 +10,10 @@ angular.module("friendship.controller", [])
 		$scope.send_friend_request = function(request) {
 			Friendship.send_friend_request(request).then(function(data) {
 				toastr.info("friend request sent");
-				$scope.friend_request.username = "";
+				$scope.friend_request.to_username = "";
 			}, function(response) {
 				toastr.warning(response.data.errors);
-				$scope.friend_request.username = "";
+				$scope.friend_request.to_username = "";
 			});
 		}
 
