@@ -25,6 +25,7 @@ angular.module("profileapp", [
 	'session.service',
 	'friendship.controller',
 	'friendship.service',
+	'question.controller',
 	'question.service',
 	'answer.service',
 	'profile.controller',
