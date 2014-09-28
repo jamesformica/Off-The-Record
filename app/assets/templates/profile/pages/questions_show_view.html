@@ -20,10 +20,9 @@
 				</div>
 			</div>
 
+			<!-- Status -->
 			<div class="container" style="margin: 10px 0">
-				<div class="qu-user-answered" ng-repeat="answer in current_question.answers" >
-					<i class="fa fa-circle" ng-class="answer.answer ? 'qu-show-answered' : 'qu-show-unanswered'"></i><span>{{answer.user_username}}</span>
-				</div>
+				<question-show-user-status ng-repeat="answer in current_question.answers" answer="answer"></question-show-user-status>
 			</div>
 
 			<!-- Answer -->

@@ -4,7 +4,7 @@ angular.module("layout.directive", [])
 	return {
 
 		restrict: 'E',
-		replace: 'true',
+		replace: true,
 		scope: {
 			icon: '@',
 			text: '@',
@@ -18,7 +18,7 @@ angular.module("layout.directive", [])
 .directive('friendshipRow', function() {
 	return {
 		restrict: 'E',
-		replace: 'true',
+		replace: true,
 		scope: {
 			friend: '=',
 			destroy: '&'
@@ -30,7 +30,7 @@ angular.module("layout.directive", [])
 .directive('friendshipRequestRow', function() {
 	return {
 		restrict: 'E',
-		replace: 'true',
+		replace: true,
 		scope: {
 			request: '=',
 			accept: '&',
@@ -43,12 +43,23 @@ angular.module("layout.directive", [])
 .directive('newQuestionAddFriendRow', function() {
 	return {
 		restrict: 'E',
-		replace: 'true',
+		replace: true,
 		scope: {
 			friend: '=',
 			toggle: '&'
 		},
 		templateUrl: 'profile/rows/new_question_add_friend_row.html'
+	}
+})
+
+.directive('questionShowUserStatus', function() {
+	return {
+		restrict: 'E',
+		replace: true,
+		scope: {
+			answer: '='
+		},
+		templateUrl: 'profile/rows/question_show_user_status.html'
 	}
 })
 
