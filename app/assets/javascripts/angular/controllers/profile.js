@@ -109,6 +109,8 @@ angular.module("profile.controller", [])
 			}
 			Answer.update(answer).then(function(data) {
 				$scope.setCurrentQuestionAndState(data.question);
+			}, function(response) {
+				_.map(response.data.errors, function(error) { toastr.warning(error); });
 			});
 		}
 
