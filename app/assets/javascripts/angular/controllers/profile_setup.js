@@ -1,3 +1,8 @@
+/* This controller acts as the $parent controller for:
+- question.controller
+- friendship.controller
+- edit_profile.controller */
+
 angular.module("profile.controller", [])
 
 .controller('ProfileSetupController', ['$scope', '$location', 'User', 'Session', 'Redirect',
