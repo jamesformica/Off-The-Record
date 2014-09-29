@@ -24,7 +24,7 @@ module Api
 
 
 			def destroy
-				if current_user.friendship_requests.find(request_params[:id]).destroy()
+				if current_user.friendship_requests.find(params[:id]).destroy()
 					render json: { message: "Friendship request deleted successfully"}, status: :ok
 				else
 					render json: { errors: "Friendship Request not exist" }, status: :not_found
