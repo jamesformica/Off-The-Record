@@ -1,17 +1,5 @@
 angular.module("common.service", [])
 
-// .factory('Common', ['Redirect', function(Redirect) {
-
-// 	function Common() {
-// 	};
-
-// 	Common.prototype.Redirect = function() {
-// 		return Redirect;
-// 	}
-
-// 	return new Common;
-// }])
-
 .factory('Model', function() {
 	function Model() {
 	}
