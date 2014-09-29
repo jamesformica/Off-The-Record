@@ -29,9 +29,9 @@ angular.module("question.controller", [])
 		}
 
 		$scope.createQuestion = function(question) {
-			//need to create wrapper funciton
-			var newQuestion = Model.wrapObject("question", question);
-			Question.create(newQuestion).then(function(data) {
+			var w_question = Model.wrapObject("question", question);
+
+			Question.create(w_question).then(function(data) {
 				$scope.current_user.questions.push(data.question);
 				$scope.setCurrentViewable($scope.sections.questions.url);
 			}, function(response) {
@@ -71,9 +71,9 @@ angular.module("question.controller", [])
 			var update_answer = Model.update_answer(true);
 			update_answer.id = $scope.current_question.user_answer_id;
 			update_answer.answer = answer; 
-			update_answer = Model.wrapObject("answer", update_answer);
+			var w_update_answer = Model.wrapObject("answer", update_answer);
 
-			Answer.update(update_answer).then(function(data) {
+			Answer.update(w_update_answer).then(function(data) {
 				$scope.setCurrentQuestionAndState(data.question);
 			}, function(response) {
 				_.map(response.data.errors, function(error) { toastr.warning(error); });
@@ -85,9 +85,9 @@ angular.module("question.controller", [])
 			var update_answer = Model.update_answer(false);
 			update_answer.id = $scope.current_question.user_answer_id;
 			update_answer.viewed = true;
-			update_answer = Model.wrapObject("answer", update_answer);
+			var w_update_answer = Model.wrapObject("answer", update_answer);
 
-			Answer.update(update_answer).then(function(data) {
+			Answer.update(w_update_answer).then(function(data) {
 				$scope.setCurrentQuestionAndState(data.question);
 			});
 		}
