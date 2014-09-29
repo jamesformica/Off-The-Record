@@ -17,9 +17,9 @@ angular.module("common.service", [])
 	}
 
 	Model.prototype.wrapObject = function(object, value) {
-		return {
-			value: object
-		}
+		var wrapper = {};
+		wrapper[object] = value;
+		return wrapper;
 	}
 
 	Model.prototype.new_question = function() {

@@ -30,9 +30,10 @@ angular.module("question.controller", [])
 
 		$scope.createQuestion = function(question) {
 			//need to create wrapper funciton
-			var newQuestion = {
-				question: question
-			}
+			var newQuestion = Model.wrapObject("question", question);
+			// var newQuestion = {
+			// 	question: question
+			// }
 			Question.create(newQuestion).then(function(data) {
 				$scope.current_user.questions.push(data.question);
 				$scope.setCurrentViewable($scope.sections.questions.url);
