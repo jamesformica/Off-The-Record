@@ -24,6 +24,11 @@
 //= require_tree ../templates
 //= require_tree .
 
+var profile_settings = {
+	action_menu_min_width: 220,
+	content_max_width: 600
+};
+
 var viewable_sections = {
 	questions: {
 		url: "questions",

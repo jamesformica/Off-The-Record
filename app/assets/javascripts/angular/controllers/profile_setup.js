@@ -10,6 +10,7 @@ angular.module("profile.controller", [])
 
 		$scope.action_menu_active = false;
 		$scope.sections = viewable_sections;
+		$scope.profileSettings = profile_settings;
 
 		toastr.options = {
 			"positionClass": "toast-bottom-left"

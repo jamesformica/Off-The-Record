@@ -1,6 +1,6 @@
 <div class="action-menu-backdrop animated fadeIn" ng-show="action_menu_active" y-to-bottom ng-click="action_menu_active = false"></div>
-
-<div class="container action-menu-wrapper animated slideInLeft" ng-show="action_menu_active" y-to-bottom>
+<!-- ng-show="action_menu_active" -->
+<div class="container action-menu-wrapper"  y-to-bottom action-menu-wrapper actionmenuwidth="{{profileSettings.action_menu_min_width}}" contentmaxwidth="{{profileSettings.content_max_width}}" ng-class="{'action-menu-wrapper-active': action_menu_active }" >
 	
 	<h1>OFF THE RECORD</h1>
 

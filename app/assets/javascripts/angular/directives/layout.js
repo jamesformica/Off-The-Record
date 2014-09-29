@@ -1,5 +1,37 @@
 angular.module("layout.directive", [])
 
+.directive('actionMenuWrapper', function() {
+	return {
+		scope: {
+			actionmenuwidth: '@',
+			contentmaxwidth: '@'
+		},
+		link: function (scope, element, attrs) {
+
+			setActionMenu();
+
+			$(window).resize(function() {
+				setActionMenu();
+			});
+
+			function setActionMenu() {
+				var window_width = $(window).width();
+				var action_menu_width = parseInt(scope.actionmenuwidth);
+				var content_max_width = parseInt(scope.contentmaxwidth);
+
+				$(element).width(action_menu_width);
+				if ((window_width - content_max_width - 60) / 2 >= action_menu_width) {
+					$(element).css("left", 0);
+					$("#action-bar-icon").hide();
+				} else {
+					$(element).css("left", (action_menu_width + 30) * -1);
+					$("#action-bar-icon").show();
+				}
+			}
+		}
+	}
+})
+
 .directive('actionMenuItem', function() {
 	return {
 
