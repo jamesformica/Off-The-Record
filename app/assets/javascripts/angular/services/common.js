@@ -12,6 +12,27 @@ angular.module("common.service", [])
 // 	return new Common;
 // }])
 
+.factory('Model', function() {
+	function Model() {
+	}
+
+	Model.prototype.wrapObject = function(object, value) {
+		return {
+			value: object
+		}
+	}
+
+	Model.prototype.new_question = function() {
+		return {
+			question: "",
+			answer: "",
+			to: []
+		}
+	}
+
+	return new Model;
+})
+
 
 .factory('Redirect', ['$window', function($window) {
 

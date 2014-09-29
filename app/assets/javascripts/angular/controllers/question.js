@@ -16,14 +16,10 @@ angular.module("question.controller", [])
 	}])
 
 
-.controller('QuestionsNewController', ['$scope', 'Question', 
-	function ($scope, Question) {
+.controller('QuestionsNewController', ['$scope', 'Question', 'Model',
+	function ($scope, Question, Model) {
 
-		$scope.new_question = {
-			question: "",
-			answer: "",
-			to: []
-		};
+		$scope.new_question = Model.new_question();
 
 		$scope.addFriendToQuestion = function(friend) {
 			if (_.contains($scope.new_question.to, friend))
