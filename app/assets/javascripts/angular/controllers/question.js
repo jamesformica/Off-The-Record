@@ -5,9 +5,9 @@ angular.module("question.controller", [])
 
 		$scope.setCurrentUser();
 
-		var timer = setInterval( function() {
-			$scope.setCurrentUser();
-		}, 5000);
+		// var timer = setInterval( function() {
+		// 	$scope.setCurrentUser();
+		// }, 5000);
 
 		$scope.showQuestion = function(question) {
 			$location.path("/question/" + question.id)
@@ -58,20 +58,20 @@ angular.module("question.controller", [])
 			$scope.setCurrentQuestionAndState(data.question);
 		});
 
-		var timer = setInterval( function() {
-			if ($scope.current_state === $scope.states.waiting) {
-				Question.show(q_id).then(function(data) {
-					$scope.setCurrentQuestionAndState(data.question);
-				});
-			}
-		}, 7500);
+		// var timer = setInterval( function() {
+		// 	if ($scope.current_state === $scope.states.waiting) {
+		// 		Question.show(q_id).then(function(data) {
+		// 			$scope.setCurrentQuestionAndState(data.question);
+		// 		});
+		// 	}
+		// }, 7500);
 
 		
 		$scope.updateAnswer = function(answer) {
 			var update_answer = Model.update_answer(true);
+			update_answer.id = $scope.current_question.user_answer_id;
 			update_answer.answer = answer; 
 			update_answer = Model.wrapObject("answer", update_answer);
-			update_answer.id = $scope.current_question.user_answer_id;
 
 			Answer.update(update_answer).then(function(data) {
 				$scope.setCurrentQuestionAndState(data.question);
@@ -83,9 +83,9 @@ angular.module("question.controller", [])
 		$scope.setViewed = function() {
 
 			var update_answer = Model.update_answer(false);
+			update_answer.id = $scope.current_question.user_answer_id;
 			update_answer.viewed = true;
 			update_answer = Model.wrapObject("answer", update_answer);
-			update_answer.id = $scope.current_question.user_answer_id;
 
 			Answer.update(update_answer).then(function(data) {
 				$scope.setCurrentQuestionAndState(data.question);

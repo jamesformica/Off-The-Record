@@ -35,7 +35,7 @@ module Api
 			private
 			def request_params
 				puts params
-				params.permit(:id, :to_username)
+				params.require(:friendship_request).permit(:id, :to_username)
 			end
 
 			

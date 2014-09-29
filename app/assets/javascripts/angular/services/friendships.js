@@ -14,15 +14,15 @@ angular.module("friendship.service", [ 'restangular' ])
 		return this.request_service.one('').get();
 	}
 
-	Friendship.prototype.send_friend_request = function(request) {
+	Friendship.prototype.create_request = function(request) {
 		return this.request_service.post(request);
 	}
 
-	Friendship.prototype.accept_friend_request = function(request) {
+	Friendship.prototype.create_friendship = function(request) {
 		return this.friend_service.post(request);
 	}
 
-	Friendship.prototype.destroy_friend_request = function(request) {
+	Friendship.prototype.destroy_request = function(request) {
 		return this.request_service.one(request.id).remove();
 	}
 

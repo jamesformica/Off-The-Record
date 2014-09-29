@@ -16,9 +16,11 @@ angular.module("common.service", [])
 	function Model() {
 	}
 
-	Model.prototype.wrapObject = function(object, value) {
+	Model.prototype.wrapObject = function(wrap, object) {
 		var wrapper = {};
-		wrapper[object] = value;
+		wrapper[wrap] = object;
+		if (object.id)
+			wrapper["id"] = object.id;
 		return wrapper;
 	}
 
@@ -39,6 +41,12 @@ angular.module("common.service", [])
 		if (!showAnswer)
 			delete answer["answer"];
 		return answer;
+	}
+
+	Model.prototype.new_friend_request = function() {
+		return {
+			to_username: ""
+		}
 	}
 
 	return new Model;

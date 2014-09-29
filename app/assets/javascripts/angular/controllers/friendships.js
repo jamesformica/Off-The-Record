@@ -1,14 +1,14 @@
 angular.module("friendship.controller", [])
 
-.controller('FriendshipsController', ['$scope', 'Friendship',
-	function ($scope, Friendship) {
+.controller('FriendshipsController', ['$scope', 'Friendship', 'Model',
+	function ($scope, Friendship, Model) {
 		
-		$scope.friend_request = {
-			to_username: ""
-		}
+		$scope.friend_request = Model.new_friend_request();
 
 		$scope.send_friend_request = function(request) {
-			Friendship.send_friend_request(request).then(function(data) {
+			var w_request = Model.wrapObject("friendship_request", request);
+
+			Friendship.create_request(w_request).then(function(data) {
 				toastr.info("friend request sent");
 				$scope.friend_request.to_username = "";
 			}, function(response) {
@@ -18,7 +18,9 @@ angular.module("friendship.controller", [])
 		}
 
 		$scope.decline_friend_request = function(request) {
-			Friendship.destroy_friend_request(request).then(function(data) {
+			var w_request = Model.wrapObject("friendship_request", request);
+
+			Friendship.destroy_request(w_request).then(function(data) {
 				toastr.info("friend request ignored");
 				$scope.current_user.friendship_requests = _.without($scope.current_user.friendship_requests, request);
 			}, function(response) {
@@ -27,7 +29,9 @@ angular.module("friendship.controller", [])
 		}
 
 		$scope.accept_friend_request = function(request) {
-			Friendship.accept_friend_request(request).then(function(data) {
+			var w_request = Model.wrapObject("friendship", request);
+
+			Friendship.create_friendship(w_request).then(function(data) {
 				toastr.info("friend request accepted");
 				$scope.current_user.friendship_requests = _.without($scope.current_user.friendship_requests, request);
 				$scope.current_user.friendships.push(data.friendship);
@@ -37,7 +41,9 @@ angular.module("friendship.controller", [])
 		}
 
 		$scope.destroy_friendship = function(friendship) {
-			Friendship.destroy_friendship(friendship).then(function(data) {
+			var w_friendship = Model.wrapObject("friendship", friendship);
+
+			Friendship.destroy_friendship(w_friendship).then(function(data) {
 				$scope.current_user.friendships = _.without($scope.current_user.friendships, friendship);
 			}, function(response) {
 			});
