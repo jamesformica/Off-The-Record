@@ -30,6 +30,17 @@ angular.module("common.service", [])
 		}
 	}
 
+	Model.prototype.update_answer = function(showAnswer) {
+		var answer = {
+			id: "",
+			viewed: false,
+			answer: ""
+		}
+		if (!showAnswer)
+			delete answer["answer"];
+		return answer;
+	}
+
 	return new Model;
 })
 

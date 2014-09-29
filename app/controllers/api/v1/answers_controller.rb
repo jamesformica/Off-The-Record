@@ -15,7 +15,7 @@ module Api
 
 			private
 			def answer_params
-				params.permit(:answer, :viewed)
+				params.require(:answer).permit(:answer, :viewed)
 			end
 
 		end

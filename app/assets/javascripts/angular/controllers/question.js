@@ -31,9 +31,6 @@ angular.module("question.controller", [])
 		$scope.createQuestion = function(question) {
 			//need to create wrapper funciton
 			var newQuestion = Model.wrapObject("question", question);
-			// var newQuestion = {
-			// 	question: question
-			// }
 			Question.create(newQuestion).then(function(data) {
 				$scope.current_user.questions.push(data.question);
 				$scope.setCurrentViewable($scope.sections.questions.url);
@@ -44,8 +41,8 @@ angular.module("question.controller", [])
 	}])
 
 
-.controller('QuestionsShowController', ['$scope', 'Question', 'Answer', '$routeParams',
-	function ($scope, Question, Answer, $routeParams) {
+.controller('QuestionsShowController', ['$scope', 'Question', 'Answer', 'Model', '$routeParams',
+	function ($scope, Question, Answer, Model, $routeParams) {
 
 		var q_id = $routeParams.id;
 
@@ -71,11 +68,12 @@ angular.module("question.controller", [])
 
 		
 		$scope.updateAnswer = function(answer) {
-			var answer = {
-				id: $scope.current_question.user_answer_id,
-				answer: answer
-			}
-			Answer.update(answer).then(function(data) {
+			var update_answer = Model.update_answer(true);
+			update_answer.answer = answer; 
+			update_answer = Model.wrapObject("answer", update_answer);
+			update_answer.id = $scope.current_question.user_answer_id;
+
+			Answer.update(update_answer).then(function(data) {
 				$scope.setCurrentQuestionAndState(data.question);
 			}, function(response) {
 				_.map(response.data.errors, function(error) { toastr.warning(error); });
@@ -83,11 +81,13 @@ angular.module("question.controller", [])
 		}
 
 		$scope.setViewed = function() {
-			var answer = {
-				id: $scope.current_question.user_answer_id,
-				viewed: true
-			}
-			Answer.update(answer).then(function(data) {
+
+			var update_answer = Model.update_answer(false);
+			update_answer.viewed = true;
+			update_answer = Model.wrapObject("answer", update_answer);
+			update_answer.id = $scope.current_question.user_answer_id;
+
+			Answer.update(update_answer).then(function(data) {
 				$scope.setCurrentQuestionAndState(data.question);
 			});
 		}
