@@ -30,11 +30,25 @@ div.action-menu-item
 		color: $action-menu-text-c
 		font-size: 20px
 		line-height: 40px
-		
+	span.action-badge
+		display: inline-block
+		text-align: center
+		font-size: 10px
+		width: 20px
+		height: 20px
+		line-height: 10px
+		color: white
+		background-color: $action-menu-text-c
+		border: 6px solid $action-menu-text-c
+		border-radius: 50%
+		margin-left: 6px
+
 div.action-menu-item:hover
 	background: darken($action-menu-bg-c, 4%)
 	span, i
 		color: lighten($action-menu-text-c, 10%)
+	span.action-badge
+		color: white
 
 div.action-menu-item-active:after
 	content: ""

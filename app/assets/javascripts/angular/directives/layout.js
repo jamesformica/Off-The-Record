@@ -41,6 +41,7 @@ angular.module("layout.directive", [])
 			icon: '@',
 			text: '@',
 			color: '@',
+			badge: '=',
 			action: '&'
 		},
 		templateUrl: 'profile/rows/action_menu_item.html'
