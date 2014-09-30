@@ -1,5 +1,13 @@
 ### Off The Record ###
 
+#Developer:# James Formica
+#Brainchild of:# Sam "Pezza" Pezzimenti
+
+##What is this even?##
+Off the Record is a fun social tool allowing you are ask a question to your friends and have them answer all anonymously. Thats right folks, you heard correctly, every answer is anonymous*. Built with a rails back-end / API and an AngularJS front-end it features features that are indeed features of the site. Oh and its like totally mobile friendly so thats a relief!
+
+
+
 == README
 
 This README would normally document whatever steps are necessary to get the
