@@ -18,7 +18,7 @@ angular.module("layout.directive", [])
 				var window_width = $(window).width();
 				var action_menu_width = parseInt(scope.actionmenuwidth);
 				var content_max_width = parseInt(scope.contentmaxwidth);
-
+				
 				$(element).width(action_menu_width);
 				if ((window_width - content_max_width - 60) / 2 >= action_menu_width) {
 					$(element).css("left", 0);
