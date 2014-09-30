@@ -18,6 +18,17 @@
 	<div class="row slate-content" y-to-bottom>
 		<div class="col-xs-12">
 
+			<!-- no questions -->
+			<section ng-hide="current_user.questions.length > 0">
+				<div class="row">
+					<div class="col-xs-12 no-friends">
+						<i class="fa fa-frown-o"></i>
+						<span>Nup, no questions for you...<br/>Maybe try creating one</span>
+					</div>
+				</div>
+			</section>
+
+			<!-- questions -->
 			<table class="qu-question" ng-repeat="question in current_user.questions" ng-click="showQuestion(question)">
 				<tr class="row qu-question-row">
 					<td class="col-xs-10 qu-question-row-question"><p>{{question.question}}</p></td>
