@@ -1,21 +1,14 @@
 class StaticPagesController < ApplicationController
 
-	#before_action :redirect_to_profile, except: :profile
+	before_action :redirect_if_signed_out, except: :index
+	before_action :redirect_if_signed_in, except: :profile
 
 	def index
-	end
-
-	def test
 	end
 
 	def profile
 	end
 
-	private
-	def redirect_to_profile
-		if signed_in?
-			redirect_to profile_path
-		end
-	end
+
 
 end
