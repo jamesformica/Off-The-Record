@@ -19,6 +19,7 @@ angular.module("profile.controller", [])
 		$scope.setCurrentUser = function() {
 			User.current().then(function(data) {
 				$scope.current_user = data.user;
+				$scope.current_user.questionBadge = getQuestionBadgeCount();
 			});
 		}
 
@@ -33,6 +34,13 @@ angular.module("profile.controller", [])
 			}, function(response) {
 				$scope.errors = response.data.errors;
 			});
+		}
+
+		function getQuestionBadgeCount() {
+			var questions = $scope.current_user.questions;
+			var answerQuestions = _.filter(questions, function(question) { return !question.answered; }).length;
+			var readyQuestions = _.filter(questions, function(question) { return (question.completely_answered && !question.viewed); }).length;
+			return answerQuestions + readyQuestions;
 		}
 
 		$scope.setCurrentUser();
