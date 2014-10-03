@@ -96,4 +96,18 @@ angular.module("layout.directive", [])
 	}
 })
 
+.directive('inputField', function() {
+	return {
+		restrict: 'E',
+		replace: true,
+		scope: {
+			id: '@',
+			text: '@',
+			type: '@',
+			field: '='
+		},
+		templateUrl: 'profile/rows/input_field.html'
+	}
+})
+
 ;

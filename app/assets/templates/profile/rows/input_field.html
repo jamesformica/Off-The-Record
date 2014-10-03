@@ -1,0 +1,5 @@
+
+<div class="new-input-field" ng-init="focused = false">
+	<label for="{{id}}" ng-class="{'active' : field.length > 0 || focused }">{{text}}</label>
+	<input type="{{type ? type : 'text'}}" id="{{id}}" ng-model="field" ng-focus="focused = true" ng-blur="focused = false">
+</div>

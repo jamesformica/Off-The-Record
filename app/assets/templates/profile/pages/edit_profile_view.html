@@ -11,12 +11,13 @@
 			</div>
 
 			<form name="signUpForm" ng-submit="update_information(edit_user)">
-				<div class="otr-input-group">
-					<input type="text" ng-model="edit_user.name" placeholder="full name">
-					<input type="text" ng-model="edit_user.email" placeholder="email">
-					<input type="text" ng-model="edit_user.username" placeholder="username">
-				</div>
 
+				<div class="new-input-group">
+					<input-field id="edit-name" text="name" field="edit_user.name"></input-field>
+					<input-field id="edit-email" text="email" field="edit_user.email"></input-field>
+					<input-field id="edit-username" text="username" field="edit_user.username"></input-field>
+				</div>
+				
 				<button type="submit" class="otr-btn-primary md" style="margin-top: 20px">
 					<i class="fa fa-user"></i>&nbsp;&nbsp;Update
 				</button>

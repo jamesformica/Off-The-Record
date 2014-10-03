@@ -6,12 +6,13 @@
 
 	<form name="signUpForm" ng-submit="signUp(newuser)">
 
-		<div class="otr-input-group">
-			<input type="text" ng-model="newuser.user.name" placeholder="full name">
-			<input type="text" ng-model="newuser.user.email" placeholder="email">
-			<input type="text" ng-model="newuser.user.username" placeholder="username">
-			<input type="password" ng-model="newuser.user.password" placeholder="password">
-			<input type="password" ng-model="newuser.user.password_confirmation" placeholder="confirm password">
+
+		<div class="new-input-group">
+			<input-field id="signup-name" text="full name" field="newuser.user.name"></input-field>
+			<input-field id="signup-email" text="email" field="newuser.user.email"></input-field>
+			<input-field id="signup-username" text="username" field="newuser.user.username"></input-field>
+			<input-field id="signup-password" text="password" type="password" field="newuser.user.password"></input-field>
+			<input-field id="signup-password-conf" text="confirm-password" type="password" field="newuser.user.password_confirmation"></input-field>
 		</div>
 		
 		<ul class="otr-validation-errors">

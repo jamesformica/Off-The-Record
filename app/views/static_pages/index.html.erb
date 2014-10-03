@@ -10,16 +10,17 @@
 		
 		<div class="otr-slate-w">
 			<form name="signUpForm" ng-submit="signIn(signin)">
-				<div class="otr-input-group">
-					<input type="text" placeholder="email / username" ng-model="signin.email">
-					<input type="password" placeholder="password" ng-model="signin.password">
+
+				<div class="new-input-group">
+					<input-field id="signin-username" text="email / username" field="signin.email"></input-field>
+					<input-field id="signin-password" text="password" type="password" field="signin.password"></input-field>
 				</div>
 				
 				<ul class="otr-validation-errors">
 					<li ng-repeat="err in errors">{{err}}</li>
 				</ul>
 
-				<br/>
+				<br/><br/><br/>
 				<button type="submit" class="otr-btn-primary lg">
 					<%= icon('magic') %>&nbsp;&nbsp;Log In
 				</button>
