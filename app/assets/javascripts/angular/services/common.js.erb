@@ -54,6 +54,10 @@ angular.module("common.service", [])
 		$window.location.href = '/';
 	}
 
+	Redirect.prototype.to_signup = function() {
+		$window.location.href = '/signup';
+	}
+
 	return new Redirect;
 
 }])

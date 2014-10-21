@@ -15,7 +15,11 @@ angular.module("sign_in.controller", [])
 			$scope.errors = response.data.errors;
 			$scope.signin.password = '';
 		});
-	};
+	}
+
+	$scope.signUp = function() {
+		Redirect.to_signup();
+	}
 
 }])
 ;

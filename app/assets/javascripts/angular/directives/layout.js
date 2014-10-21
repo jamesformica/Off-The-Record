@@ -101,7 +101,7 @@ angular.module("layout.directive", [])
 		restrict: 'E',
 		replace: true,
 		scope: {
-			id: '@',
+			elemid: '@',
 			text: '@',
 			type: '@',
 			field: '='

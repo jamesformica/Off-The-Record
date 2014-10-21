@@ -17,5 +17,9 @@ angular.module("sign_up.controller", [])
 		});
 	};
 
+	$scope.cancel = function() {
+		Redirect.to_index();
+	}
+
 }])
 ;
