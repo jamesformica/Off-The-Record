@@ -1,13 +1,15 @@
 @import variables
 
 div.action-bar
+	position: absolute
 	height: $action-bar-h
 	background-color: $action-bar-c
 	color: #575757
-	//border-bottom: 2px solid fade-out(#575757, 0.6)
+	//border-top: 2px solid fade-out(#575757, 0.6)
 	overflow: hidden
 	width: 100%
-	//box-shadow: $dark-shadow
+	box-shadow: $dark-shadow
+	z-index: 1001
 	i.menu
 		position: absolute
 		font-size: $action-bar-h - 10
@@ -19,15 +21,20 @@ div.action-bar
 		margin-left: -1 * ($menu-icon-s / 2)
 		margin-top: -1 * (($menu-icon-s - $action-bar-h) / 2)
 		z-index: 150
-	i.menu:hover
-		color: darken(#575757, 10%)
+		
+		&:hover
+			color: darken(#575757, 10%)
 
 	div.user
 		text-align: center
 		font-size: $action-bar-h / 2
 		line-height: $action-bar-h
 
-
+div.action-bar-fake
+	height: $action-bar-h
+	width: 100%
+	z-index: -1
+	visibility: hidden
 
 $slate-w: 100%
 $slate-max-w: 600px
