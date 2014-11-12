@@ -9,14 +9,19 @@ div.action-menu-backdrop
 	background-color: rgba(0,0,0,0.6)
 	z-index: 150
 
-$action-menu-bg-c: white
-$action-menu-text-c: #575757
+$action-menu-bg-c: transparent
+$action-menu-text-c: white
 div.action-menu-wrapper
 	position: fixed
 	top: 40px
 	width: 18%
-	background: $action-menu-bg-c
+	background: transparent
 	z-index: 160
+	h1
+		color: fade-out(white, 0.8)
+
+.action-with-background
+	background-image: url('/assets/stardust.png') !important
 
 .action-menu-wrapper-active
 	left: 0 !important
@@ -26,6 +31,7 @@ div.action-menu-wrapper
 div.action-menu-item
 	height: 40px
 	cursor: pointer
+	position: relative
 	span, i
 		color: $action-menu-text-c
 		font-size: 20px
@@ -47,11 +53,12 @@ div.action-menu-item
 		border-radius: 50%
 
 div.action-menu-item:hover
-	background: darken($action-menu-bg-c, 4%)
+	background: fade-out($action-menu-text-c, 0.9)
 	span, i
 		color: lighten($action-menu-text-c, 10%)
 	span.action-badge
 		color: white
+
 
 div.action-menu-item-active:after
 	content: ""

@@ -20,16 +20,20 @@
 					<li ng-repeat="err in errors">{{err}}</li>
 				</ul>
 
-				<br/><br/><br/>
+				<br/><br/>
 				<button type="submit" class="otr-btn-primary lg">
 					<%= icon('magic') %>&nbsp;&nbsp;Log In
 				</button>
 			</form>
-			<br/><br/>
-			<p>Or, join the fun</p>
-			<%= link_to sign_up_path, class: "otr-btn-secondary md" do %> 
-			<%= icon('hand-o-right') %> Sign Up 
-			<% end %> 
+			<br/><br/><br/>
+
+			<p style="text-align: left;">Or, join the fun</p>
+
+			<button class="otr-btn-secondary md" ng-click="signUp()">
+				<i class="fa hand-o-right"></i>&nbsp;&nbsp;Sign Up
+			</button>
+
+			
 		</div>
 
 	</div>

@@ -8,9 +8,8 @@ body
 	font-weight: 300
 	color: black
 	font-size: $default-font-size
-	//background-image: url('/assets/cake-bg-drk.png')
+	background-image: url('/assets/stardust.png')
 	background-repeat: repeat
-	background-color: white
 
 .animated
 	-webkit-animation-duration: 0.6s !important
@@ -70,6 +69,7 @@ div.new-input-field
 	height: 56px
 	text-align: left
 	margin-bottom: 7px !important
+	
 	label
 		position: relative
 		font-size: 15px
@@ -79,9 +79,11 @@ div.new-input-field
 		color: #b6b6b6
 		font-weight: 300
 		margin-bottom: 0
-	label.active
-		transform: translate3d(0px, 1px, 0) scale(0.85)
-		transition: 0.4s
+		
+		&.active
+			transform: translate3d(0px, 1px, 0) scale(0.85)
+			transition: 0.4s
+
 	input
 		position: relative
 		background-color: #f0f0f0
@@ -133,26 +135,27 @@ $btn-secondary-c: #E37C76
 	background: $btn-primary-c
 	border-bottom-color: darken($btn-primary-c, 10%)
 
-.otr-btn-primary:active
-	border-bottom: 0
-	border-top: 4px solid transparent
-	top: 4px
+	&:active
+		border-bottom: 0
+		border-top: 4px solid transparent
+		top: 4px
 
-.otr-btn-primary:hover
-	background: lighten($btn-primary-c, $btn-hover-amt)
+	&:hover
+		background: lighten($btn-primary-c, $btn-hover-amt)
+
 
 .otr-btn-secondary
 	@extend .otr-btn
 	background: $btn-secondary-c
 	border-bottom-color: darken($btn-secondary-c, 10%)
 
-.otr-btn-secondary:active
-	border-bottom: 0
-	border-top: 4px solid transparent
-	top: 4px
+	&:active
+		border-bottom: 0
+		border-top: 4px solid transparent
+		top: 4px
 
-.otr-btn-secondary:hover
-	background: lighten($btn-secondary-c, $btn-hover-amt)
+	&:hover
+		background: lighten($btn-secondary-c, $btn-hover-amt)
 
 
 
@@ -202,21 +205,6 @@ span.otr-logo
 	color: white
 	text-shadow: 1px 1px 6px black
 	padding: 10px 50px 0 50px
-
-
-$ok-c: #21AABD
-$cancel-c: #FF6B6B
-i.btn-ok
-	+i-btn($ok-c)
-
-i.btn-ok:hover
-	+i-btn(fade-out($ok-c, 0.3))
-
-i.btn-cancel
-	+i-btn($cancel-c)
-
-i.btn-cancel:hover
-	+i-btn(fade-out($cancel-c, 0.3))
 
 
 .m-t-20

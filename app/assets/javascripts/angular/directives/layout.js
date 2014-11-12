@@ -22,9 +22,11 @@ angular.module("layout.directive", [])
 				$(element).width(action_menu_width);
 				if ((window_width - content_max_width - 60) / 2 >= action_menu_width) {
 					$(element).css("left", 0);
+					$(element).removeClass("action-with-background");
 					$("#action-bar-icon").hide();
 				} else {
 					$(element).css("left", (action_menu_width + 30) * -1);
+					$(element).addClass("action-with-background");
 					$("#action-bar-icon").show();
 				}
 			}
