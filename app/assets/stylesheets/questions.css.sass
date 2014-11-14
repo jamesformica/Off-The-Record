@@ -1,3 +1,5 @@
+@import variables
+
 $fr-action-s: 30px
 .q-check
 	position: relative
@@ -7,36 +9,26 @@ $fr-action-s: 30px
 	border-radius: 50%
 	text-align: right
 	margin: 5px 0
+	
 	i
 		font-size: 30px
-		color: #979398
+		color: $colour-question-friend-unchecked
 		line-height: $fr-action-s
 		margin-right: 6px
-	i.q-checked
-		color: #e03f67
-
-i.qu-new
-	color: #111111
-	font-size: 2.4em
-	width: 45px
-	line-height: 45px
-	margin-bottom: 5px
-	margin-left: -15px
-	border-radius: 50%
-	text-align: center
-	background: white
-	box-shadow: 1px 1px 2px rgba(0,0,0,0.2)
+		
+		&.q-checked
+			color: $colour-question-friend-checked
 
 
 //Colouring the circles
 i.qu-answer
-	color: #2ce8f5
+	color: $colour-question-answer
 i.qu-waiting
-	color: #bf72f5
+	color: $colour-question-waiting
 i.qu-ready
-	color: #0593f5
+	color: $colour-question-ready
 i.qu-viewed
-	color: #7afc99
+	color: $colour-question-viewed
 
 // Questions - show
 table.qu-question:last-child
@@ -45,59 +37,75 @@ table.qu-question:last-child
 table.qu-question
 	padding: 0
 	width: 100%
-	border-bottom: 1px solid #e6e6e6
+	border-bottom: 1px solid $colour-list-item-border
 	cursor: pointer
+	
 	tr.qu-question-row
 		height: 40px
+		
 		td.qu-question-row-question
 			padding-top: 10px
 			overflow-x: hidden
+			
 			p
 				font-size: 25px
-			p:first-letter
-				text-transform: uppercase
+				
+				&:first-letter
+					text-transform: uppercase
+		
 		td.qu-question-row-status
 			text-align: right
+			
 			i
 				font-size: 20px
 
 	tr.qu-to-row
 		height: 30px
+		
 		td.qu-to-row-to
 			padding-bottom: 10px
+			
 			span
 				font-size: 16px
 				color: #b3b3b3
-			span:after
-				content: ", "
-			span:last-child:after
-				content: ""
+				
+				&:after
+					content: ", "
+				
+				&:last-child:after
+					content: ""
 
 		td.qu-to-row-owner
 			text-align: right
 			padding-bottom: 0
+			
 			i
 				font-size: 20px
-				color: #e9e9e9
+				color: $colour-question-owner
 
-//quenstion show
+
+//question show
 i.qu-show-answered
-	color: #7afc99
+	color: $colour-question-answered
 i.qu-show-unanswered
-	color: #b9bcbc
+	color: $colour-question-unanswered
 
 h2.qu-question-question
 	margin-top: 30px
-h2.qu-question-question:first-letter
-	text-transform: uppercase
+	
+	&:first-letter
+		text-transform: uppercase
 
 
 div.qu-user-answered
 	display: inline-block
+	
 	i, span
 		font-size: 14px
+	
 	i
 		margin-right: 4px
+	
 	span
 		margin-right: 18px
 
@@ -105,12 +113,14 @@ div.qu-waiting
 	margin-top: 40px
 	text-align: center
 	font-size: 18px
+	
 	i
 		font-size: 28px
 
 div.qu-ready
 	margin-top: 40px
 	text-align: center
+	
 	button
 		display: inline-block
 
@@ -121,6 +131,7 @@ p.qu-viewed-heading
 
 div.qu-viewed
 	margin-top: 16px
+	
 	span
 		font-size: 18px
 		margin-left: 20px

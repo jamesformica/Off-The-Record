@@ -7,15 +7,58 @@ $mat-shadow: 1px 1px 2px rgba(0,0,0,0.2)
 $dark-shadow: 2px 2px 4px rgba(0,0,0,0.4)
 
 $default-font-size: 10px
-$default-font-c: #575757
 
 $input-border-c: fade-out(black, 0.88)
 $input-border-style: 1px solid $input-border-c
 $input-border-radius: 4px
 
-$action-bar-h: 40px
-$action-bar-c: white
-$menu-icon-s: $action-bar-h + 10
+
+
+/* Defaults */
+$colour-default-text: #575757
+
+/* Action Menu & Bar */
+$colour-action-menu-backdrop: rgba(0,0,0,0.6)
+$colour-action-menu-background: transparent
+$colour-action-menu-badge-background: #d7d7d7
+$colour-action-menu-text: white
+$colour-action-menu-heading-text: fade-out(white, 0.8)
+$colour-action-menu-hover-item-background: fade-out($colour-action-menu-text, 0.9)
+$colour-action-bar-background: white
+$height-action-bar: 40px
+
+/* Layout */
+$colour-slate-content-background: white
+$colour-slate-heading-input: lighten($colour-default-text, 10%)
+$colour-slate-sub-heading: white
+$colour-slate-sub-heading-border: darken($colour-slate-sub-heading, 10%)
+$colour-slate-item-background: white
+$colour-slate-item-border: fade-out(black, 0.88)
+$colour-slate-item-highlight-background: #f5f5f5
+$colour-slate-floating-background: fade-out(white, 0.1)
+$colour-slate-floating-border-base: #b5b5b5
+$colour-slate-floating-border: fade-out($colour-slate-floating-border-base, 0.7)
+$size-menu-icon: $height-action-bar + 10
+$width-slate: 100%
+$width-slate-max: 600px
+$height-slate-heading-min: 50px
+
+/* Friend Requests */
+$colour-friend-request-accept: #21AABD
+$colour-friend-request-decline: #FF6B6B
+$size-friend-request-action: 30px
+
+/* Questions */
+$colour-question-answer: #2ce8f5
+$colour-question-waiting: #bf72f5
+$colour-question-ready: #0593f5
+$colour-question-viewed: #7afc99
+$colour-question-answered: #7afc99
+$colour-question-unanswered: #b9bcbc
+$colour-question-friend-unchecked: #979398
+$colour-question-friend-checked: #e03f67
+$colour-question-owner: #e9e9e9 
+$colour-list-item-border: #e6e6e6
 
 =gradient-bg($top, $bottom)
 	background: -webkit-linear-gradient($top, $bottom) /* For Safari 5.1 to 6.0 */

@@ -1,67 +1,56 @@
-div.fr-name
-	span
-		font-size: 20px
-		line-height: 40px
-		display: inline-block
+@import variables
 
+div.fr-name span
+	font-size: 20px
+	line-height: 40px
+	display: inline-block
 
 div.fr-actions
 	text-align: right
 
-$fr-action-s: 30px
+
 .fr-req-action
 	position: relative
 	display: inline-block
-	width: $fr-action-s
-	height: $fr-action-s
+	width: $size-friend-request-action
+	height: $size-friend-request-action
 	margin-left: 10px
 	border-radius: 50%
 	text-align: center
 	margin: 5px 0
+	
 	i
 		font-size: 20px
 		color: white
-		line-height: $fr-action-s
+		line-height: $size-friend-request-action
 
-$accept-c: #21AABD
-$decline-c: #FF6B6B// #FF6600
+
 div.fr-accept
 	@extend .fr-req-action
-	background: $accept-c
+	background: $colour-friend-request-accept
 
-div.fr-accept:hover
-	background: fade-out($accept-c, 0.3)
+	&:hover
+		background: fade-out($colour-friend-request-accept, 0.3)
 
 div.fr-decline
 	@extend .fr-req-action
-	background: $decline-c
+	background: $colour-friend-request-decline
 
-div.fr-decline:hover
-	background: fade-out($decline-c, 0.3)
+	&:hover
+		background: fade-out($colour-friend-request-decline, 0.3)
 
 
-
-i.fr-add
-	color: white
-	font-size: 2.4em
-	width: 45px
-	line-height: 45px
-	margin-bottom: 5px
-	margin-left: -15px
-	border-radius: 50%
-	text-align: center
-	background: darken(#36b59e, 5%)
-i.fr-add:hover
-	color: darken(#36b59e, 10%)
 
 div.no-friends
 	padding-top: 10px
 	padding-bottom: 10px
 	text-align: center
-	color: #575757
+	color: $colour-default-text
+	
 	i
 		font-size: 2.2em
 		display: block
+	
 	span
 		font-size: 1.4em
 

@@ -1,24 +1,23 @@
 @import variables
 
-
 div.action-menu-backdrop
 	position: fixed
-	top: $action-bar-h
+	top: $height-action-bar
 	left: 0
 	width: 100%
-	background-color: rgba(0,0,0,0.6)
+	background-color: $colour-action-menu-backdrop
 	z-index: 150
 
-$action-menu-bg-c: transparent
-$action-menu-text-c: white
+
 div.action-menu-wrapper
 	position: fixed
 	top: 40px
 	width: 18%
-	background: transparent
+	background: $colour-action-menu-background
 	z-index: 160
+	
 	h1
-		color: fade-out(white, 0.8)
+		color: $colour-action-menu-heading-text
 
 .action-with-background
 	background-image: url('/assets/stardust.png') !important
@@ -32,32 +31,31 @@ div.action-menu-item
 	height: 40px
 	cursor: pointer
 	position: relative
+	
 	span, i
-		color: $action-menu-text-c
+		color: $colour-action-menu-text
 		font-size: 20px
 		line-height: 40px
+	
 	span.action-badge
 		position: relative
-	span.action-badge:after
-		content: attr(data-badge)
-		position: absolute
-		top: 0px
-		right: -30px
-		font-size: 10px
-		background: #d7d7d7
-		color: white
-		width: 18px
-		height: 18px
-		text-align: center
-		line-height: 18px
-		border-radius: 50%
+	
+		&:after
+			content: attr(data-badge)
+			position: absolute
+			top: 0px
+			right: -30px
+			font-size: 10px
+			background: $colour-action-menu-badge-background
+			color: $colour-default-text
+			width: 18px
+			height: 18px
+			text-align: center
+			line-height: 18px
+			border-radius: 50%
 
-div.action-menu-item:hover
-	background: fade-out($action-menu-text-c, 0.9)
-	span, i
-		color: lighten($action-menu-text-c, 10%)
-	span.action-badge
-		color: white
+	&:hover
+		background: $colour-action-menu-hover-item-background
 
 
 div.action-menu-item-active:after
