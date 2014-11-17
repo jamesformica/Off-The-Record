@@ -8,7 +8,6 @@ div.fr-name span
 div.fr-actions
 	text-align: right
 
-
 span.letter-highlight
 	display: inline-block
 	width: 40px
@@ -18,41 +17,6 @@ span.letter-highlight
 	margin-right: 20px
 	border-radius: 50%
 	text-transform: uppercase
-
-
-.fr-req-action
-	position: relative
-	display: inline-block
-	width: $size-friend-request-action
-	height: $size-friend-request-action
-	margin-left: 10px
-	border-radius: 50%
-	text-align: center
-	margin: 5px 0
-	box-shadow: 1px 1px 1px rgba(0,0,0,0.2)
-	cursor: pointer
-	
-	i
-		font-size: 20px
-		color: white
-		line-height: $size-friend-request-action
-
-
-div.fr-accept
-	@extend .fr-req-action
-	background: $colour-friend-request-accept
-
-	&:hover
-		background: fade-out($colour-friend-request-accept, 0.3)
-
-div.fr-decline
-	@extend .fr-req-action
-	background: $colour-friend-request-decline
-
-	&:hover
-		background: fade-out($colour-friend-request-decline, 0.3)
-
-
 
 div.no-friends
 	padding-top: 10px

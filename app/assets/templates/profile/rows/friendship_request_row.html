@@ -1,9 +1,15 @@
-<div class="row slate-item">
+<div class="row slate-item hover-highlight">
 	<div class="col-xs-7 fr-name">
 		<span>{{request.from_username}}</span>
 	</div>
 	<div class="col-xs-5 fr-actions">
-		<div class="fr-decline"><i class="fa fa-times" ng-click="decline()"></i></div>
-		<div class="fr-accept"><i class="fa fa-check" ng-click="accept()"></i></div>
+
+		<button type="button" class="otr-btn-secondary sm" ng-click="decline()">
+			<i class="fa fa-times"></i>
+		</button>
+		&nbsp;
+		<button type="button" class="otr-btn-primary sm" ng-click="accept()">
+			<i class="fa fa-check"></i>
+		</button>
 	</div>
 </div>

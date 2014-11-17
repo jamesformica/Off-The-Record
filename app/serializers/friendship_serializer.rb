@@ -7,7 +7,7 @@ class FriendshipSerializer < ActiveModel::Serializer
 
 
   def highlight_colour
-  	colours = ["#51c3f5", "#f59b1c", "#17efb1", "#ff8780", "#ff79c0", "#745eb0", "#efcc00", "#ef588c", "#65ff7e"]
+  	colours = ["#4ECDC4", "#C7F464", "#FF6B6B", "#F67280", "#C06C84", "#0ABFBC", "#F56991", "#FF9F80", "#D1F2A5"]
   	firstLetter = friend_username[0]
   	return colours[firstLetter.ord % (colours.length - 1)]
   end
