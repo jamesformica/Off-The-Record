@@ -124,14 +124,20 @@ div.slate-item-highlight
 	background-color: $colour-slate-item-highlight-background
 
 div.slate-floating
-	position: relative
-	width: 74%
-	max-width: 600px
-	padding: 24px
-	margin: 0 auto
-	margin-top: 20px
+	position: absolute
+	width: 90%
+	height: 350px
+	max-width: $width-slate-max
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	margin: auto
 	border-radius: 6px
 	border: 1px solid $colour-slate-floating-border
 	border-bottom: 5px solid $colour-slate-floating-border-base
 	background-color: $colour-slate-floating-background
+		
+	p, span
+		color: white
 	
