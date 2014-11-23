@@ -21,6 +21,12 @@ angular.module("question.controller", [])
 
 		$scope.new_question = Model.new_question();
 
+		$scope.random_question = function() {
+			Question.random().then(function(data) {
+				$scope.new_question.question = data;
+			});
+		}
+
 		$scope.addFriendToQuestion = function(friend) {
 			if (_.contains($scope.new_question.to, friend))
 				$scope.new_question.to = _.without($scope.new_question.to, friend);

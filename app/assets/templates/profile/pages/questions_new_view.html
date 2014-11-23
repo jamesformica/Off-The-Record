@@ -42,9 +42,14 @@
 
 		<div class="col-xs-12">
 
+			<!-- New Question -->
 			<section ng-show="step == 'q'">
 
+				<button type="button" class="btn otr-btn-primary sm pull-right" ng-click="random_question()">
+					<i class="fa fa-question"></i> Random
+				</button>
 				<h4>Question</h4>
+				
 				<textarea rows="2" cols="50" style="width: 100%;" ng-model="new_question.question"></textarea>
 				<br/><br/>
 				<h4>Your Answer</h4>
@@ -52,6 +57,7 @@
 
 			</section>
 
+			<!-- Pick Friends -->
 			<section ng-show="step == 'f'">
 
 				<new-question-add-friend-row ng-repeat="friendship in current_user.friendships" friend="friendship" toggle="addFriendToQuestion(friendship)"></new-question-add-friend-row>

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
       match 'signout', to: 'sessions#destroy', via: 'delete'
       match 'current_user', to: 'current_user#show', via: 'get'
+      match 'random_question', to: 'questions#random_question', via: 'get'
     end
   end
 

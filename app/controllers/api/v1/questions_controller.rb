@@ -3,23 +3,30 @@ module Api
 
 		class QuestionsController < ApplicationController
 
+			include QuestionHelper
+
 			def create
-				if question_params[:to].blank?
+
+				question_to_ask = question_params[:question]
+				own_answer = question_params[:answer]
+				people_to = question_params[:to]
+
+				if people_to.blank?
 					render json: { errors: ["Please select at least one friend"] }, status: :unprocessable_entity
 					return
 				end
 
-				if question_params[:answer].blank?
+				if own_answer.blank?
 					return render json: { errors: ["Please provide your own answer"] }, status: :unprocessable_entity
 				end
 
-				question = Question.new(question: question_params[:question], owner_id: current_user.id)
+				question = Question.new(question: question_to_ask, owner_id: current_user.id)
 				if question.save
 
 					current_user.user_questions.create(question_id: question.id)
-					current_user.answers.create(question_id: question.id, answer: question_params[:answer])
+					current_user.answers.create(question_id: question.id, answer: own_answer)
 
-					question_params[:to].each do |friend|
+					people_to.each do |friend|
 						qFriend = User.find(friend[:friend_id])
 						qFriend.user_questions.create(question_id: question.id)
 						qFriend.answers.create(question_id: question.id)
@@ -41,6 +48,9 @@ module Api
 				end
 			end
 
+			def random_question
+				render json: get_random_question
+			end
 
 			private
 			def question_params

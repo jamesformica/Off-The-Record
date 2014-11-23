@@ -16,6 +16,10 @@ angular.module("question.service", [ 'restangular' ])
 		return this.service.one(id).get();
 	}
 
+	Question.prototype.random = function() {
+		return Restangular.one("random_question").get();
+	}
+
 	return new Question;
 }])
 
