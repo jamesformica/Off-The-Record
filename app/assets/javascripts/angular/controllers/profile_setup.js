@@ -13,7 +13,9 @@ angular.module("profile.controller", [])
 		$scope.profileSettings = profile_settings;
 
 		toastr.options = {
-			"positionClass": "toast-bottom-left"
+			"positionClass": "toast-top-right",
+			"containerId": "toast-container"
+
 		};
 
 		$scope.setCurrentUser = function() {

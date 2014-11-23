@@ -1,5 +1,5 @@
-require 'spec_helper'
+# require 'spec_helper'
 
-describe AnswersController do
+# describe AnswersController do
 
-end
+# end

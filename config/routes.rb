@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
       resources :sessions, only: [:create, :destroy]
+      resources :current_user, only: [:show]
       resources :users, only: [:new, :create, :update, :destroy]
       resources :friendship_requests, only: [:index, :create, :destroy]
       resources :friendships, only: [:create, :destroy]
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
       resources :answers, only: [:update]
 
       match 'signout', to: 'sessions#destroy', via: 'delete'
-      match 'users/current_user', to: 'users#get_current_user', via: 'get'
+      match 'current_user', to: 'current_user#show', via: 'get'
     end
   end
 

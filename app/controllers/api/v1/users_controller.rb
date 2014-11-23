@@ -33,10 +33,6 @@ module Api
 				respond_with User.destroy(params[:id])
 			end
 
-			def get_current_user
-				render json: current_user
-			end
-
 			private
 			def user_params
 				params.require(:user).permit(:name, :email, :username, :password, :password_confirmation)
