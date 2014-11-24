@@ -45,10 +45,16 @@
 			<!-- New Question -->
 			<section ng-show="step == 'q'">
 
-				<button type="button" class="btn otr-btn-primary sm pull-right" ng-click="random_question()">
-					<i class="fa fa-question"></i> Random
-				</button>
-				<h4>Question</h4>
+				<div class="row">
+					<div class="col-xs-10">
+						<h4>Question</h4> 
+					</div>
+					<div class="col-sm-2" style="text-align: right;">
+						<button type="button" class="otr-btn-primary btn-random sm" ng-click="random_question()">
+							<i class="fa fa-random"></i>
+						</button>
+					</div>
+				</div>
 				
 				<textarea rows="2" cols="50" style="width: 100%;" ng-model="new_question.question"></textarea>
 				<br/><br/>
