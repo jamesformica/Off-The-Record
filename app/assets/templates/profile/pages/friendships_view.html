@@ -2,23 +2,24 @@
 	<!-- heading -->
 	<div class="row" background-colour color="{{ sections.friendships.headingColour }}">
 		<div class="col-xs-12 slate-heading"><span>{{ sections.friendships.headingText }}</span></div>
-	</div>
 
-	<!-- Search -->
-	<div class="row" style="margin: 10px 0">
-		<form name="addFriend" ng-submit="send_friend_request(friend_request)">
-			<div class="col-xs-9">
-				<div class="slate-heading-input">
-					<input class="slate-heading-input" type="text" place-holder-value="...username" place-holder ng-model="friend_request.to_username">
+		<!-- Search -->
+		<div class="row" style="margin: 10px 0;">
+			<form name="addFriend" ng-submit="send_friend_request(friend_request)">
+				<div class="col-xs-9">
+					<div class="slate-heading-input">
+						<input class="slate-heading-input" type="text" place-holder-value="...username" place-holder ng-model="friend_request.to_username">
+					</div>
 				</div>
-			</div>
-			<div class="col-xs-3" style="text-align: center">
-				<button class="otr-btn-primary md" type="submit" style="display: inline">
-					Add
-				</button>
-			</div>
-		</form>
+				<div class="col-xs-3" style="text-align: center">
+					<button class="otr-btn-primary md" type="submit" style="display: inline">
+						Add
+					</button>
+				</div>
+			</form>
+		</div>
 	</div>
+	
 
 	<div class="row slate-content" y-to-bottom>
 		<div class="col-xs-12">
