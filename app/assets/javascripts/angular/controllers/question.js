@@ -5,13 +5,17 @@ angular.module("question.controller", [])
 
 		$scope.setCurrentUser();
 
-		// var timer = setInterval( function() {
-		// 	$scope.setCurrentUser();
-		// }, 5000);
+		var timer = setInterval( function() {
+			$scope.setCurrentUser();
+		}, 5000);
 
 		$scope.showQuestion = function(question) {
 			$location.path("/question/" + question.id)
 		}
+
+		$scope.$on("$destroy", function() {
+			clearInterval(timer);
+		});
 
 	}])
 
@@ -64,14 +68,17 @@ angular.module("question.controller", [])
 			$scope.setCurrentQuestionAndState(data.question);
 		});
 
-		// var timer = setInterval( function() {
-		// 	if ($scope.current_state === $scope.states.waiting) {
-		// 		Question.show(q_id).then(function(data) {
-		// 			$scope.setCurrentQuestionAndState(data.question);
-		// 		});
-		// 	}
-		// }, 7500);
+		var timer = setInterval( function() {
+			if ($scope.current_state === $scope.states.waiting) {
+				Question.show(q_id).then(function(data) {
+					$scope.setCurrentQuestionAndState(data.question);
+				});
+			}
+		}, 7500);
 
+		$scope.$on("$destroy", function() {
+			clearInterval(timer);
+		});
 		
 		$scope.updateAnswer = function(answer) {
 			var update_answer = Model.update_answer(true);
