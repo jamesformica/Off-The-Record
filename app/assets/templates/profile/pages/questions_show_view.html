@@ -13,19 +13,19 @@
 		<div class="col-xs-12">
 			
 			
+			<!-- Status -->
+			<div style="margin-top: 30px">
+				<question-show-user-status ng-repeat="answer in current_question.answers" answer="answer"></question-show-user-status>
+			</div>
 
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="qu-current-question">
 					<h2 class="qu-question-question">{{current_question.question}}</h2>
 				</div>
 			</div>
 
-			<!-- Status -->
-			<div style="margin: 10px 0">
-				<question-show-user-status ng-repeat="answer in current_question.answers" answer="answer"></question-show-user-status>
-			</div>
 
-			<!-- Answer -->
+			<!-- Need to Answer -->
 			<section ng-show="current_state == states.answer">
 				<h4>Your Answer</h4>
 				<textarea rows="2" cols="50" style="width: 100%;" ng-model="users_answer"></textarea>
@@ -60,9 +60,8 @@
 
 			<!-- Viewed -->
 			<section class="m-b-20" ng-show="current_state == states.viewed">
-				<p class="qu-viewed-heading">Answers:</p>
-				<div class="row" ng-repeat="answer in randomised_answers">
-					<div class="col-xs-12 qu-viewed">
+				<div class="row qu-viewed-answer" ng-repeat="answer in randomised_answers">
+					<div class="qu-viewed">
 						<span class="animated flipInX">{{answer.answer}}</span>
 					</div>
 				</div>

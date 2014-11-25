@@ -120,20 +120,63 @@ div.qu-ready
 	button
 		display: inline-block
 
-p.qu-viewed-heading
-	margin-top: 30px
-	font-size: 18px
-	font-weight: bold
+div.qu-viewed-answer
 
-div.qu-viewed
-	margin-top: 16px
+	div.qu-viewed
+		position: relative
+		display: inline-block
+		background-color: #e2e2e2
+		margin: 16px 30px 0 30px
+		padding: 10px 20px
+		border-top-right-radius: 4px
+		border-bottom-left-radius: 4px
+		border-bottom-right-radius: 4px
+
+		&:after
+			content: ""
+			position: absolute
+			width: 0
+			height: 0
+			border: 4px solid transparent
+			top: 0
+			left: -8px
+			border-right-color: #e2e2e2
+			border-top-color: #e2e2e2
+				
+	&:nth-child(odd)
+		text-align: left
+
+	&:nth-child(even)
+		text-align: right
 	
 	span
 		font-size: 18px
-		margin-left: 20px
 
 .btn-random
 	margin-bottom: 4px
 
 
+div.qu-current-question
+	position: relative
+	background-color: #FF6B6B
+	margin: 20px auto
+	padding: 15px 10px
+	width: 90%
+	border-top-left-radius: 4px
+	border-bottom-left-radius: 4px
+	border-bottom-right-radius: 4px
 
+	&:after
+		content: ""
+		position: absolute
+		top: 0
+		right: -16px
+		width: 0
+		height: 0
+		border: 8px solid transparent
+		border-left-color: #FF6B6B
+		border-top-color: #FF6B6B
+
+	h2
+		color: white
+		margin: 0
