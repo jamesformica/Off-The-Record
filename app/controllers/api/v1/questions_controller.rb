@@ -49,7 +49,7 @@ module Api
 			end
 
 			def random_question
-				render json: get_random_question
+				render json: RandomQuestion.get_random_question
 			end
 
 			private
