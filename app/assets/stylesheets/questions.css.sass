@@ -125,42 +125,41 @@ div.qu-viewed-answer
 	div.qu-viewed
 		position: relative
 		display: inline-block
-		background-color: #f2f2f2
+		background-color: $colour-answer-background
 		max-width: 70%
 		margin: 10px 40px
 		padding: 15px 20px
-		border-bottom-left-radius: 4px
-		border-bottom-right-radius: 4px
+		border-bottom-left-radius: $radius-answer-container
+		border-bottom-right-radius: $radius-answer-container
 
 		&:after
 			content: ""
 			position: absolute
 			width: 0
 			height: 0
-			border: 4px solid transparent
+			border: $size-answer-tick-border solid transparent
 			top: 0
-			border-top-color: #f2f2f2
+			border-top-color: $colour-answer-background
 				
 	&:nth-child(even)
 		text-align: left
 
 		div.qu-viewed
-			border-top-right-radius: 4px
+			border-top-right-radius: $radius-answer-container
 
 			&:after
-				left: -8px
-				border-right-color: #f2f2f2
+				left: ($size-answer-tick-border * 2 * -1)
+				border-right-color: $colour-answer-background
 
 	&:nth-child(odd)
 		text-align: right
 
 		div.qu-viewed
-			border-top-left-radius: 4px
+			border-top-left-radius: $radius-answer-container
 
 			&:after
-				right: -8px
-				border-left-color: #f2f2f2
-
+				right: ($size-answer-tick-border * 2 * -1)
+				border-left-color: $colour-answer-background
 	
 	span
 		font-size: 18px
@@ -171,22 +170,23 @@ div.qu-viewed-answer
 
 div.qu-current-question
 	position: relative
-	margin: 10px 40px
+	margin: 20px 40px 10px 40px
 	padding: 20px 15px
-	border-top-left-radius: 4px
-	border-bottom-left-radius: 4px
-	border-bottom-right-radius: 4px
+	border-top-left-radius: $radius-answer-container
+	border-bottom-left-radius: $radius-answer-container
+	border-bottom-right-radius: $radius-answer-container
 
 	div.qu-current-question-tick
 		position: absolute
 		top: 0
-		right: -16px
+		right: ($size-question-tick-border * 2 * -1)
 		width: 0
 		height: 0
-		border: 8px solid transparent
+		border: $size-question-tick-border solid transparent
 		border-right-color: transparent !important
 		border-bottom-color: transparent !important
 
-	h2
+	p
+		font-size: 24px
 		color: white
 		margin: 0

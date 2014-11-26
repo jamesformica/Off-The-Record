@@ -10,14 +10,13 @@
 	</button>
 	
 	<div class="row slate-content" y-to-bottom>
-		<div class="col-xs-12">
-			
-			
+		<div class="col-xs-12 m-t-b-30">
+
 			<!-- Status -->
-			<div style="margin-top: 30px">
+			<div>
 				<question-show-user-status ng-repeat="answer in current_question.answers" answer="answer"></question-show-user-status>
 			</div>
-			
+
 			<!-- Waiting -->
 			<section ng-show="current_state == states.waiting">
 				<div class="row">
@@ -52,10 +51,11 @@
 
 			</section>
 
+			<!-- Actual Question -->
 			<div class="row m-b-20">
 				<div class="qu-current-question" style="background-color: {{current_question.asker_colour}}">
 					<div class="qu-current-question-tick" style="border-color: {{current_question.asker_colour}}"></div>
-					<h2 class="qu-question-question">{{current_question.question}}</h2>
+					<p class="qu-question-question">{{current_question.question}}</p>
 				</div>
 			</div>
 
