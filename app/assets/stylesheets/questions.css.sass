@@ -125,10 +125,10 @@ div.qu-viewed-answer
 	div.qu-viewed
 		position: relative
 		display: inline-block
-		background-color: #e2e2e2
-		margin: 16px 30px 0 30px
-		padding: 10px 20px
-		border-top-right-radius: 4px
+		background-color: #f2f2f2
+		max-width: 70%
+		margin: 10px 40px
+		padding: 15px 20px
 		border-bottom-left-radius: 4px
 		border-bottom-right-radius: 4px
 
@@ -139,15 +139,28 @@ div.qu-viewed-answer
 			height: 0
 			border: 4px solid transparent
 			top: 0
-			left: -8px
-			border-right-color: #e2e2e2
-			border-top-color: #e2e2e2
+			border-top-color: #f2f2f2
 				
-	&:nth-child(odd)
+	&:nth-child(even)
 		text-align: left
 
-	&:nth-child(even)
+		div.qu-viewed
+			border-top-right-radius: 4px
+
+			&:after
+				left: -8px
+				border-right-color: #f2f2f2
+
+	&:nth-child(odd)
 		text-align: right
+
+		div.qu-viewed
+			border-top-left-radius: 4px
+
+			&:after
+				right: -8px
+				border-left-color: #f2f2f2
+
 	
 	span
 		font-size: 18px
@@ -158,24 +171,21 @@ div.qu-viewed-answer
 
 div.qu-current-question
 	position: relative
-	background-color: #FF6B6B
-	margin: 20px auto
-	padding: 15px 10px
-	width: 90%
+	margin: 10px 40px
+	padding: 20px 15px
 	border-top-left-radius: 4px
 	border-bottom-left-radius: 4px
 	border-bottom-right-radius: 4px
 
-	&:after
-		content: ""
+	div.qu-current-question-tick
 		position: absolute
 		top: 0
 		right: -16px
 		width: 0
 		height: 0
 		border: 8px solid transparent
-		border-left-color: #FF6B6B
-		border-top-color: #FF6B6B
+		border-right-color: transparent !important
+		border-bottom-color: transparent !important
 
 	h2
 		color: white

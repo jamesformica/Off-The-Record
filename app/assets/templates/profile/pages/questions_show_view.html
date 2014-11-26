@@ -17,22 +17,6 @@
 			<div style="margin-top: 30px">
 				<question-show-user-status ng-repeat="answer in current_question.answers" answer="answer"></question-show-user-status>
 			</div>
-
-			<div class="row">
-				<div class="qu-current-question">
-					<h2 class="qu-question-question">{{current_question.question}}</h2>
-				</div>
-			</div>
-
-
-			<!-- Need to Answer -->
-			<section ng-show="current_state == states.answer">
-				<h4>Your Answer</h4>
-				<textarea rows="2" cols="50" style="width: 100%;" ng-model="users_answer"></textarea>
-				<button class="otr-btn-primary md" style="margin-top: 10px" ng-click="updateAnswer(users_answer)">
-					<i class="fa fa-arrow-right"></i>&nbsp;&nbsp;Answer
-				</button>
-			</section>
 			
 			<!-- Waiting -->
 			<section ng-show="current_state == states.waiting">
@@ -59,13 +43,29 @@
 			</section>
 
 			<!-- Viewed -->
-			<section class="m-b-20" ng-show="current_state == states.viewed">
+			<section class="m-t-20" ng-show="current_state == states.viewed">
 				<div class="row qu-viewed-answer" ng-repeat="answer in randomised_answers">
 					<div class="qu-viewed">
 						<span class="animated flipInX">{{answer.answer}}</span>
 					</div>
 				</div>
 
+			</section>
+
+			<div class="row m-b-20">
+				<div class="qu-current-question" style="background-color: {{current_question.asker_colour}}">
+					<div class="qu-current-question-tick" style="border-color: {{current_question.asker_colour}}"></div>
+					<h2 class="qu-question-question">{{current_question.question}}</h2>
+				</div>
+			</div>
+
+			<!-- Need to Answer -->
+			<section ng-show="current_state == states.answer">
+				<h4>Your Answer</h4>
+				<textarea rows="2" cols="50" style="width: 100%;" ng-model="users_answer"></textarea>
+				<button class="otr-btn-primary md" style="margin-top: 10px" ng-click="updateAnswer(users_answer)">
+					<i class="fa fa-arrow-right"></i>&nbsp;&nbsp;Answer
+				</button>
 			</section>
 
 		</div>
