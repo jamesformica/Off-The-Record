@@ -1,7 +1,3 @@
-## Summary
-# index: returns a list of friend requests for the current user (if any)
-# create: various validation results in a new request being created
-
 module Api
 	module V1
 
@@ -36,9 +32,7 @@ module Api
 			def request_params
 				puts params
 				params.require(:friendship_request).permit(:id, :to_username)
-			end
-
-			
+			end	
 
 		end
 	end

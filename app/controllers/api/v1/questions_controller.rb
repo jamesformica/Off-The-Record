@@ -22,14 +22,10 @@ module Api
 
 				question = Question.new(question: question_to_ask, owner_id: current_user.id)
 				if question.save
-
-					current_user.user_questions.create(question_id: question.id)
-					current_user.answers.create(question_id: question.id, answer: own_answer)
-
+					User.create_user_question(current_user.id, question.id, own_answer)
+					
 					people_to.each do |friend|
-						qFriend = User.find(friend[:friend_id])
-						qFriend.user_questions.create(question_id: question.id)
-						qFriend.answers.create(question_id: question.id)
+						User.create_user_question(friend[:friend_id], question.id)
 					end
 
 					render json: question, status: :ok

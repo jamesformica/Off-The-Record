@@ -28,11 +28,25 @@ class User < ActiveRecord::Base
 		Digest::SHA1.hexdigest(token.to_s)
 	end
 
+	def User.create_user_question(userID, questionID)
+		User.create_user_question(userID, questionID, nil)
+	end
+
+	def User.create_user_question(userID, questionID, answer)
+		user = User.find(userID)
+		user.user_questions.create(question_id: questionID)
+		if (answer == nil)
+			user.answers.create(question_id: questionID)
+		else
+			user.answers.create(question_id: questionID, answer: answer)
+		end
+	end
+
 	private
 
-		def create_remember_token
-			self.remember_token = User.digest(User.new_remember_token)
-		end
+	def create_remember_token
+		self.remember_token = User.digest(User.new_remember_token)
+	end
 
 
 end
