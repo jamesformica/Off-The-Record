@@ -5,12 +5,16 @@ module Api
 
 			def create
 				cred = params[:session][:email].downcase
-				user = User.find_by(email: cred) || User.find_by(username: cred)
-				if user && user.authenticate(params[:session][:password])
-					sign_in user
-					render json: { message: "Sign In successful"}, status: :ok
+				user = User.where("lower(email) = ?", cred).first || User.where("lower(username) = ?", cred).first
+				if user 
+					if user.authenticate(params[:session][:password])
+						sign_in user
+						render json: { message: "Sign In successful"}, status: :ok
+					else
+						render json: { errors: ["Wrong password"]}, status: :unprocessable_entity
+					end
 				else
-					render json: { errors: ["Invalid credentials"]}, status: :unprocessable_entity
+					render json: { errors: ["Can't find who you're looking for"]}, status: :not_found
 				end
 			end
 

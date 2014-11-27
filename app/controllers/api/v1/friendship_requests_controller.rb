@@ -9,7 +9,7 @@ module Api
 			respond_to :json
 
 			def create
-				toUser = User.find_by(username: request_params[:to_username].downcase)
+				toUser = User.where("lower(username) = ?", request_params[:to_username].downcase).first
 				if toUser
 					friend_req = FriendshipRequest.new(from_user_id: current_user.id, to_user_id: toUser.id)
 					if friend_req.save
