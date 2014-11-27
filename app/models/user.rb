@@ -28,8 +28,12 @@ class User < ActiveRecord::Base
 		Digest::SHA1.hexdigest(token.to_s)
 	end
 
-	def User.create_user_question(userID, questionID)
-		User.create_user_question(userID, questionID, nil)
+	def User.find_by_email(email)
+		User.where("lower(email) = ?", email.downcase).first
+	end
+
+	def User.find_by_username(username)
+		User.where("lower(username) = ?", username.downcase).first
 	end
 
 	def User.create_user_question(userID, questionID, answer)

@@ -4,8 +4,8 @@ module Api
 		class SessionsController < ApplicationController
 
 			def create
-				cred = params[:session][:email].downcase
-				user = User.where("lower(email) = ?", cred).first || User.where("lower(username) = ?", cred).first
+				cred = params[:session][:email]
+				user = User.find_by_email(cred) || User.find_by_username(cred)
 				if user 
 					if user.authenticate(params[:session][:password])
 						sign_in user
@@ -22,14 +22,6 @@ module Api
 				sign_out
 				render json: { message: "Sign out successful"}, status: :ok
 			end
-
-			# def signedin
-			# 	if signed_in?
-			# 		render json: { message: "Signed in"}, status: :ok
-			# 	else
-			# 		render json: { message: "Not signed in"}, status: :unauthorized
-			# 	end
-			# end
 
 		end
 

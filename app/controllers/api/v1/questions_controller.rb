@@ -23,9 +23,9 @@ module Api
 				question = Question.new(question: question_to_ask, owner_id: current_user.id)
 				if question.save
 					User.create_user_question(current_user.id, question.id, own_answer)
-					
+
 					people_to.each do |friend|
-						User.create_user_question(friend[:friend_id], question.id)
+						User.create_user_question(friend[:friend_id], question.id, nil)
 					end
 
 					render json: question, status: :ok
