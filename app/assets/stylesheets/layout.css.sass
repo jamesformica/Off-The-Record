@@ -94,8 +94,13 @@ div.slate-heading-input
 .slate-content
 	background-color: $colour-slate-content-background
 	overflow: scroll
+	-webkit-overflow-scrolling: touch //hopefully fix stupid ios issues
+
 	overflow-x: hidden
 	height: 1000px
+
+	& > *
+		-webkit-transform: translateZ(0px)
 
 div.slate-sub-heading
 	position: relative
