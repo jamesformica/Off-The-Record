@@ -46,6 +46,12 @@ class User < ActiveRecord::Base
 		end
 	end
 
+	def User.build_two_way_friendship(user1ID, user2ID)
+		friendship_a = User.find(user1ID).friendships.new(friend_id: user2ID)
+		friendship_b = User.find(user2ID).friendships.build(friend_id: user1ID)
+		return friendship_a, friendship_b
+	end
+
 	private
 
 	def create_remember_token

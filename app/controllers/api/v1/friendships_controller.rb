@@ -4,8 +4,7 @@ module Api
 		class FriendshipsController < ApplicationController
 
 			def create
-				friendship_a = current_user.friendships.new(friend_id: friendship_params[:from_user_id])
-				friendship_b = User.find(friendship_params[:from_user_id]).friendships.build(friend_id: current_user.id)
+				friendship_a, friendship_b = User.build_two_way_friendship(current_user.id, friendship_params[:from_user_id])
 				if friendship_a.save && friendship_b.save && FriendshipRequest.find(friendship_params[:id]).destroy
 					render json: friendship_a, status: :ok
 				else
