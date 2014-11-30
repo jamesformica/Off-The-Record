@@ -5,7 +5,6 @@ div.action-bar
 	height: $height-action-bar
 	background-color: $colour-action-bar-background
 	color: #575757
-	overflow: hidden
 	width: 100%
 	box-shadow: $dark-shadow
 	z-index: 1001
@@ -27,8 +26,13 @@ div.action-bar
 
 	div.user
 		text-align: center
-		font-size: $height-action-bar / 2
-		line-height: $height-action-bar
+		font-family: $fancy-font
+		font-size: $height-action-bar
+		line-height: $height-action-bar + 8
+
+		span
+			color: white
+			+text-outline(2px, 3px, rgba(0,0,0,0.2))
 
 div.action-bar-fake
 	height: $height-action-bar
