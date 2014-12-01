@@ -69,31 +69,6 @@ angular.module("common.directive", [])
 	}
 }])
 
-
-.directive('widthOfContent', ['$timeout', function($timeout) {
-	return {
-		restrict: 'A',
-		link: function (scope, element, attrs) {
-
-			$(window).resize(function() {
-				setElementWidth();
-			});
-
-			$(document).ready(function(){
-				var t = setTimeout( function() {
-					setElementWidth();
-					clearTimeout(t);
-				}, 0);
-			});
-
-			function setElementWidth() {
-				var slateWidth = $(".slate-wrapper").width();
-				element.css("width", slateWidth);
-			}
-		}
-	}
-}])
-
 .directive('placeHolder', [function() {
 	return {
 		restrict: 'A',
