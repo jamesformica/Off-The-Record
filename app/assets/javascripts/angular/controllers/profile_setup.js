@@ -13,7 +13,7 @@ angular.module("profile.controller", [])
 		$scope.profileSettings = profile_settings;
 
 		toastr.options = {
-			"positionClass": "toast-top-right",
+			"positionClass": "toast-bottom-right",
 			"containerId": "toast-container"
 
 		};

@@ -23,9 +23,18 @@ angular.module("question.controller", [])
 .controller('QuestionsNewController', ['$scope', 'Question', 'Model',
 	function ($scope, Question, Model) {
 
+		$scope.step = 0;
 		$scope.new_question = Model.new_question();
 
-		$scope.random_question = function() {
+		$scope.nextStep = function() {
+			$scope.step += 1;
+		}
+
+		$scope.previousStep = function() {
+			$scope.step -= 1;
+		}
+
+		$scope.randomQuestion = function() {
 			Question.random().then(function(data) {
 				$scope.new_question.question = data;
 			});
