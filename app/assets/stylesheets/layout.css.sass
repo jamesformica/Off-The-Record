@@ -27,12 +27,12 @@ div.action-bar
 	div.user
 		text-align: center
 		font-family: $fancy-font
-		font-size: $height-action-bar
-		line-height: $height-action-bar + 8
+		font-size: $height-action-bar - 4
+		line-height: $height-action-bar + 6
 
 		span
-			color: white
-			+text-outline(1px, 2px, rgba(0,0,0,0.25))
+			color: #6f6f6f
+			+text-outline(2px, 0px, rgba(255,255,255, 1))
 
 div.action-bar-fake
 	height: $height-action-bar
@@ -97,11 +97,10 @@ div.slate-heading-input
 
 .slate-content
 	background-color: $colour-slate-content-background
+	margin-top: $height-profile-control
 	overflow: scroll
 	-webkit-overflow-scrolling: touch //hopefully fix stupid ios issues
-
 	overflow-x: hidden
-	height: 1000px
 
 	& > *
 		-webkit-transform: translateZ(0px)

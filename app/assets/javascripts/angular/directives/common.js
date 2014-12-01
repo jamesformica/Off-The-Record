@@ -43,6 +43,56 @@ angular.module("common.directive", [])
 	}
 }])
 
+.directive('pageMinHeight', ['$timeout', function($timeout) {
+	return {
+		restrict: 'A',
+		link: function (scope, element, attrs) {
+
+			$(window).resize(function() {
+				setElementHeight();
+			});
+
+			$(document).ready(function(){
+				var t = setTimeout( function() {
+					setElementHeight();
+					clearTimeout(t);
+				}, 0);
+			});
+
+			function setElementHeight() {
+				var pos = element.offset();
+				var windowH = $(window).height();
+				element.css("min-height", windowH - pos.top);
+				element.css("overflow-y", "auto");
+			}
+		}
+	}
+}])
+
+
+.directive('widthOfContent', ['$timeout', function($timeout) {
+	return {
+		restrict: 'A',
+		link: function (scope, element, attrs) {
+
+			$(window).resize(function() {
+				setElementWidth();
+			});
+
+			$(document).ready(function(){
+				var t = setTimeout( function() {
+					setElementWidth();
+					clearTimeout(t);
+				}, 0);
+			});
+
+			function setElementWidth() {
+				var slateWidth = $(".slate-wrapper").width();
+				element.css("width", slateWidth);
+			}
+		}
+	}
+}])
 
 .directive('placeHolder', [function() {
 	return {

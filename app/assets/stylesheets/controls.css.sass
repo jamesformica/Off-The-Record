@@ -1,0 +1,24 @@
+@import variables
+
+div.ui-profile-controls
+	height: $height-profile-control
+
+	div.ui-profile-control-heading, div.ui-profile-control-action
+		position: relative
+		padding: 0 10px
+
+		i, span
+			line-height: $height-profile-control
+			color: white
+
+		i
+			font-size: 20px
+
+		span
+			font-size: 24px
+	
+	div.ui-profile-control-action
+		cursor: pointer
+
+		&:hover, &:active
+			background: rgba(0,0,0,0.06)

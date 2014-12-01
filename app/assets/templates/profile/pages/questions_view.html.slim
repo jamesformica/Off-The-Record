@@ -1,0 +1,47 @@
+div class="container slate-wrapper"
+
+	profile-control colour="sections.questions.headingColour"
+
+		div class="ui-profile-control-heading col-xs-9"
+			span
+				| {{sections.questions.headingText}}
+
+		div class="ui-profile-control-action col-xs-3 text-center" ng-click="setCurrentViewable(sections.questions_new.url)"
+			i class="fa fa-plus"
+				| &nbsp;New
+
+
+	/ No Questions
+	div [class="slate-content" page-min-height]
+
+		section ng-hide="current_user.questions.length > 0"
+			div class="no-friends m-t-40"
+				i class="fa fa-frown-o"
+				span
+					| Nup, no questions for you...
+					br
+					| Maybe try creating one above
+
+
+		/ Questions
+		table class="qu-question" ng-repeat="question in current_user.questions" ng-click="showQuestion(question)"
+					tr class="row qu-question-row"
+						td class="col-xs-10 qu-question-row-question"
+							p
+								| {{question.question}}
+
+						td class="col-xs-2 qu-question-row-status"
+							
+							i class="fa fa-circle-o" ng-hide="question.completely_answered" ng-class="question.answered ? 'qu-waiting' : 'qu-answer'"
+
+							i class="fa fa-circle" ng-show="question.completely_answered" ng-class="question.viewed ? 'qu-viewed' : 'qu-ready' "
+
+					tr class="row qu-to-row"
+
+						td class="col-xs-10 qu-to-row-to"
+							span ng-repeat="answer in question.answers"
+								| {{answer.user_username == current_user.username ? "you" : answer.user_username}}
+
+						td class="col-xs-2 qu-to-row-owner"
+							i class="fa fa-user" ng-show="question.is_owner"
+	

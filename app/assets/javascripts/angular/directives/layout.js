@@ -34,6 +34,17 @@ angular.module("layout.directive", [])
 	}
 })
 
+.directive('profileControl', function() {
+	return {
+		restrict: 'E',
+		transclude: true,
+		scope: {
+			colour: '='
+		},
+		templateUrl: 'profile/rows/profile_control.html'
+	}
+})
+
 .directive('actionMenuItem', function() {
 	return {
 

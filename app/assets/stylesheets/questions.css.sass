@@ -27,13 +27,11 @@ i.qu-viewed
 	color: $colour-question-viewed
 
 // Questions - show
-table.qu-question:last-child
-	border-bottom: 0
-
 table.qu-question
+	position: relative
 	padding: 0
+	margin: 30px 0
 	width: 100%
-	border-bottom: 1px solid $colour-list-item-border
 	cursor: pointer
 	
 	tr.qu-question-row
@@ -44,7 +42,7 @@ table.qu-question
 			overflow-x: hidden
 			
 			p
-				font-size: 25px
+				font-size: 20px
 				
 				&:first-letter
 					text-transform: uppercase
