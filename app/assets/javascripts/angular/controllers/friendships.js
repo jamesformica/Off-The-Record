@@ -10,10 +10,8 @@ angular.module("friendship.controller", [])
 
 			Friendship.create_request(w_request).then(function(data) {
 				toastr.info("friend request sent");
-				$scope.friend_request.to_username = "";
 			}, function(response) {
 				toastr.warning(response.data.errors);
-				$scope.friend_request.to_username = "";
 			});
 		}
 
