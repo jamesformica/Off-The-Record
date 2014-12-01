@@ -1,0 +1,44 @@
+div class="container slate-wrapper"
+
+	profile-control colour="sections.friendships.headingColour"
+		form name="addFriend" ng-submit="send_friend_request(friend_request)"
+			div class="ui-profile-control-heading col-xs-8"
+				input [type="text" place-holder-value="Search" place-holder ng-model="friend_request.to_username"]
+
+			button class="ui-profile-control-button col-xs-4" type="submit"
+				| Add
+				i class="fa fa-plus"
+
+
+	div [class="slate-content" page-min-height]
+
+		/ Friend Requests
+		section ng-show="current_user.friendship_requests.length > 0"
+				div class="row"
+					div class="col-xs-12 slate-sub-heading"
+						span Friend requests
+
+				friendship-request-row ng-repeat="request in current_user.friendship_requests" request="request" accept="accept_friend_request(request)" decline="decline_friend_request(request)"
+
+
+		/ Friends
+		section ng-show="current_user.friendships.length > 0"
+			div class="row"
+				div class="col-xs-12 slate-sub-heading"
+					span Friends
+
+			friendship-row ng-repeat="friendship in current_user.friendships" friend="friendship" destroy="destroy_friendship(friendship)"
+
+		/ No Friends	
+		section ng-hide="current_user.friendships.length > 0"
+			div class="row"
+				div class="col-xs-12 slate-sub-heading"
+				span Oh so lonely
+
+			div class="row"
+				div class="col-xs-12 no-friends"
+					i class="fa fa-frown-o"
+					span
+						| Looks like you need some friends...
+						br
+						| Try adding some above

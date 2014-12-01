@@ -4,13 +4,13 @@ div.ui-profile-controls
 	height: $height-profile-control
 	margin-right: 15px
 
-	div.ui-profile-control-heading, div.ui-profile-control-action
+	div.ui-profile-control-heading, div.ui-profile-control-action, button.ui-profile-control-button
 		position: relative
 		color: white
 		font-size: 20px
 		text-align: center
 
-		i, span
+		i, span, button, input[type="text"]
 			line-height: $height-profile-control
 			color: white
 
@@ -20,8 +20,23 @@ div.ui-profile-controls
 
 		span
 			font-size: 14px
+
+		input[type="text"]
+			background: transparent
+			font-size: 18px
+			color: white
+			padding-left: 6px
+			border-bottom: 1px solid white
+
+	button.ui-profile-control-button
+		background: transparent
+		padding: 0
+		border: 0
+		margin: 0
+		outline: 0
+
 	
-	div.ui-profile-control-action
+	div.ui-profile-control-action, button.ui-profile-control-button
 		cursor: pointer
 
 		&:hover, &:active

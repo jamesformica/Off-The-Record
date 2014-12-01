@@ -79,17 +79,20 @@ angular.module("common.directive", [])
 			$(document).ready(function() {
 				var t = setTimeout( function() {
 					$(element)[0].value = scope.placeHolderValue;
+					$(element).addClass("italic");
 					clearTimeout(t);
 				}, 0);
 				
 				$(element).focusin(function() {
 					if (this.value == scope.placeHolderValue) {
 						this.value = '';
+						$(this).removeClass("italic");
 					}
 				});
 				$(element).focusout(function() {
 					if (this.value == '') {
 						this.value = scope.placeHolderValue;
+						$(this).addClass("italic");
 					}
 				});
 			});			
