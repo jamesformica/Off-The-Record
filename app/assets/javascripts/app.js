@@ -21,6 +21,7 @@ angular.module("profileapp", [
 	'templates',
 	'ngRoute',
 	'restangular',
+	'headroom',
 
 	'user.service',
 	'session.service',

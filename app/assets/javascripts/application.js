@@ -22,6 +22,7 @@
 //= require underscore
 //= require_tree ./angular
 //= require_tree ../templates
+//= require '_headroom.angular'
 //= require_tree .
 
 var profile_settings = {
