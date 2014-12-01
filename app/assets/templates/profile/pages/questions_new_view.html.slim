@@ -5,14 +5,11 @@ div class="container slate-wrapper"
 
 		profile-control colour="sections.questions.headingColour"
 
-			div class="ui-profile-control-action col-xs-5 text-center" ng-click="setCurrentViewable(sections.questions.url)"
+			div class="ui-profile-control-action col-xs-2" ng-click="setCurrentViewable(sections.questions.url)"
 				i class="fa fa-times"
-				| Cancel
 
-			div class="col-xs-2"
-
-			div class="ui-profile-control-action col-xs-5 text-center" ng-click="nextStep()"
-				| Next
+			div class="ui-profile-control-action col-xs-4 col-xs-offset-6" ng-click="nextStep()"
+				| next
 				i class="fa fa-arrow-right"
 
 	
@@ -20,14 +17,11 @@ div class="container slate-wrapper"
 
 		profile-control colour="sections.questions.headingColour"
 
-				div class="ui-profile-control-action col-xs-5 text-center" ng-click="previousStep()"
+				div class="ui-profile-control-action col-xs-2" ng-click="previousStep()"
 					i class="fa fa-arrow-left"
-					| Back
 
-				div class="col-xs-2"
-
-				div class="ui-profile-control-action col-xs-5 text-center" ng-click="createQuestion(new_question)"
-					| Finish
+				div class="ui-profile-control-action col-xs-5 col-xs-offset-5" ng-click="createQuestion(new_question)"
+					| finish
 					i class="fa fa-check"
 
 

@@ -1,0 +1,60 @@
+div class="container slate-wrapper"
+
+	/ Controls
+	profile-control colour="sections.questions.headingColour"
+
+		div class="ui-profile-control-action col-xs-2" ng-click="setCurrentViewable(sections.questions.url)"
+			i class="fa fa-arrow-left"
+
+		div class="ui-profile-control-action col-xs-5 col-xs-offset-5" ng-click="updateAnswer(users_answer)" ng-show="current_state == states.answer"
+			| answer
+			i class="fa fa-check"
+
+		div class="ui-profile-control-action col-xs-7 col-xs-offset-3" ng-click="setViewed()" ng-show="current_state == states.ready"
+			| view answers
+			i class="fa fa-binoculars"
+
+
+	/ Content
+	div [class="slate-content" page-min-height]
+
+		question-show-user-status ng-repeat="answer in current_question.answers" answer="answer"
+
+		
+		/ Need to Answer
+		section ng-show="current_state == states.answer"
+				h4 class="m-t-20"
+					| Your Answer
+				textarea rows="2" cols="50" style="width: 100%;" ng-model="users_answer"
+
+
+		/ Waiting
+		section ng-show="current_state == states.waiting"
+			div class="row"
+				div class="col-xs-12 qu-waiting"
+					i class="fa fa-clock-o animated swing" style="color: {{sections.questions_show.headingColour}}"
+					br
+					span Seems like we are waiting on some individuals...
+
+		
+		/ Ready
+		section ng-show="current_state == states.ready"
+			div class="row"
+				div class="col-xs-12 qu-ready"
+					br
+					span Looks like everyone has answered. Click View Answers above to check them out!
+
+		
+		/ Viewed
+		section class="m-t-20" ng-show="current_state == states.viewed"
+			div class="row qu-viewed-answer" ng-repeat="answer in randomised_answers"
+				div class="qu-viewed"
+					span class="animated flipInX"{{answer.answer}}
+
+
+		/ Actual Question
+		div class=" m-b-20 m-t-40"
+			div class="qu-current-question" style="background-color: {{current_question.asker_colour}}"
+				div class="qu-current-question-tick" style="border-color: {{current_question.asker_colour}}"
+				p class="qu-question-question"
+						| {{current_question.question}}
