@@ -5,8 +5,8 @@
 
 angular.module("profile.controller", [])
 
-.controller('ProfileSetupController', ['$scope', '$location', 'User', 'Session', 'Redirect',
-	function ($scope, $location, User, Session, Redirect) {
+.controller('ProfileSetupController', ['$scope', '$location', 'User', 'Session', 'Redirect', 'Loading',
+	function ($scope, $location, User, Session, Redirect, Loading) {
 
 		$scope.action_menu_active = false;
 		$scope.sections = viewable_sections;
@@ -18,8 +18,10 @@ angular.module("profile.controller", [])
 
 		};
 
+		Loading.showLoading();
 		$scope.setCurrentUser = function() {
 			User.current().then(function(data) {
+				Loading.hideLoading();
 				$scope.current_user = data.user;
 				$scope.current_user.questionBadge = getQuestionBadgeCount();
 			});

@@ -23,6 +23,7 @@ angular.module("profileapp", [
 	'restangular',
 	'headroom',
 
+	'loading.service',
 	'user.service',
 	'session.service',
 	'friendship.service',

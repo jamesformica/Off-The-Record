@@ -10,7 +10,7 @@ div class="container slate-wrapper"
 	div [class="slate-content" page-min-height]
 
 		/ No Questions
-		section ng-hide="current_user.questions.length > 0"
+		section ng-hide="current_user == null || current_user.questions.length > 0"
 			div class="no-friends m-t-40"
 				i class="fa fa-frown-o"
 				span
