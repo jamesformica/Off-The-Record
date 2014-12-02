@@ -12,6 +12,16 @@ angular.module("common.service", [])
 		return wrapper;
 	}
 
+	Model.prototype.new_user = function() {
+		return {
+			name: "",
+			email: "",
+			username: "",
+			password: "",
+			password_confirmation: ""
+		}
+	}
+
 	Model.prototype.new_question = function() {
 		return {
 			question: "",

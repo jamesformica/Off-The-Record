@@ -2,11 +2,15 @@ angular.module("publicapp", [
 	'templates',
 	'ngRoute',
 	'restangular',
+
+	'loading.service',
 	'user.service',
 	'session.service',
+	'common.service',
+	
 	'sign_up.controller',
 	'sign_in.controller',
-	'common.service',
+	
 	'common.directive',
 	'layout.directive'
 	])
