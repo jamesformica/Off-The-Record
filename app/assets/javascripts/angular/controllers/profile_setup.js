@@ -24,6 +24,9 @@ angular.module("profile.controller", [])
 				Loading.hideLoading();
 				$scope.current_user = data.user;
 				$scope.current_user.questionBadge = getQuestionBadgeCount();
+			}, function(response) {
+				Loading.hideLoading();
+				$scope.signOut();
 			});
 		}
 
