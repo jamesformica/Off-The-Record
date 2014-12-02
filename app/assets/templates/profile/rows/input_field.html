@@ -1,4 +1,3 @@
-
 <div class="new-input-field" ng-init="focused = false">
 	<label for="{{elemid}}" ng-class="{'active' : field.length > 0 || focused }">{{text}}</label>
 	<input type="{{type ? type : 'text'}}" id="{{elemid}}" ng-model="field" ng-focus="focused = true" ng-blur="focused = false">

@@ -20,8 +20,8 @@ angular.module("question.controller", [])
 	}])
 
 
-.controller('QuestionsNewController', ['$scope', 'Question', 'Model',
-	function ($scope, Question, Model) {
+.controller('QuestionsNewController', ['$scope', 'Question', 'Model', 'Loading',
+	function ($scope, Question, Model, Loading) {
 
 		$scope.step = 0;
 		$scope.new_question = Model.new_question();
@@ -50,11 +50,18 @@ angular.module("question.controller", [])
 		$scope.createQuestion = function(question) {
 			var w_question = Model.wrapObject("question", question);
 
+			Loading.showLoading();
 			Question.create(w_question).then(function(data) {
+
+				Loading.hideLoading();
 				$scope.current_user.questions.push(data.question);
 				$scope.setCurrentViewable($scope.sections.questions.url);
+
 			}, function(response) {
+
+				Loading.hideLoading();
 				_.map(response.data.errors, function(error) { toastr.warning(error); });
+
 			});
 		}
 	}])
