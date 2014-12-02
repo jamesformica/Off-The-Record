@@ -11,7 +11,7 @@ angular.module("loading.service", [])
 	}
 
 	Loading.prototype.hideLoading = function() {
-		$("#ui-loading").hide();
+		$("#ui-loading").fadeOut(200);
 	}
 
 	return new Loading;
