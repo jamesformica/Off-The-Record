@@ -3,6 +3,7 @@ angular.module("sign_up.controller", [])
 .controller('SignUpController', ['$scope', 'Redirect', 'Model', 'User', 'Loading',
 	function ($scope, Redirect, Model, User, Loading) {
 
+	$scope.sections = viewable_sections;
 	$scope.newuser = Model.new_user();	
 
 	$scope.signUp = function(user) {

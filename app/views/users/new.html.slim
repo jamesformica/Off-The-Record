@@ -1,0 +1,27 @@
+div class="container slate-wrapper" ng-app="publicapp" ng-controller="SignUpController"
+	
+	profile-control colour="sections.sign_up.headingColour"
+
+		div class="ui-profile-control-action col-xs-2" ng-click="cancel()"
+			i class="fa fa-arrow-left"
+
+		div class="ui-profile-control-action col-xs-4 col-xs-offset-6" ng-click="signUp(newuser)"
+			| join
+			i class="fa fa-check"
+
+
+	div [class="slate-content" page-min-height]
+
+		p class="m-t-20"
+			| fill out the form below to become one of us...
+
+		div class="new-input-group"
+			input-field elemid="signup-name" text="full name" field="newuser.name"
+			input-field elemid="signup-email" text="email" field="newuser.email"
+			input-field elemid="signup-username" text="username" field="newuser.username"
+			input-field elemid="signup-password" text="password" type="password" field="newuser.password"
+			input-field elemid="signup-password-conf" text="confirm-password" type="password" field="newuser.password_confirmation"
+
+		ul class="otr-validation-errors"
+			li ng-repeat="error in errors"
+				| {{error}}

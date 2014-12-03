@@ -2,6 +2,7 @@ angular.module("publicapp", [
 	'templates',
 	'ngRoute',
 	'restangular',
+	'headroom',
 
 	'loading.service',
 	'user.service',
