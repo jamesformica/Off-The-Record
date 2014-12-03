@@ -29,7 +29,7 @@ div class="container slate-wrapper"
 			friendship-row ng-repeat="friendship in current_user.friendships" friend="friendship" destroy="destroy_friendship(friendship)"
 
 		/ No Friends	
-		section ng-hide="current_user.friendships.length > 0"
+		section ng-hide="!current_user || current_user.friendships.length > 0"
 
 			div class="row m-t-40"
 				div class="col-xs-12 no-friends"
