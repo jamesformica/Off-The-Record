@@ -8,21 +8,31 @@ div.action-bar
 	width: 100%
 	box-shadow: $dark-shadow
 	z-index: 1001
+
+	div.action-bar-menu
+		cursor: pointer
 	
-	i.menu
-		position: absolute
-		font-size: $height-action-bar - 10
-		line-height: $size-menu-icon
-		width: $size-menu-icon
-		height: $size-menu-icon
-		color: $colour-action-bar-user-text
-		text-align: center
-		margin-left: -1 * ($size-menu-icon / 2)
-		margin-top: -1 * (($size-menu-icon - $height-action-bar) / 2)
-		z-index: 150
-		
-		&:hover
-			color: darken(#575757, 10%)
+		i.menu
+			position: absolute
+			font-size: $height-action-bar - 10
+			line-height: $height-action-bar
+			width: $height-action-bar
+			height: $height-action-bar
+			color: $colour-action-bar-user-text
+			text-align: center
+			margin-left: -1 * ($size-menu-icon / 2)
+			z-index: 150
+			transition: 400ms
+			
+			&:hover
+				color: darken($colour-action-bar-user-text, 10%)
+
+		i.menu-active
+			transform: rotate(-90deg)
+			-moz-transform: rotate(-90deg)
+			-webkit-transform: rotate(-90deg)
+			-ms-transform: rotate(-90deg)
+			color: darken($colour-action-bar-user-text, 10%)
 
 	div.user
 		text-align: center
@@ -33,6 +43,10 @@ div.action-bar
 		span
 			color: $colour-action-bar-user-text
 			+text-outline(2px, 0px, rgba(255,255,255, 1))
+
+		img.record-logo
+			width: $height-action-bar + 20
+			height: $height-action-bar + 20
 
 div.action-bar-fake
 	height: $height-action-bar
