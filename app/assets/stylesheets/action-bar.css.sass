@@ -1,0 +1,47 @@
+@import variables
+
+div.action-bar
+	position: fixed
+	height: $height-action-bar
+	background-color: $colour-action-bar-background
+	color: #575757
+	width: 100%
+	box-shadow: $dark-shadow
+	z-index: 1001
+
+	div.action-bar-menu
+		cursor: pointer
+	
+		i.action-bar-menu-icon
+			position: absolute
+			font-size: $height-action-bar - 10
+			line-height: $height-action-bar
+			width: $height-action-bar
+			height: $height-action-bar
+			color: $colour-action-bar-user-text
+			text-align: center
+			margin-left: -1 * ($size-menu-icon / 2)
+			z-index: 150
+			transition: 400ms
+			
+			&:hover
+				color: darken($colour-action-bar-user-text, 10%)
+
+		i.menu-active
+			transform: rotate(-90deg)
+			-moz-transform: rotate(-90deg)
+			-webkit-transform: rotate(-90deg)
+			-ms-transform: rotate(-90deg)
+			color: darken($colour-action-bar-user-text, 10%)
+
+	div.action-bar-logo
+		text-align: right
+		font-size: $height-action-bar - 16
+		line-height: $height-action-bar
+		color: $colour-action-bar-user-text
+
+div.action-bar-fake
+	height: $height-action-bar
+	width: 100%
+	z-index: -1
+	visibility: hidden

@@ -13,19 +13,11 @@ div class="container slate-wrapper"
 
 		/ Friend Requests
 		section ng-show="current_user.friendship_requests.length > 0"
-				div class="row"
-					div class="col-xs-12 slate-sub-heading"
-						span Friend requests
-
 				friendship-request-row ng-repeat="request in current_user.friendship_requests" request="request" accept="accept_friend_request(request)" decline="decline_friend_request(request)"
 
 
 		/ Friends
 		section ng-show="current_user.friendships.length > 0"
-			div class="row"
-				div class="col-xs-12 slate-sub-heading"
-					span Friends
-
 			friendship-row ng-repeat="friendship in current_user.friendships" friend="friendship" destroy="destroy_friendship(friendship)"
 
 		/ No Friends	
