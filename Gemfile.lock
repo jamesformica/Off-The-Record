@@ -186,7 +186,7 @@ DEPENDENCIES
   bootstrap-sass
   capybara (= 2.1.0)
   coffee-rails (~> 4.0.0)
-  font-awesome-sass
+  font-awesome-sass (~> 4.2.0)
   headroom-rails
   jbuilder (~> 2.0)
   jquery-rails
