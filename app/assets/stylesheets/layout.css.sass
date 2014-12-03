@@ -12,7 +12,7 @@ div.action-bar
 	div.action-bar-menu
 		cursor: pointer
 	
-		i.menu
+		i.action-bar-menu-icon
 			position: absolute
 			font-size: $height-action-bar - 10
 			line-height: $height-action-bar
@@ -34,19 +34,11 @@ div.action-bar
 			-ms-transform: rotate(-90deg)
 			color: darken($colour-action-bar-user-text, 10%)
 
-	div.user
-		text-align: center
-		font-family: $fancy-font
+	div.action-bar-logo
+		text-align: right
 		font-size: $height-action-bar - 16
-		line-height: $height-action-bar + 4
-
-		span
-			color: $colour-action-bar-user-text
-			+text-outline(2px, 0px, rgba(255,255,255, 1))
-
-		img.record-logo
-			width: $height-action-bar + 20
-			height: $height-action-bar + 20
+		line-height: $height-action-bar
+		color: $colour-action-bar-user-text
 
 div.action-bar-fake
 	height: $height-action-bar
