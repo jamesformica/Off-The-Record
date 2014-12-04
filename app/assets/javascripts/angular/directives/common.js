@@ -1,5 +1,25 @@
 angular.module("common.directive", [])
 
+.directive('customColour', function() {
+	return {
+		restrict: 'A',
+		scope: {
+			colour: '=',
+			css: '@'
+		},
+		link: function(scope, elem, attrs) {
+			if (scope.colour) {
+				$(elem).css(scope.css, scope.colour);
+			} else {	
+				scope.$watch('colour', function(newValue, oldValue) {
+					if (newValue)
+						$(elem).css(scope.css, newValue);
+				}, true);
+			}
+		}
+	}
+})
+
 .directive('otrHeader', function() {
 	return {
 		restrict: 'E',

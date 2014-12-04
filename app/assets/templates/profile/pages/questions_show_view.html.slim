@@ -32,7 +32,7 @@ div class="container slate-wrapper"
 		section ng-show="current_state == states.waiting"
 			div class="row"
 				div class="col-xs-12 qu-waiting"
-					i class="fa fa-clock-o animated swing" style="color: {{sections.questions_show.headingColour}}"
+					i [class="fa fa-clock-o animated swing" custom-colour css="color" colour="sections.questions_show.headingColour"]
 					br
 					span Seems like we are waiting on some individuals...
 
@@ -54,7 +54,7 @@ div class="container slate-wrapper"
 
 		/ Actual Question
 		div class=" m-b-20 m-t-40"
-			div class="qu-current-question" style="background-color: {{current_question.asker_colour}}"
-				div class="qu-current-question-tick" style="border-color: {{current_question.asker_colour}}"
+			div [class="qu-current-question" custom-colour css="background-color" colour="current_question.asker_colour"]
+				div [class="qu-current-question-tick" custom-colour css="border-color" colour="current_question.asker_colour"]
 				p class="qu-question-question"
 						| {{current_question.question}}
