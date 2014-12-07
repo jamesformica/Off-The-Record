@@ -27,6 +27,6 @@ div class="container slate-wrapper" ng-app="publicapp" ng-controller="SignUpCont
 				| {{error}}
 
 
-		ul class="favourite-colours"
-			li ng-repeat="colour in favourite_colours"
-				| {{colour}}
+		ul class="favourite-colours" ng-model="newuser.favourite_colour"
+			li ng-repeat="colour in favourite_colours" style="background: {{colour}}" ng-click="updateChosenColour($index)"
+				i class="fa fa-check" ng-show="chosenColour == $index"

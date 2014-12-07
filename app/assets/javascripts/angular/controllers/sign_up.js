@@ -5,14 +5,21 @@ angular.module("sign_up.controller", [])
 
 	$scope.sections = viewable_sections;
 	$scope.newuser = Model.new_user();
+
+	$scope.chosenColour = 0;
+
 	FavouriteColours.index().then(function(data) {
 		$scope.favourite_colours = data.favourite_colours;
 	});
 
+	$scope.updateChosenColour = function(index) {
+		$scope.chosenColour = index;
+		$scope.newuser.favourite_colour = $scope.favourite_colours[index];
+	}
 
 	$scope.signUp = function(user) {
 		var w_user = Model.wrapObject("user", user);
-		
+
 		Loading.showLoading();
 		User.create(w_user).then(function(data) {
 			

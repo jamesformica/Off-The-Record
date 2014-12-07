@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
 	has_many :answers
 	has_many :user_questions
-	has_many :questions, -> { order(created_at: :desc )}, :through => :user_questions
+	has_many :questions, -> { order(created_at: :desc) }, :through => :user_questions
 
 	has_many :friendships
 	has_many :friendship_requests, :foreign_key => 'to_user_id'
@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
 	validates :name, presence: true, length: { maximum: 50 }
+	validates :favourite_colour, presence: true
 	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
 	validates :username, presence: true, uniqueness: { case_sensitive: false }
 	validates :password, length: { minimum: 6 }, on: :create
