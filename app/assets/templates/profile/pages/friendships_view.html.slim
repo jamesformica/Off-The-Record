@@ -1,6 +1,6 @@
 div class="container slate-wrapper"
 
-	profile-control colour="sections.friendships.headingColour"
+	profile-control colour="currentViewable.headingColour"
 		form name="addFriend" ng-submit="send_friend_request(friend_request)"
 			div class="ui-profile-control-heading col-xs-10"
 				input [type="text" place-holder-value="Search" place-holder ng-model="friend_request.to_username"]
