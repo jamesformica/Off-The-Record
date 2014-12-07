@@ -11,6 +11,7 @@ angular.module("profile.controller", [])
 		$scope.action_menu_active = false;
 		$scope.sections = viewable_sections;
 		$scope.profileSettings = profile_settings;
+		$scope.currentViewable = $scope.sections.questions;
 
 		toastr.options = {
 			"positionClass": "toast-bottom-right",
@@ -30,9 +31,10 @@ angular.module("profile.controller", [])
 			});
 		}
 
-		$scope.setCurrentViewable = function(name) {
+		$scope.setCurrentViewable = function(viewable) {
+			$scope.currentViewable = viewable;
 			$scope.action_menu_active = false;
-			$location.path("/" + name);
+			$location.path("/" + viewable.url);
 		}
 
 		$scope.signOut = function() {

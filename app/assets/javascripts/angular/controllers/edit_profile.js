@@ -4,7 +4,7 @@ angular.module("edit_profile.controller", [])
 	function ($scope, User, Loading) {
 
 		if (!$scope.current_user) {
-			$scope.setCurrentViewable($scope.sections.questions.url);
+			$scope.setCurrentViewable($scope.sections.questions);
 		}
 
 		$scope.edit_user = jQuery.extend(true, {}, $scope.current_user);
@@ -18,7 +18,7 @@ angular.module("edit_profile.controller", [])
 				Loading.showLoading();
 				toastr.info("successfully updated information");
 				$scope.current_user = data.user;
-				$scope.setCurrentViewable($scope.sections.questions.url);
+				$scope.setCurrentViewable($scope.sections.questions);
 
 			}, function(response) {
 				

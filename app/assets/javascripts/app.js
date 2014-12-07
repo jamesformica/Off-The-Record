@@ -8,6 +8,7 @@ angular.module("publicapp", [
 	'user.service',
 	'session.service',
 	'common.service',
+	'favourite_colours.service',
 	
 	'sign_up.controller',
 	'sign_in.controller',
@@ -35,6 +36,7 @@ angular.module("profileapp", [
 	'question.service',
 	'answer.service',
 	'common.service',
+	'favourite_colours.service',
 
 	'profile.controller',
 	'question.controller',

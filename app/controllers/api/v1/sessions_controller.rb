@@ -11,10 +11,10 @@ module Api
 						sign_in user
 						render json: { message: "Sign In successful"}, status: :ok
 					else
-						render json: { errors: ["Wrong password"]}, status: :unprocessable_entity
+						render json: { errors: ["Wrong password"] }, status: :unprocessable_entity
 					end
 				else
-					render json: { errors: ["Can't find who you're looking for"]}, status: :not_found
+					render json: { errors: ["Can't find who you're looking for"] }, status: :not_found
 				end
 			end
 

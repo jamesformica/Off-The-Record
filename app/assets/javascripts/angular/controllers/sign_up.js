@@ -1,10 +1,14 @@
 angular.module("sign_up.controller", [])
 
-.controller('SignUpController', ['$scope', 'Redirect', 'Model', 'User', 'Loading',
-	function ($scope, Redirect, Model, User, Loading) {
+.controller('SignUpController', ['$scope', 'Redirect', 'Model', 'User', 'Loading', 'FavouriteColours',
+	function ($scope, Redirect, Model, User, Loading, FavouriteColours) {
 
 	$scope.sections = viewable_sections;
-	$scope.newuser = Model.new_user();	
+	$scope.newuser = Model.new_user();
+	FavouriteColours.index().then(function(data) {
+		$scope.favourite_colours = data.favourite_colours;
+	});
+
 
 	$scope.signUp = function(user) {
 		var w_user = Model.wrapObject("user", user);

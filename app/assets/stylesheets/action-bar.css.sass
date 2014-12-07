@@ -3,14 +3,19 @@
 div.action-bar
 	position: fixed
 	height: $height-action-bar
-	background-color: $colour-action-bar-background
 	color: #575757
 	width: 100%
-	box-shadow: $dark-shadow
+	max-width: $width-slate-max
+	left: 0
+	right: 0
+	margin: 0 auto
 	z-index: 1001
 
 	div.action-bar-menu
 		cursor: pointer
+		width: 50px
+		min-height: 1px
+		float: left
 	
 		i.action-bar-menu-icon
 			position: absolute
@@ -20,7 +25,6 @@ div.action-bar
 			height: $height-action-bar
 			color: $colour-action-bar-user-text
 			text-align: center
-			margin-left: -1 * ($size-menu-icon / 2)
 			z-index: 150
 			transition: 400ms
 			
@@ -34,11 +38,15 @@ div.action-bar
 			-ms-transform: rotate(-90deg)
 			color: darken($colour-action-bar-user-text, 10%)
 
-	div.action-bar-logo
-		text-align: right
+	div.action-bar-text
+		display: block
+		overflow: hidden
 		font-size: $height-action-bar - 16
 		line-height: $height-action-bar
-		color: $colour-action-bar-user-text
+		float: left
+
+		span
+			color: $colour-action-bar-user-text
 
 div.action-bar-fake
 	height: $height-action-bar

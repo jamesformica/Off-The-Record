@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924214813) do
+ActiveRecord::Schema.define(version: 20141204201053) do
 
   create_table "answers", force: true do |t|
     t.string   "answer"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20140924214813) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "remember_token"
+    t.string   "favourite_colour", default: "#575757"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -1,5 +1,28 @@
 angular.module("common.directive", [])
 
+.directive('actionBar', function() {
+	return {
+		restrict: 'A',
+		scope: {
+			currentViewable: '=' 
+		},
+		link: function(scope, elem, attrs) {
+			if (scope.currentViewable) {
+				updateActionBar(scope.currentViewable);
+			}
+			scope.$watch('currentViewable', function(newValue, oldValue) {
+				if (newValue)
+					updateActionBar(scope.currentViewable);
+			}, true);
+			
+			function updateActionBar(currentViewable) {
+				$(elem).css("background-color", currentViewable.headingColour);
+				$(elem).find("span#ui-action-bar-text").text(currentViewable.headingText);
+			}
+		}
+	}
+})
+
 .directive('customColour', function() {
 	return {
 		restrict: 'A',

@@ -7,6 +7,6 @@ class UserSerializer < ActiveModel::Serializer
 	has_many :questions
 
 	def favourite_colour
-		AccentColour.get_color_from_name(object.username)
+		AccentColour.get_colour_from_name(object.username)
 	end
 end

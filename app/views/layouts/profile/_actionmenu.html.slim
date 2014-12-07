@@ -2,7 +2,7 @@ div [class="action-menu-backdrop animated fadeIn" ng-show="action_menu_active" y
 
 div [class="container action-menu-wrapper"  y-to-bottom action-menu-wrapper actionmenuwidth="{{profileSettings.action_menu_min_width}}" contentmaxwidth="{{profileSettings.content_max_width}}" ng-class="{'action-menu-wrapper-active': action_menu_active }"]
 
-	div class="row action-menu-item action-menu-username" ng-click="setCurrentViewable(sections.edit_profile.url)"
+	div class="row action-menu-item action-menu-username" ng-click="setCurrentViewable(sections.edit_profile)"
 		div class="col-xs-12 fr-name"
 			span [class="letter-highlight" custom-colour css="background-color" colour="current_user.favourite_colour"]
 				| {{current_user.username[0]}}
@@ -10,8 +10,8 @@ div [class="container action-menu-wrapper"  y-to-bottom action-menu-wrapper acti
 				| {{current_user.username}}
 
 
-	action-menu-item icon="square-o" text="Questions" action="setCurrentViewable(sections.questions.url)" color="{{sections.questions.headingColour}}" badge="current_user.questionBadge"	
+	action-menu-item icon="square-o" text="Questions" action="setCurrentViewable(sections.questions)" color="{{sections.questions.headingColour}}" badge="current_user.questionBadge"	
 
-	action-menu-item icon="square-o" text="View Friends" action="setCurrentViewable(sections.friendships.url)" color="{{sections.friendships.headingColour}}" badge="current_user.friendship_requests.length"
+	action-menu-item icon="square-o" text="View Friends" action="setCurrentViewable(sections.friendships)" color="{{sections.friendships.headingColour}}" badge="current_user.friendship_requests.length"
 
 	action-menu-item icon="square-o" text="Sign Out" action="signOut()" color="white"

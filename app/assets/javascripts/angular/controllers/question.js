@@ -55,7 +55,7 @@ angular.module("question.controller", [])
 
 				Loading.hideLoading();
 				$scope.current_user.questions.push(data.question);
-				$scope.setCurrentViewable($scope.sections.questions.url);
+				$scope.setCurrentViewable($scope.sections.questions);
 
 			}, function(response) {
 

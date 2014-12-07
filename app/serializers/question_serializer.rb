@@ -26,7 +26,7 @@ class QuestionSerializer < ActiveModel::Serializer
   end
 
   def asker_colour
-    AccentColour.get_color_from_name(object.owner.username)
+    AccentColour.get_colour_from_name(object.owner.username)
   end
 
 end
