@@ -37,26 +37,26 @@ var viewable_sections = {
 	questions: {
 		url: "questions",
 		headingText: "Questions",
-		headingColour: "#4FD1C2"
+		headingColour: "#AEFFCE"
 	},
 	questions_new: {
 		url: "questions/new",
 		headingText: "New Question",
-		headingColour: "#4FD1C2"
+		headingColour: "#AEFFCE"
 	},
 	questions_show: {
 		url: "question/:id",
 		headingText: "Answers",
-		headingColour: "#4FD1C2"
+		headingColour: "#AEFFCE"
 	},
 	friendships: {
 		url: "friendships",
 		headingText: "Acquaintances",
-		headingColour: "#F788B5"
+		headingColour: "#E7C7FF"
 	},
 	edit_profile: {
 		url: "editprofile",
 		headingText: "Edit Profile",
-		headingColour: "#FFA881"
+		headingColour: "#FFC7AE"
 	}
 };
