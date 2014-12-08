@@ -37,17 +37,17 @@ var viewable_sections = {
 	questions: {
 		url: "questions",
 		headingText: "Questions",
-		headingColour: "#70DED1"
+		headingColour: "#4FD1C2"
 	},
 	questions_new: {
 		url: "questions/new",
 		headingText: "New Question",
-		headingColour: "#70DED1"
+		headingColour: "#4FD1C2"
 	},
 	questions_show: {
 		url: "question/:id",
 		headingText: "Answers",
-		headingColour: "#70DED1"
+		headingColour: "#4FD1C2"
 	},
 	friendships: {
 		url: "friendships",
