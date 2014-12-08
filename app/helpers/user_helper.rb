@@ -8,6 +8,10 @@ module UserHelper
 			@@colours
 		end
 
+		def self.get_random_colour
+			@@colours.sample
+		end
+
 		def self.get_colour_from_name(name)
 			firstLetter = name[0]
 			@@colours[firstLetter.ord % (@@colours.length - 1)]

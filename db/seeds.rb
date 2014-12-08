@@ -1,3 +1,5 @@
+include UserHelper
+
 puts "*** Creating Fake Data ***"
 # ^.^ meow
 
@@ -19,17 +21,17 @@ Answer.destroy_all
 
 puts "* Creating User Accounts *"
 
-james = User.create(name: "James Formica", email: "james@example.com", username: "james", password: "password", password_confirmation: "password")
-anastasia = User.create(name: "Anastasia Kostarelas", email: "anastasia@example.com", username: "anastasia", password: "password", password_confirmation: "password")
-sam = User.create(name: "Samule Pezzimenti", email: "sam@example.com", username: "pezza", password: "password", password_confirmation: "password")
-chris = User.create(name: "Chris Whiton", email: "chris@example.com", username: "chris", password: "password", password_confirmation: "password")
-kaisha = User.create(name: "Kaisha Crupi", email: "kaisha@example.com", username: "kaisha", password: "password", password_confirmation: "password")
-lauren = User.create(name: "Lauren Short", email: "lauren@example.com", username: "lauren", password: "password", password_confirmation: "password")
-luke = User.create(name: "Luke Visona", email: "luke@example.com", username: "luke", password: "password", password_confirmation: "password")
-mitch = User.create(name: "Mitchell Formica", email: "mitch@example.com", username: "mitch", password: "password", password_confirmation: "password")
-adam = User.create(name: "Adam Kostarelas", email: "adam@example.com", username: "adam", password: "password", password_confirmation: "password")
-alana = User.create(name: "Alana Cuci", email: "alana@example.com", username: "alana", password: "password", password_confirmation: "password")
-bridie = User.create(name: "Bridie Waldron", email: "bridie@example.com", username: "bridie", password: "password", password_confirmation: "password")
+james = User.create(name: "James Formica", email: "james@example.com", username: "james", password: "password", password_confirmation: "password", favourite_colour: AccentColour.get_random_colour)
+anastasia = User.create(name: "Anastasia Kostarelas", email: "anastasia@example.com", username: "anastasia", password: "password", password_confirmation: "password", favourite_colour: AccentColour.get_random_colour)
+sam = User.create(name: "Samule Pezzimenti", email: "sam@example.com", username: "pezza", password: "password", password_confirmation: "password", favourite_colour: AccentColour.get_random_colour)
+chris = User.create(name: "Chris Whiton", email: "chris@example.com", username: "chris", password: "password", password_confirmation: "password", favourite_colour: AccentColour.get_random_colour)
+kaisha = User.create(name: "Kaisha Crupi", email: "kaisha@example.com", username: "kaisha", password: "password", password_confirmation: "password", favourite_colour: AccentColour.get_random_colour)
+lauren = User.create(name: "Lauren Short", email: "lauren@example.com", username: "lauren", password: "password", password_confirmation: "password", favourite_colour: AccentColour.get_random_colour)
+luke = User.create(name: "Luke Visona", email: "luke@example.com", username: "luke", password: "password", password_confirmation: "password", favourite_colour: AccentColour.get_random_colour)
+mitch = User.create(name: "Mitchell Formica", email: "mitch@example.com", username: "mitch", password: "password", password_confirmation: "password", favourite_colour: AccentColour.get_random_colour)
+adam = User.create(name: "Adam Kostarelas", email: "adam@example.com", username: "adam", password: "password", password_confirmation: "password", favourite_colour: AccentColour.get_random_colour)
+alana = User.create(name: "Alana Cuci", email: "alana@example.com", username: "alana", password: "password", password_confirmation: "password", favourite_colour: AccentColour.get_random_colour)
+bridie = User.create(name: "Bridie Waldron", email: "bridie@example.com", username: "bridie", password: "password", password_confirmation: "password", favourite_colour: AccentColour.get_random_colour)
 
 puts "* Creating User Friendships *"
 peeps = User.all
