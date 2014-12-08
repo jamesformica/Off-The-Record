@@ -92,7 +92,8 @@ angular.module("layout.directive", [])
 		replace: true,
 		scope: {
 			friend: '=',
-			toggle: '&'
+			toggle: '&',
+			checkColour: '='
 		},
 		templateUrl: 'profile/rows/new_question_add_friend_row.html'
 	}

@@ -10,7 +10,7 @@ angular.module("question.controller", [])
 		}, 5000);
 
 		$scope.showQuestion = function(question) {
-			$location.path("/question/" + question.id)
+			$scope.setCurrentViewableIndex($scope.sections.questions_show, question.id);
 		}
 
 		$scope.$on("$destroy", function() {

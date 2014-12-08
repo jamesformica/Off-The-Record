@@ -51,4 +51,4 @@ div class="container slate-wrapper"
 	section ng-show="step == 1"
 		div [class="slate-content" page-min-height]	
 
-			new-question-add-friend-row ng-repeat="friendship in current_user.friendships" friend="friendship" toggle="addFriendToQuestion(friendship)"
+			new-question-add-friend-row ng-repeat="friendship in current_user.friendships" friend="friendship" toggle="addFriendToQuestion(friendship)" check-colour="currentViewable.headingColour"

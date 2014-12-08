@@ -11,7 +11,6 @@ angular.module("profile.controller", [])
 		$scope.action_menu_active = false;
 		$scope.sections = viewable_sections;
 		$scope.profileSettings = profile_settings;
-		$scope.currentViewable = $scope.sections.questions;
 
 		toastr.options = {
 			"positionClass": "toast-bottom-right",
@@ -37,6 +36,13 @@ angular.module("profile.controller", [])
 			$location.path("/" + viewable.url);
 		}
 
+		$scope.setCurrentViewableIndex = function(viewable, index) {
+			$scope.currentViewable = viewable;
+			$scope.action_menu_active = false;
+			var url = viewable.url.replace(":id", index);
+			$location.path("/" + url);
+		}
+
 		$scope.signOut = function() {
 			Session.destroy().then(function(data) {
 				Redirect.to_index();
@@ -53,6 +59,7 @@ angular.module("profile.controller", [])
 		}
 
 		$scope.setCurrentUser();
+		$scope.setCurrentViewable($scope.sections.questions);
 
 	}])
 ;

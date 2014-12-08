@@ -3,12 +3,13 @@
 div.action-bar
 	position: fixed
 	height: $height-action-bar
-	color: #575757
+	color: $colour-default-text
 	width: 100%
 	max-width: $width-slate-max
 	left: 0
 	right: 0
 	margin: 0 auto
+	padding-left: 0
 	z-index: 1001
 
 	div.action-bar-menu
@@ -46,6 +47,7 @@ div.action-bar
 		float: left
 
 		span
+			padding-left: 10px
 			color: $colour-action-bar-user-text
 
 div.action-bar-fake
