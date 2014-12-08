@@ -7,9 +7,8 @@ class FriendshipSerializer < ActiveModel::Serializer
 		object.friend.username
 	end
 
-
 	def highlight_colour
-		AccentColour.get_colour_from_name(friend_username)
+		object.friend.favourite_colour
 	end
 
 end
