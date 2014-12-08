@@ -32,7 +32,7 @@ var profile_settings = {
 
 var viewable_sections = {
 	sign_up: {
-		headingColour: "#15b3b6"
+		headingColour: "#AEFFCE"
 	},
 	questions: {
 		url: "questions",
