@@ -6,10 +6,9 @@ angular.module("sign_up.controller", [])
 	$scope.sections = viewable_sections;
 	$scope.newuser = Model.new_user();
 
-	$scope.chosenColour = 0;
-
 	FavouriteColours.index().then(function(data) {
 		$scope.favourite_colours = data.favourite_colours;
+		$scope.updateChosenColour(0);
 	});
 
 	$scope.updateChosenColour = function(index) {
