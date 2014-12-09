@@ -26,7 +26,7 @@
 //= require_tree .
 
 var profile_settings = {
-	action_menu_min_width: 200,
+	action_menu_min_width: 220,
 	content_max_width: 600
 };
 

@@ -6,36 +6,42 @@
 		<h1 id="logo">Off the Record</h1>
 	</div>
 
-	<div class="slate-floating">
+	<div class="outline">
+		
+		<div class="slate-floating">
 
-		<form name="signUpForm" ng-submit="signIn(signin)">
+			<form name="signUpForm" ng-submit="signIn(signin)">
 
-			<div class="new-input-group">
-				<input-field elemid="signin-username" text="email / username" field="signin.email"></input-field>
-				<input-field elemid="signin-password" text="password" type="password" field="signin.password"></input-field>
-			</div>
+				<div class="new-input-group">
+					<input-field elemid="signin-username" text="email / username" field="signin.email" classes="bold"></input-field>
+					<input-field elemid="signin-password" text="password" type="password" field="signin.password" classes="bold"></input-field>
+				</div>
 
-			<ul class="otr-validation-errors">
-				<li ng-repeat="err in errors">{{err}}</li>
-			</ul>
+				<ul class="otr-validation-errors">
+					<li ng-repeat="err in errors">{{err}}</li>
+				</ul>
 
-			<br/><br/>
-			<button type="submit" class="otr-btn-primary lg">
-				<i class="fa fa-magic"></i>&nbsp;&nbsp;Log In
-			</button>
+				<br/>
+				
+				<div class="row">
+					<div class="col-xs-5">
+						<button type="submit" class="otr-btn-primary lg">
+							<i class="fa fa-rocket"></i>&nbsp;&nbsp;Log In
+						</button>
+					</div>
 
+					<div class="col-xs-7 text-right">
+						<p>Or, join the fun</p>
 
-			<div class="pull-right">
-				<br/><br/>
-				<p>Or, join the fun</p>
+						<button class="otr-btn-secondary md" type="button" ng-click="signUp()">
+							<i class="fa hand-o-right"></i>&nbsp;&nbsp;Sign Up
+						</button>
+					</div>
+				</div>
 
-				<button class="otr-btn-secondary md" type="button" ng-click="signUp()">
-					<i class="fa hand-o-right"></i>&nbsp;&nbsp;Sign Up
-				</button>
-			</div>
+			</form>
 
-		</form>
-
+		</div>
 	</div>
 
 </div>

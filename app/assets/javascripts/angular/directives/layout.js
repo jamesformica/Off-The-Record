@@ -52,7 +52,7 @@ angular.module("layout.directive", [])
 		replace: true,
 		scope: {
 			icon: '@',
-			text: '@',
+			text: '=',
 			color: '@',
 			badge: '=',
 			action: '&'
@@ -115,6 +115,7 @@ angular.module("layout.directive", [])
 		restrict: 'E',
 		replace: true,
 		scope: {
+			classes: '@',
 			elemid: '@',
 			text: '@',
 			type: '@',
