@@ -72,4 +72,33 @@ angular.module("common.service", [])
 
 }])
 
+.factory('ColourHelper', function() {
+	
+	function ColourHelper() {
+	}
+
+	ColourHelper.prototype.ContrastColour = function(colour) {
+		if (colour.charAt(0) === "#") {
+			var fullHex = colour.substring(1, 7);
+			var r = parseInt(fullHex.substring(0, 2), 16);
+			var g = parseInt(fullHex.substring(2, 4), 16);
+			var b = parseInt(fullHex.substring(4, 6), 16);
+
+			var d = "";
+
+			var a = 1 - (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+			if (a < 0.5) {
+				d = "#000000"; //bright colour - dark font
+			} else {
+				d = "#ffffff"; //dark colour - light font
+			}
+
+			return d;
+		}
+	}
+
+	return new ColourHelper;
+})
+
 ;

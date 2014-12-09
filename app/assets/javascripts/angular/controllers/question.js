@@ -67,11 +67,12 @@ angular.module("question.controller", [])
 	}])
 
 
-.controller('QuestionsShowController', ['$scope', 'Question', 'Answer', 'Model', '$routeParams',
-	function ($scope, Question, Answer, Model, $routeParams) {
+.controller('QuestionsShowController', ['$scope', 'Question', 'Answer', 'Model', 'ColourHelper', '$routeParams',
+	function ($scope, Question, Answer, Model, ColourHelper, $routeParams) {
 
 		var q_id = $routeParams.id;
 
+		$scope.contrastColour = "";
 		$scope.current_state = null;
 		$scope.states = {
 			answer: 0,
@@ -82,6 +83,7 @@ angular.module("question.controller", [])
 
 		Question.show(q_id).then(function(data) {
 			$scope.setCurrentQuestionAndState(data.question);
+			$scope.contrastColour = ColourHelper.ContrastColour(data.question.asker_colour);
 		});
 
 		var timer = setInterval( function() {
