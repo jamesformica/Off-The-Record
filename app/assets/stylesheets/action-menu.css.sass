@@ -29,14 +29,22 @@ div.action-menu-wrapper
 
 
 div.action-menu-item
-	height: 40px
+	height: $height-action-menu-item
 	cursor: pointer
 	position: relative
+
+	div.item-colour
+		position: absolute
+		width: 0
+		height: 0
+		top: $height-action-menu-item / 4
+		left: 0
+		border: $height-action-menu-item / 4 solid transparent
 	
 	span, i
 		color: $colour-action-menu-text
 		font-size: 20px
-		line-height: 40px
+		line-height: $height-action-menu-item
 	
 	span.action-badge
 		position: relative
