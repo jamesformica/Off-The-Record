@@ -88,7 +88,7 @@ angular.module("common.service", [])
 
 			var a = 1 - (0.299 * r + 0.587 * g + 0.114 * b) / 255;
 
-			if (a < 0.5) {
+			if (a < 0.35) {
 				d = "#000000"; //bright colour - dark font
 			} else {
 				d = "#ffffff"; //dark colour - light font
