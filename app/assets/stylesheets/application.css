@@ -1,6 +1,6 @@
 /*
  *= require_tree .
- *= require font-awesome
+ *= require FontAwesome/css/font-awesome.min.css
  *= require animate
  *= require toastr
  *= require_self

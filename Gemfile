@@ -48,8 +48,6 @@ gem "animate-rails"
 
 gem 'lodash-rails' #for restangular
 
-gem 'font-awesome-sass', '~> 4.2.0'
-
 gem 'toastr-rails'
 
 gem "active_model_serializers", "0.8.1"
