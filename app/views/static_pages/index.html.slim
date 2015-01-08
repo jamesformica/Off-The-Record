@@ -1,0 +1,106 @@
+
+div class="otr-home-banner"
+
+	div class="otr-home-logo"
+			span class="logo-off"
+				| Off
+			br
+			span class="logo-the"
+				| the
+			br
+			span class="logo-record"
+				| &nbsp;&nbsp;record.</span>
+
+
+div class="otr-home-banner-mock"
+
+section ng-app="publicapp" ng-controller="SignInController"
+
+	div class="otr-slate-container container"
+		
+		form name="signUpForm" ng-submit="signIn(signin)"
+
+			div class="new-input-group"
+				input-field elemid="signin-username" text="email / username" field="signin.email" classes="bold"
+				input-field elemid="signin-password" text="password" type="password" field="signin.password" classes="bold"
+
+			ul class="otr-validation-errors"
+			 	li ng-repeat="err in errors" {{err}}
+
+		 	br
+
+			div class="row"
+				div class="col-xs-5"
+					button type="submit" class="otr-btn-primary lg"
+						| Log In
+
+				div class="col-xs-7 text-right"
+					p
+						| Or, join the fun
+
+					button class="otr-btn-secondary md" type="button" ng-click="signUp()"
+						i class="fa hand-o-right"
+							| &nbsp;&nbsp;Sign Up
+
+
+
+/  <div class="otr-home container" ng-app="publicapp" ng-controller="SignInController">
+
+/ 	<div class="row home-row">
+
+		
+
+/ 		<div class="outline col-md-6">
+
+/ 			<div class="slate-floating">
+
+/ 				<form name="signUpForm" ng-submit="signIn(signin)">
+
+/ 					<div class="new-input-group">
+/ 						<input-field elemid="signin-username" text="email / username" field="signin.email" classes="bold"></input-field>
+/ 						<input-field elemid="signin-password" text="password" type="password" field="signin.password" classes="bold"></input-field>
+/ 					</div>
+
+/ 					<ul class="otr-validation-errors">
+/ 						<li ng-repeat="err in errors">{{err}}</li>
+/ 					</ul>
+
+/ 					<br/>
+
+/ 					<div class="row">
+/ 						<div class="col-xs-5">
+/ 							<button type="submit" class="otr-btn-primary lg">
+/ 								Log In
+/ 							</button>
+/ 						</div>
+
+/ 						<div class="col-xs-7 text-right">
+/ 							<p>Or, join the fun</p>
+
+/ 							<button class="otr-btn-secondary md" type="button" ng-click="signUp()">
+/ 								<i class="fa hand-o-right"></i>&nbsp;&nbsp;Sign Up
+/ 							</button>
+/ 						</div>
+/ 					</div>
+
+/ 				</form>
+
+/ 			</div>
+/ 		</div>
+
+/ 		<div class="otr-home-logo col-md-6">
+
+/ 			<span class="logo-off">Off</span>
+/ 			<br/>
+/ 			<span class="logo-the">the</span>
+/ 			<br/>
+/ 			<span class="logo-record">Record</span>
+
+/ 		</div>
+
+/ 	</div>
+/ </div> 
+javascript:
+	$(document).ready(function() {
+		$(".logo-record").arctext({radius: 100, dir: -1});
+	});

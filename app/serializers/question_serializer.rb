@@ -1,7 +1,7 @@
 class QuestionSerializer < ActiveModel::Serializer
   include UserHelper
 
-  attributes :id, :question, :is_owner, :answered, :user_answer_id, :completely_answered, :viewed, :asker_colour
+  attributes :id, :question, :is_owner, :answered, :user_answer_id, :completely_answered, :viewed, :asker_colour, :answer_count
   has_many :answers
   has_many :to
 
@@ -27,6 +27,10 @@ class QuestionSerializer < ActiveModel::Serializer
 
   def asker_colour
     object.owner.favourite_colour
+  end
+
+  def answer_count
+    object.answers.select{ |a| !a.answer.blank? }.count
   end
 
 end

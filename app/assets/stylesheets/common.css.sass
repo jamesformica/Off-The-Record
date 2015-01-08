@@ -1,6 +1,4 @@
 @import bootstrap
-@import font-awesome-sprockets
-@import font-awesome
 @import variables
 
 body
@@ -10,9 +8,9 @@ body
 	font-weight: 300
 	color: black
 	font-size: $default-font-size
-	//background-image: url('/assets/stardust.png')
+	background-image: url('/assets/stardust.png')
 	//background-repeat: repeat
-	background: $colour-default-text
+	//background: #eaeaea
 
 	&:before
 		content: ""
@@ -22,8 +20,8 @@ body
 		right: 0
 		bottom: 0
 		border: 100px solid transparent
-		border-bottom: 120px solid rgba(255,255,255,0.1)
-		border-right: 120px solid rgba(255,255,255,0.2)
+		border-bottom: 120px solid rgba(255,255,255,0.04)
+		border-right: 120px solid rgba(255,255,255,0.03)
 		border-top: 320px solid transparent
 
 .animated
@@ -99,20 +97,20 @@ div.new-input-field
 		font-size: 15px
 		z-index: 1
 		transition: 0.4s
-		color: $colour-default-text
+		color: $colour-accent
 		margin-bottom: 2px
 		text-transform: capitalize
 
 	input
 		position: relative
-		background-color: #f2f2f2
+		background-color: white
 		border-radius: 4px
 		height: 40px
 		font-size: 1.4em
 		z-index: 0
 
 	input.bold
-		border: 1px solid $colour-default-text
+		border: 2px solid fade-out(black, 0.7)
 
 
 
@@ -186,47 +184,6 @@ ul.otr-validation-errors
 	list-style-type: none
 	padding: 0
 	font-weight: bold
-
-
-
-
-
-/* NAV */
-$home-nav-h: 60px
-div.otr-home-banner
-	position: relative
-	width: 100%
-	height: $home-nav-h
-	display: block
-	text-align: center
-	background-color: $primary-color
-	box-shadow: 1px 1px 4px rgba(0,0,0,0.6)
-
-	img.otr-home-logo
-		position: relative
-		height: $home-nav-h * .8
-		top: ($home-nav-h - ($home-nav-h * .8)) / 2
-
-
-
-$nav-h: 70px
-div.otr-nav
-	position: relative
-	width: 100%
-	height: $nav-h
-	line-height: $nav-h
-	text-align: center
-	color: white
-	box-shadow: 0px 1px 6px rgba(0,0,0,0.8)
-	+gradient-bg($primary-color, darken($primary-color, 3%))
-
-span.otr-logo
-	font-family: $fancy-font
-	font-size: 2em
-	color: white
-	text-shadow: 1px 1px 6px black
-	padding: 10px 50px 0 50px
-
 
 //toastr overrides
 #toast-container-otr

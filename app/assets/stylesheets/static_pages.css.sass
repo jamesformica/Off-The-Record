@@ -1,5 +1,96 @@
 @import variables
 
+
+$height-home-banner: 75px
+div.otr-home-banner-mock
+	position: relative
+	width: 100%
+	background: transparent
+	height: $height-home-banner + 100
+
+div.otr-home-banner
+	position: fixed
+	width: 100%
+	//background-color: white
+	background-image: url('/assets/small-crackle-bright.png')
+	height: $height-home-banner
+	box-shadow: 0px 2px 3px rgba(0,0,0,0.6)
+	text-align: center
+	z-index: 1000
+
+	div.otr-home-logo
+		position: relative
+		margin: 0 auto
+		text-align: center
+		display: inline-block
+		background-color: white
+		width: 160px
+		padding-bottom: 4px
+		box-shadow: 1px 1px 2px rgba(0,0,0,0.3)
+
+		&:after
+			content: ""
+			position: absolute
+			width: 160px
+			height: 0
+			bottom: -100px
+			left: 0
+			border: 80px solid transparent
+			border-top: 20px solid white
+
+
+		span.logo-off
+			font-weight: 400
+			font-size: 30px
+			letter-spacing: 8px
+			color: black
+			margin: 0
+			display: inline-block
+			text-shadow: (1px 1px 1px rgba(0,0,0,0.1))
+
+		$font-size-logo-the: 16px
+		span.logo-the
+			position: relative
+			font-family: $fancy-font
+			font-weight: 400
+			font-size: $font-size-logo-the
+			color: white
+			background-color: black
+			margin: 0
+			padding: 0 20px
+			height: $font-size-logo-the + 10
+			line-height: $font-size-logo-the + 10
+			display: inline-block
+			-ms-transform: rotate(-10deg)
+			-webkit-transform: rotate(-10deg)
+			transform: rotate(-10deg)
+
+			&:before, &:after
+				content: ""
+				position: absolute
+				width: 0
+				height: 0
+				top: 0
+				border: ($font-size-logo-the + 10) / 2 solid black
+
+			&:before
+				left: (($font-size-logo-the + 10) / 2) * -1
+				border-left-color: transparent
+
+			&:after
+				right: (($font-size-logo-the + 10) / 2) * -1
+				border-right-color: transparent
+
+		span.logo-record span
+			position: relative
+			display: inline-block
+			font-size: 15px
+			letter-spacing: 8px
+			color: black
+			margin: 0
+			margin-top: 18px
+
+
 $height-home-row: 310px
 
 div.otr-home
@@ -20,68 +111,7 @@ div.home-row
 		margin-top: -155px
 
 
-div.otr-home-logo
-	text-align: center
-	height: $height-home-row
-	padding-top: 40px
 
-	span.logo-off
-		font-weight: 400
-		font-size: 60px
-		letter-spacing: 8px
-		color: white
-		margin: 0
-		display: inline-block
-		+text-outline(1px, 1px, rgba(0,0,0,0.1))
-
-	span.logo-the
-		position: relative
-		font-family: $fancy-font
-		font-weight: 400
-		font-size: 26px
-		color: $colour-default-text
-		background-color: white
-		margin: 0
-		padding: 0 20px
-		height: 36px
-		display: inline-block
-		-ms-transform: rotate(-10deg)
-		-webkit-transform: rotate(-10deg)
-		transform: rotate(-10deg)
-
-		&:before, &:after
-			content: ""
-			position: absolute
-			width: 0
-			height: 0
-			top: 0
-			border: 18px solid white
-
-		&:before
-			left: -18px
-			border-left-color: transparent
-
-		&:after
-			right: -18px
-			border-right-color: transparent
-
-	span.logo-record span
-		position: relative
-		font-size: 20px
-		letter-spacing: 8px
-		color: white
-		margin: 0
-		margin-top: 22px
-		+text-outline(1px, 1px, rgba(0,0,0,0.1))
-
-		// &:after
-		// 	content: ""
-		// 	position: absolute
-		// 	width: 260px
-		// 	height: 1px
-		// 	background-color: fade-out(white, 0.0)
-		// 	top: 40px
-		// 	left: -10px
 
 
 div.outline
